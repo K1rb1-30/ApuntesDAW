@@ -52,6 +52,11 @@ public class OperacionesAritmeticas {
 		
 		System.out.println(modulo);
 		
+		//POTENCIA
+		
+		double potencia = Math.pow(x, y);
+		System.out.println(potencia);
+		
 		
 		
 		
