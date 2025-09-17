@@ -33,7 +33,7 @@ public class OperacionesLogicas {
 		
 		System.out.println(resultado);
 		
-		resultado = t && f; // AND $$
+		resultado = t && f; // AND &&
 		
 		System.out.println(resultado);
 		
