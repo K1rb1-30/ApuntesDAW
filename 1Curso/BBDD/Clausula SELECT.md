@@ -105,3 +105,4 @@ SELECT * FROM clientes WHERE nombre LIKE '%@gmail.___'
 ```SQL
 SELECT nomUsuari, cognom1Usuari, cognom2Usuari, rol, actiu, repetidor, sexe, dataNaixement, TIMESTAMPDIFF(YEAR, dataNaixement, CURDATE()) AS anys FROM usuaris WHERE idGrup = 4 ORDER BY anys;
 ```
+APLICACION DBEVEAR
