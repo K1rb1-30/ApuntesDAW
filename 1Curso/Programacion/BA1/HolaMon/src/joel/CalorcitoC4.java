@@ -19,19 +19,20 @@ public class CalorcitoC4 {
 		
 		if (temperatura > 25 && comandament == "SI") {
 			System.out.println("Aire");	
-		}
-		else if (alumnos > 15 && temperatura >18) {
-				if (alumnos > 15 && temperatura >22 && temperatura <= 25 && comandament == "SI") {
+		} else if (alumnos > 15) {
+			if (temperatura > 22 && temperatura <= 25) {
+				if (comandament == "SI") {
 					System.out.println("Aire");
-				}else if (alumnos > 15 && temperatura >22 && temperatura <= 25 && comandament == "NO") {
-					System.out.println("Obrir Finestra");
-				}else {
-					System.out.println("Obrir Finestra");
+				}
+				else {
+					System.out.println("Obrir finestra");
+				}
 			}
-			
-		}else {
-			System.out.println("Res");
-		}
+	} else if (temperatura >18) {
+		System.out.println("Obrir finestra");
+	}else {
+		System.out.println("Res");
 	}
 
+	}
 }

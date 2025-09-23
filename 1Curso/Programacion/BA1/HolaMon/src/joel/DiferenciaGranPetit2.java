@@ -11,8 +11,29 @@ public class DiferenciaGranPetit2 {
 		int b = sc.nextInt();
 		int c = sc.nextInt();
 		
+		int grande = 0;
 		
+		if (a > b && a > c) {
+			grande = a;
+		} else if (b > a && b > c) {
+			grande = b;
+		} else if (c > a && c > b) {
+			grande = b;
+		}
 		
+		int peque = 0;
+		
+		if (a < b && a < c) {
+			peque = a;
+		} else if (b < a && b < c) {
+			peque = b;
+		} else if (c < a && c < b) {
+			peque = b;
+		}
+		
+		int resultado = grande - peque;
+		
+		System.out.println(resultado);
 
 	}
 
