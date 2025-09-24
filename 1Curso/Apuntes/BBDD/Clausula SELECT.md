@@ -117,3 +117,63 @@ SELECT * FROM usuaris WHERE nomUsuari LIKE 'A%';
 SELECT * FROM usuaris WHERE nomUsuari LIKE '%A%A%';
 SELECT * FROM usuaris WHERE nomUsuari LIKE '____';
 ```
+
+## FORMATO FECHAS
+
+### CURDATE() yCURRENT_DATE()
+
+Muestra la fecha actual, comun para realizar calculos i filtrar rangos de fecha.
+
+```SQL
+SELECT CURDATE()
+```
+
+### DATE_ADD y DATE_SUB
+
+Permite añadir o restar dias, meses, años a una fecha.
+
+### Extraer campos
+
+- YEAR() 
+- MONTH() 
+- QUARTER() 
+- DAYOFYEAR() 
+- DAYOFWEEK() 
+- DAY()
+- Y mas...
+### DATE_FORMAT()
+
+Personalizar el formato de salida de la fecha. Los mas comunes 
+
+```SQL
+DATE_FORMAT(data_contractacio, '%d %b, %Y') AS data_formateada;
+
+data_formateada = 15 jan, 2022
+```
+
+## NULL
+
+EN SQL hay tres valores logicos 3VL (True, False i NULL)
+
+False-> 0
+True -> 1
+Unknown -> \[NULL]
+
+NULL es un valor logico mas que escapa de true o false.
+```SQL
+SELECT * FROM usuaris WHERE cognom = NULL;
+```
+
+Para compararlo en una sentencia utilizaremos IS NULL.
+
+```SQL
+SELECT * FROM usuaris WHERE cognom IS NULL;
+```
+
+Para obviarlo en una sentencia utilizamos IS NOT NULL.
+
+```SQL
+SELECT * FROM usuaris WHERE cognom IS NOT NULL;
+```
+
+
