@@ -17,20 +17,21 @@ public class CalorcitoC4 {
 		
 		String comandament = sc.nextLine();
 		
-		if (temperatura > 25 && comandament == "SI") {
+		if (temperatura > 25 && comandament.equals("SI")) {
 			System.out.println("Aire");	
 		} else if (alumnos > 15) {
 			if (temperatura > 22 && temperatura <= 25) {
-				if (comandament == "SI") {
+				if (comandament.equals("SI")) {
 					System.out.println("Aire");
-				}
-				else {
+				}else {
 					System.out.println("Obrir finestra");
 				}
+			} else if (temperatura >18) {
+				System.out.println("Obrir finestra");
+			}else {
+				System.out.println("Res");
 			}
-	} else if (temperatura >18) {
-		System.out.println("Obrir finestra");
-	}else {
+	} else {
 		System.out.println("Res");
 	}
 

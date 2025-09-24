@@ -79,30 +79,41 @@ Selecciona un valor entre lo que indiques incluido X / Y
 
 BEETWEEN 50 AND 100
 
+```SQL
+SELECT * FROM usuaris WHERE dataNaixement BETWEEN '2003-03-1' AND '2003-03-31';
+```
+
 ### IN
 
 Permite filtrar registros que coinciden con algunos valores dentro de una lista.
 
 ```SQL
-SELECT * FROM empleados WHERE departamento IN ('ventas','marketing', 'IT')
+SELECT * FROM empleados WHERE departamento IN ('ventas','marketing', 'IT');
+
+SELECT * FROM usuaris WHERE sexe = 'M' AND idGrup IN (4,5);
 ```
 
 ### AND
 
+```SQL
+SELECT * FROM usuaris WHERE sexe = 'M' AND idGrup = 30;
+```
+
 ### OR
+
+```SQL
+SELECT * FROM usuaris WHERE sexe = 'M' OR idGrup = 30;
+```
 
 ### LIKE
 
 Para buscar concidencias parciales en cadena de texto (permite el uso de comodines (%) i ( _ ) para un solo caracter)
 
 ```SQL
-SELECT * FROM clientes WHERE nombre LIKE 'Juan%'
-SELECT * FROM clientes WHERE nombre LIKE '%@gmail.___'
-```
+SELECT * FROM clientes WHERE nombre LIKE 'Juan%';
+SELECT * FROM clientes WHERE nombre LIKE '%@gmail.___';
 
-### EJERCICIOS QUERYTEST.es
-
-```SQL
-SELECT nomUsuari, cognom1Usuari, cognom2Usuari, rol, actiu, repetidor, sexe, dataNaixement, TIMESTAMPDIFF(YEAR, dataNaixement, CURDATE()) AS anys FROM usuaris WHERE idGrup = 4 ORDER BY anys;
+SELECT * FROM usuaris WHERE nomUsuari LIKE 'A%';
+SELECT * FROM usuaris WHERE nomUsuari LIKE '%A%A%';
+SELECT * FROM usuaris WHERE nomUsuari LIKE '____';
 ```
-APLICACION DBEVEAR

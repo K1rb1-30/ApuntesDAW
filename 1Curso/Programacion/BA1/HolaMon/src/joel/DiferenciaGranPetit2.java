@@ -13,22 +13,22 @@ public class DiferenciaGranPetit2 {
 		
 		int grande = 0;
 		
-		if (a > b && a > c) {
+		if (a > b && a > c || a==b && a > c || a == c && a > b) {
 			grande = a;
-		} else if (b > a && b > c) {
+		} else if (b > a && b > c || b == c && b > a) {
 			grande = b;
 		} else if (c > a && c > b) {
-			grande = b;
+			grande = c;
 		}
 		
 		int peque = 0;
 		
-		if (a < b && a < c) {
+		if (a < b && a < c || a==b && a < c || a == c && a < b) {
 			peque = a;
-		} else if (b < a && b < c) {
+		} else if (b < a && b < c || b == c && b < a) {
 			peque = b;
 		} else if (c < a && c < b) {
-			peque = b;
+			peque = c;
 		}
 		
 		int resultado = grande - peque;
