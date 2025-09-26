@@ -39,6 +39,14 @@ Analisis <-> Diseño <-> Codificació <-> Integració <-> Manteniment
 
 ## Java 
 
-Compilador (javaC) -> Bytecode (class) -> intèrpret -> 011001
+src -> Compilador (javaC) -> Bytecode (class) -> intèrpret -> 011001
+
+### JDK 
+
+- Para Devs
+- Utiliza java C
+### JRE
+- Para Users
+- Utiliza JVM
 
 
