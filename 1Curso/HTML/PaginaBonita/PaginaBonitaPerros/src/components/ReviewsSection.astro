@@ -1,0 +1,15 @@
+---
+import Review from '../components/Review.astro';
+import { reviews } from '../components/reviews.js';
+---
+
+<section class="py-12 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">Lo que opinan nuestros clientes</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      {reviews.map((review) => (
+        <Review {...review} />
+      ))}
+    </div>
+  </div>
+</section>
