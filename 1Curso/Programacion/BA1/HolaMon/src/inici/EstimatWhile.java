@@ -11,6 +11,8 @@ public class EstimatWhile {
 			System.out.println("La variable a val: " + a);
 			a ++;
 		}
+		
+		
 
 	}
 
