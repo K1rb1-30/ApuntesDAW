@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/Clausula SELECT.md",
+                "file": "BBDD/Consultas Multitablas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clausula SELECT"
+              "title": "Consultas Multitablas"
             }
           }
         ]
@@ -172,7 +172,8 @@
   },
   "active": "ef7a5dc9b769430a",
   "lastOpenFiles": [
-    "Programacion/Apuntes teoria IDE.md",
-    "BBDD/Clausula SELECT.md"
+    "BBDD/Clausula SELECT.md",
+    "BBDD/Consultas Multitablas.md",
+    "Programacion/Apuntes teoria IDE.md"
   ]
 }
