@@ -120,7 +120,7 @@ SELECT * FROM usuaris WHERE nomUsuari LIKE '____';
 
 ## FORMATO FECHAS
 
-### CURDATE() yCURRENT_DATE()
+### CURDATE() y CURRENT_DATE()
 
 Muestra la fecha actual, comun para realizar calculos i filtrar rangos de fecha.
 

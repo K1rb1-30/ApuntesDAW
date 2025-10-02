@@ -1,0 +1,28 @@
+.container{
+    border: solid 5px black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.contenido1, .contenido2{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.contenido1{
+    flex-wrap: wrap;
+}
+
+.imagenes{
+    height: 128px;
+    width: 120px;
+    border: solid 2px black;
+    margin: 2px;
+}
+
+h2{
+    font-size: 23px;
+}

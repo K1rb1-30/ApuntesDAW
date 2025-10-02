@@ -1,0 +1,28 @@
+header{
+    background-color: whitesmoke;
+    padding: 2rem;
+    justify-content: center;
+    justify-items: center;
+}
+
+.mesura-list{
+    background-color: darkgrey;
+    display: flex;
+    gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+}
+
+.mesura-item{
+    background-color: tan;
+}
+
+.imagenes{
+    height: 120px;
+    width: 200px;
+}
+
+.parrafo{
+    background-color: black;
+    color: white;
+}

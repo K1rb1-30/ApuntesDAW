@@ -1,0 +1,35 @@
+header{
+    padding: 10px;
+    background-color: darkblue;
+    color: beige;
+    align-content: center;
+    justify-content: center;
+}
+.titulo{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.menutor{
+    display: flex;
+
+}
+
+.apartados{
+    color: beige;
+    margin: 2rem;
+}
+
+main{
+    justify-items: center;
+    justify-content: center;
+}
+
+
