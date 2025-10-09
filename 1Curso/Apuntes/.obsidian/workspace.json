@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/Consultas Multitablas.md",
+                "file": "BBDD/EXAMEN DE PRUEBA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Consultas Multitablas"
+              "title": "EXAMEN DE PRUEBA"
             }
           }
         ],
@@ -186,8 +186,9 @@
   },
   "active": "fd637f61c886fd3e",
   "lastOpenFiles": [
-    "BBDD/Clausula SELECT.md",
     "BBDD/Consultas Multitablas.md",
+    "BBDD/EXAMEN DE PRUEBA.md",
+    "BBDD/Clausula SELECT.md",
     "BBDD/CapturasBBDD",
     "Programacion/Apuntes teoria IDE.md"
   ]
