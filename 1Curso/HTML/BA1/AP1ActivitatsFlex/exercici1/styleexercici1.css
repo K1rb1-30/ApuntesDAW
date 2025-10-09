@@ -1,0 +1,68 @@
+body {
+    width: 60em;
+    margin: 0 auto;
+    display: flex;
+}
+
+section {
+    padding: 2em;
+    margin: 1em;
+}
+
+ul {
+    padding: 0;
+
+}
+
+li {
+    background-color: white;
+    padding: 1em;
+    display: block;
+    margin: 1em;
+
+}
+
+#green{
+    background-color: green;
+    order: 2;
+}
+#green ul{
+    display: flex;
+    flex-direction: column;
+}
+
+#red{
+    background-color: red;
+    order: 3;
+}
+
+#orange{
+    background-color: orange;
+    order: 4;
+}
+
+#orange div{
+    display: flex;
+}
+
+#orange li{
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#yellow{
+    background-color: yellow;
+    order: 5
+}
+#blue{
+    background-color: blue;
+    order: 1;
+}
+
+#blue ul{
+    display: flex;
+    flex-direction: column-reverse;
+}
