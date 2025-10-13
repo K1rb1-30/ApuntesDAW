@@ -109,7 +109,7 @@ body{
 }
 
 .inputform{
- background: transparent;
+    background: transparent;
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 5px;
@@ -142,6 +142,14 @@ body{
 .extras{
     display: flex;
     flex-direction: row;
+}
+
+.psw a{
+    color: red;
+}
+
+.containerfor input[type="checkbox"]{
+    accent-color: red;
 }
 
 @media (max-width: 600px){
