@@ -4,6 +4,7 @@ body{
     font-weight: 300;
     font-style: normal;
     font-variation-settings:"wdth" 100;
+    
     background: url("fondo.png") no-repeat center;
     background-size: cover;
 
