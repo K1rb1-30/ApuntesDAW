@@ -1,0 +1,75 @@
+body {
+    width: 60em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "orange orange orange"
+      "blue red yellow"
+      "green green yellow";
+}
+
+section {
+    padding: 2em;
+    margin: 1em;
+}
+
+#green {
+    background-color: #baffc9;
+    grid-area: green;
+}
+
+#yellow {
+    background-color: #ffffba;
+    grid-area: yellow;
+
+}
+
+#red {
+    background-color: #ffb3ba;
+    grid-area: red;
+}
+
+#orange {
+    background-color: #ffdfba;
+    grid-area: orange;
+}
+
+#blue {
+    background-color: #bae1ff;
+    grid-area: blue;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#red ul {
+    grid-template-areas:
+        "item4 item3"
+        "item2 item1";
+}
+#item1 {
+    grid-area: item1;
+}
+#item2 {
+    grid-area: item2;
+}
+#item3 {
+    grid-area: item3;
+}
+#item4 {
+    grid-area: item4;
+}
+
+
+li {
+    background-color: white;
+    padding: 1em;
+}

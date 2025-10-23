@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/EXAMEN DE PRUEBA.md",
+                "file": "BBDD/Clausula GROUP BY.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EXAMEN DE PRUEBA"
+              "title": "Clausula GROUP BY"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "70f936d95efa9a1f",
@@ -186,8 +187,9 @@
   },
   "active": "fd637f61c886fd3e",
   "lastOpenFiles": [
-    "BBDD/Consultas Multitablas.md",
     "BBDD/EXAMEN DE PRUEBA.md",
+    "BBDD/Clausula GROUP BY.md",
+    "BBDD/Consultas Multitablas.md",
     "BBDD/Clausula SELECT.md",
     "BBDD/CapturasBBDD",
     "Programacion/Apuntes teoria IDE.md"
