@@ -12,12 +12,14 @@ main{
     "green green"
     "blue   pink"
     "orange orange";
+
 }
 
 
 header {
     background-color: forestgreen;
     grid-area: green;
+
     
 }
 nav {

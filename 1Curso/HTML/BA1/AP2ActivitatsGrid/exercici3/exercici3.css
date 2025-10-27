@@ -1,67 +1,54 @@
-body{
+body {
     font-family: "Monserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    font-variation-settings:"wdth" 100;
-    
+    font-variation-settings: "wdth" 100;
+
     background: url("fondo.png") no-repeat center;
     background-size: cover;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
 }
 
-
-.contenedor1{
+.contenedor1 {
     margin: 1rem;
-    justify-content: center;
-    align-items: center;
     border: solid indianred 2px;
     border-radius: 10px;
     padding: 1rem;
-    
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 10% 60% 15% 15%;
-    grid-template-areas:
-    "title"
-    "image"
-    "inputs"
-    "butons";
-
-
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+    align-items: center;
     color: whitesmoke;
 
     background-color: transparent;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 10px rgba(255, 255, 255, .2);
-
-
 }
 
-.titulo{
-    justify-items: center;
-    align-items: center;
-
-    grid-area: "title";
+.titulo {
+    justify-self: center;
 }
 
-.titulo h1{
+.titulo h1 {
     font-size: 2rem;
 }
 
-.contenedor1 form{
-    justify-content: center;
+.contenedor1 form {
+    display: grid;
+    justify-items: center;
     align-items: center;
+    gap: 1rem;
+    width: 100%;
 }
 
-.imgcontainer{
+.imgcontainer {
+    display: flex;
     justify-content: center;
     align-items: center;
-
-    grid-area: "image";
 }
 
 .imgcontainer img {
@@ -70,7 +57,8 @@ body{
     height: 90%;
     width: 90%;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: column;
     margin: 1rem;
@@ -79,22 +67,17 @@ body{
     align-items: center;
     height: 100%;
     width: 100%;
-
-    grid-area: "inputs";
 }
 
-.menuboton{
+.menuboton {
     display: flex;
     flex-direction: column-reverse;
     gap: 30px;
     justify-content: center;
     align-items: center;
-
-    grid-area: "butons";
 }
 
-
-.menuboton button{
+.menuboton button {
     color: whitesmoke;
     background-color: indianred;
     height: 5rem;
@@ -106,26 +89,24 @@ body{
     transition: all 0.3s ease-out;
 }
 
-.menuboton button:hover{
+.menuboton button:hover {
     color: indianred;
     background-color: transparent;
     border: solid 2px indianred;
-
 }
 
-.contentinput{
+.contentinput {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.labelform{
+.labelform {
     text-shadow: 2px 2px 4px black;
-
 }
 
-.inputform{
+.inputform {
     background: transparent;
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -137,48 +118,63 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
-.inputform::placeholder{
+.inputform::placeholder {
     color: white;
 }
 
-.inputform:hover{
+.inputform:hover {
     border: solid indianred;
     border-radius: 5px;
 }
 
-.inputform:active{
+.inputform:active {
     border: solid indianred;
 }
 
-.containerfor{
+.containerfor {
     display: flex;
     flex-direction: row;
     margin: 1rem;
 }
 
-.extras{
+.extras {
     display: flex;
     flex-direction: row;
 }
 
-.psw a{
+.psw a {
     color: red;
 }
 
-.containerfor input[type="checkbox"]{
+.containerfor input[type="checkbox"] {
     accent-color: red;
 }
 
-@media (max-width: 600px){
-    .contentinput{
-        flex-direction: column;
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .contenedor1 {
+        grid-template-rows: auto auto auto;
+        padding: 0.5rem;
     }
 
-    .containerfor{
+    .contentinput {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .containerfor {
         flex-direction: row;
     }
-    .extras{
+
+    .extras {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menuboton button {
+        font-size: 1.5rem;
+        height: 4rem;
     }
 }
