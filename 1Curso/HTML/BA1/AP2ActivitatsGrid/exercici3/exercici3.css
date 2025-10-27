@@ -1,0 +1,184 @@
+body{
+    font-family: "Monserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    
+    background: url("fondo.png") no-repeat center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contenedor1{
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    border: solid indianred 2px;
+    border-radius: 10px;
+    padding: 1rem;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 60% 15% 15%;
+    grid-template-areas:
+    "title"
+    "image"
+    "inputs"
+    "butons";
+
+
+    color: whitesmoke;
+
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+
+
+}
+
+.titulo{
+    justify-items: center;
+    align-items: center;
+
+    grid-area: "title";
+}
+
+.titulo h1{
+    font-size: 2rem;
+}
+
+.contenedor1 form{
+    justify-content: center;
+    align-items: center;
+}
+
+.imgcontainer{
+    justify-content: center;
+    align-items: center;
+
+    grid-area: "image";
+}
+
+.imgcontainer img {
+    border-radius: 2rem;
+    margin: 1rem;
+    height: 90%;
+    width: 90%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    grid-area: "inputs";
+}
+
+.menuboton{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: "butons";
+}
+
+
+.menuboton button{
+    color: whitesmoke;
+    background-color: indianred;
+    height: 5rem;
+    width: 100%;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 15px;
+    border: solid transparent;
+    transition: all 0.3s ease-out;
+}
+
+.menuboton button:hover{
+    color: indianred;
+    background-color: transparent;
+    border: solid 2px indianred;
+
+}
+
+.contentinput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.labelform{
+    text-shadow: 2px 2px 4px black;
+
+}
+
+.inputform{
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 5px;
+    color: whitesmoke;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputform::placeholder{
+    color: white;
+}
+
+.inputform:hover{
+    border: solid indianred;
+    border-radius: 5px;
+}
+
+.inputform:active{
+    border: solid indianred;
+}
+
+.containerfor{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+}
+
+.extras{
+    display: flex;
+    flex-direction: row;
+}
+
+.psw a{
+    color: red;
+}
+
+.containerfor input[type="checkbox"]{
+    accent-color: red;
+}
+
+@media (max-width: 600px){
+    .contentinput{
+        flex-direction: column;
+    }
+
+    .containerfor{
+        flex-direction: row;
+    }
+    .extras{
+        display: flex;
+        flex-direction: column;
+    }
+}
