@@ -33,13 +33,30 @@ SELECT MAX(nota1c) FROM qualificacions;
 SELECT MIN(hores) FROM moduls
 ```
 
+### ROUND()
+
+
 ## GROUP BY
 
 Agrupa filas que tienen los mimso valores en determinadas columnas.
 
 ```MySQL
-SELECT departamentos, COUNT(*, SUM(sueldo)
+SELECT departamentos, COUNT(*), SUM(sueldo)
 FROM Empleados
 GROUP BY departamentos;
 ```
 
+## HAVING
+ Se utiliza para filtrar grupos de resultados que se crean en el group by(similar a la funcion de la clausula WHERE pero para los grupos creados).
+
+```MySQL
+SELECT departamentos, COUNT(*), SUM(sueldo)
+FROM Empleados
+GROUP BY departamentos
+HAVING COUNT(*) >= 2;
+
+SELECT p.category ,COUNT(*)
+FROM products p
+GROUP BY p.category
+HAVING COUNT(*) > 4;
+```

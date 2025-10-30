@@ -1,0 +1,28 @@
+body {
+    background-color: beige;
+}
+.container {
+    border: 1px solid orangered;
+    width: 800px;
+    margin: 20px auto;
+    background-color: orange;
+}
+.container div {
+    display: inline-block;
+    border: 2px solid darkmagenta;
+    background-color: fuchsia;
+    color: white;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+#div1{
+    transform: rotate(180deg);
+}
+#div2{
+    transform: rotate(50deg);
+}
+#div3{
+    transform: rotate(230deg);
+}

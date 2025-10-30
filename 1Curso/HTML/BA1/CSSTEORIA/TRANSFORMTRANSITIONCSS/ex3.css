@@ -1,0 +1,51 @@
+body{
+
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.animacion{
+    ;
+}
+
+.explosion{
+    opacity: 0;
+    animation: expo 8s ease-in-out infinite;
+}
+
+
+@keyframes animation1 {
+    0% {
+        transform: scale(2) rotate(0deg);
+    }
+
+    50%{
+        transform: scale(3) rotate(180deg);
+    }
+
+    100%{
+        transform: scale(2) rotate(360deg);
+    }
+
+}
+
+@keyframes expo {
+    0% {
+        transform: scale(1) ;
+
+    }
+
+    100%{
+        transform: scale(8) ;
+        opacity: 1;
+    }
+
+}
+
+

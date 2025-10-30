@@ -1,0 +1,106 @@
+/* Estilos generales */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(45deg, #ff3333, #ff99cc, #66ff66, #ffcc00);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: color-flicker 1s infinite alternate;
+}
+
+@keyframes color-flicker {
+    0% { background: linear-gradient(45deg, #ff00ff, #ff9900, #00ccff, #66ff66); }
+    25% { background: linear-gradient(45deg, #ff6600, #ff00cc, #33ccff, #ffcc33); }
+    50% { background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00); }
+    75% { background: linear-gradient(45deg, #ff00cc, #ffcc00, #66ff33, #00cc99); }
+    100% { background: linear-gradient(45deg, #ff00ff, #ff9900, #00ccff, #66ff66); }
+}
+
+h1 {
+    font-size: 5rem;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    color: #ff0000;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000; }
+    100% { text-shadow: 0 0 30px #ff00ff, 0 0 50px #ff00ff, 0 0 70px #ff00ff; }
+}
+
+.description {
+    font-size: 2rem;
+    color: #ffff00;
+    margin-bottom: 20px;
+    animation: wiggle 1s infinite alternate;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+.btn-big {
+    background: linear-gradient(45deg, #ff0066, #ffcc00);
+    padding: 30px 60px;
+    font-size: 2.5rem;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-big:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.testimonials p {
+    font-size: 1.5rem;
+    color: #ff6600;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #ff00cc;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.extra-content ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 2rem;
+}
+
+.extra-content li {
+    margin: 20px 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.footer p {
+    font-size: 2rem;
+    text-align: center;
+}
