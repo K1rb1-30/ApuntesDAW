@@ -1,0 +1,35 @@
+#container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    padding: 10px;
+    grid-template-areas:
+    'D A A '
+    'E A A '
+    'C C B ';
+}
+
+#a {
+    grid-area: A;
+    background-color: red;
+}
+
+#b {
+    grid-area: B;
+    background-color: orange;
+}
+
+#c {
+    grid-area: C;
+    background-color: blue;
+}
+
+#d {
+    grid-area: D;
+    background-color: yellow;
+}
+
+#e {
+    grid-area: E;
+    background-color: green;
+}
