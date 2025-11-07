@@ -20,21 +20,33 @@ public class EscalaReial {
 				flop[e] = carta;
 			}
 			
-			int sup = flop[0];
+			// BUBBLE SORT ALGORITMO
 			
-			//int compte =
 			
-			for(int a = 0; a < flop.length; a++) {
-				if( flop[a] == sup + 1 || flop[a] == sup - 1) {
-					
+			
+			int max = flop.length;
+			
+			for(int e = 0; e < max-1; e++) {
+				boolean noswap = false;
+				
+				for(int j = 0; j < max-i-1; j++) {
+					if(flop[j] > flop[j+1]) {
+						int primero = flop[j];
+						int segundo = flop[j+1];
+						
+						flop[j] = segundo;
+						flop[j+1] = primero;
+						boolean noswap = false;
+					}
 				}
 			}
+						
+						
 			
 			
+			
+			
+
+			}
 		}
-		
-		
-
 	}
-
-}

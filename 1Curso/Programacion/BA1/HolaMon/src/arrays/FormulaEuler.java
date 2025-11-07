@@ -50,7 +50,7 @@ public class FormulaEuler {
 			
 			// Comparar minimo con max
 			
-			int max = lista.length;
+			int max = lista.length - 1;
 			
 			for(int min = 0; min < lista.length/2; min++) {
 				int resultat = lista[min] + lista[max];
