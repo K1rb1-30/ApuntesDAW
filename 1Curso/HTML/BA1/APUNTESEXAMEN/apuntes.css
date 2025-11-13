@@ -1,0 +1,357 @@
+/* ===== 1. CENTRADO DE DIVS ===== */
+
+/* Centrado horizontal con margin auto */
+.centrado-horizontal {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 1rem;
+}
+
+/* Centrado vertical y horizontal con flexbox */
+.centrado-flex {
+  display: flex;
+  justify-content: center;    /* Horizontal */
+  align-items: center;        /* Vertical */
+  height: 300px;
+  background-color: #e8f4f8;
+  gap: 1rem;
+}
+
+/* Centrado con Grid */
+.centrado-grid {
+  display: grid;
+  place-items: center;        /* Centra ambos ejes */
+  height: 300px;
+  background-color: #f0e8f8;
+}
+
+/* Centrado absoluto */
+.centrado-absoluto {
+  position: relative;
+  height: 300px;
+  background-color: #f8f0e8;
+}
+
+.centrado-absoluto > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+  border: 2px solid #333;
+}
+
+/* ===== 2. ANIMACIONES ===== */
+
+/* Animación de entrada (fade-in) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animar-entrada {
+  animation: fadeIn 2s ease-in;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animar-slide {
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Animación de rotación */
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animar-rotacion {
+  animation: rotar 2s linear infinite;
+}
+
+/* Animación de escala (zoom) */
+@keyframes escala {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animar-escala {
+  animation: escala 1.5s ease-in-out infinite;
+}
+
+/* Animación de rebote */
+@keyframes rebote {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.animar-rebote {
+  animation: rebote 1s ease-in-out infinite;
+}
+
+/* Transición suave (hover) */
+.transicion-hover {
+  background-color: #3498db;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.transicion-hover:hover {
+  background-color: #2980b9;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== 3. GRID LAYOUT ===== */
+
+/* Grid básico 3 columnas */
+.grid-basico {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.grid-basico > div {
+  background-color: #ddd;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Grid con áreas nombradas */
+.grid-areas {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  height: 500px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main aside"
+    "footer footer footer";
+}
+
+.grid-areas-header {
+  grid-area: header;
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+}
+
+.grid-areas-sidebar {
+  grid-area: sidebar;
+  background-color: #ecf0f1;
+  padding: 1rem;
+}
+
+.grid-areas-main {
+  grid-area: main;
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 2px solid #bdc3c7;
+}
+
+.grid-areas-aside {
+  grid-area: aside;
+  background-color: #ecf0f1;
+  padding: 1rem;
+}
+
+.grid-areas-footer {
+  grid-area: footer;
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Grid responsivo */
+.grid-responsivo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.grid-responsivo > div {
+  background-color: #3498db;
+  color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Grid con diferentes tamaños */
+.grid-masivo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.grid-masivo .item-grande {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #e74c3c;
+}
+
+.grid-masivo .item-normal {
+  background-color: #3498db;
+}
+
+.grid-masivo > div {
+  color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* ===== 4. FLEXBOX ===== */
+
+/* Flex básico */
+.flex-basico {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flex-basico > div {
+  flex: 1;
+  min-width: 150px;
+  background-color: #9b59b6;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Flex columna */
+.flex-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.flex-columna > div {
+  background-color: #16a085;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ===== 5. EFECTOS ADICIONALES ===== */
+
+/* Sombra */
+.sombra {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Sombra hover */
+.sombra-hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.sombra-hover:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradiente */
+.gradiente {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Bordes redondeados */
+.bordes-redondeados {
+  border-radius: 10px;
+  background-color: #f39c12;
+  padding: 1rem;
+  color: white;
+}
+
+/* Bordes */
+.borde {
+  border: 2px solid #3498db;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* ===== 6. MEDIA QUERIES (RESPONSIVE) ===== */
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .grid-basico {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-basico {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .grid-basico {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-areas {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  .centrado-flex {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apuntes CSS: centrado, animaciones, grid y flexbox</title>
+  <link rel="stylesheet" href="apuntes.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+    h2 {
+      color: #34495e;
+      margin: 2rem 0 1rem 0;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 0.5rem;
+    }
+    section {
+      background-color: white;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .descripcion {
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Apuntes CSS: Centrado, Animaciones, Grid y Flexbox</h1>
+
+<!-- ===== 1. CENTRADO DE DIVS ===== -->
+<section>
+  <h2>1. Centrado Horizontal (margin auto)</h2>
+  <p class="descripcion">Centra un div horizontalmente usando width y margin: 0 auto</p>
+  <div class="centrado-horizontal">
+    ✓ Este div está centrado horizontalmente
+  </div>
+</section>
+
+<section>
+  <h2>2. Centrado con Flexbox</h2>
+  <p class="descripcion">Centra vertical y horizontalmente usando display: flex</p>
+  <div class="centrado-flex">
+    <div>✓ Centrado perfecto con Flexbox</div>
+  </div>
+</section>
+
+<section>
+  <h2>3. Centrado con Grid</h2>
+  <p class="descripcion">Centra usando place-items: center</p>
+  <div class="centrado-grid">
+    ✓ Centrado con Grid (place-items)
+  </div>
+</section>
+
+<section>
+  <h2>4. Centrado Absoluto</h2>
+  <p class="descripcion">Centra usando position absolute y transform</p>
+  <div class="centrado-absoluto">
+    <div>✓ Centrado absoluto con transform</div>
+  </div>
+</section>
+
+<!-- ===== 2. ANIMACIONES ===== -->
+<section>
+  <h2>5. Animación Fade-In (Entrada)</h2>
+  <p class="descripcion">Elemento entra con efecto de desvanecimiento</p>
+  <div class="animar-entrada" style="background-color: #3498db; color: white; padding: 2rem; border-radius: 5px; text-align: center;">
+    ✓ Animación Fade-In
+  </div>
+</section>
+
+<section>
+  <h2>6. Animación Slide-In (Deslizamiento)</h2>
+  <p class="descripcion">Elemento se desliza desde la izquierda</p>
+  <div class="animar-slide" style="background-color: #2ecc71; color: white; padding: 2rem; border-radius: 5px; text-align: center;">
+    ✓ Animación Slide-In
+  </div>
+</section>
+
+<section>
+  <h2>7. Animación Rotación</h2>
+  <p class="descripcion">Elemento rota continuamente 360 grados</p>
+  <div class="animar-rotacion" style="background-color: #e74c3c; color: white; padding: 2rem; border-radius: 50%; width: 150px; text-align: center; margin: 0 auto;">
+    ✓ Rotando
+  </div>
+</section>
+
+<section>
+  <h2>8. Animación Escala (Zoom)</h2>
+  <p class="descripcion">Elemento crece y decrece continuamente</p>
+  <div class="animar-escala" style="background-color: #9b59b6; color: white; padding: 2rem; border-radius: 5px; text-align: center; width: fit-content; margin: 0 auto;">
+    ✓ Zoom Animado
+  </div>
+</section>
+
+<section>
+  <h2>9. Animación Rebote</h2>
+  <p class="descripcion">Elemento rebota hacia arriba y abajo</p>
+  <div class="animar-rebote" style="background-color: #f39c12; color: white; padding: 2rem; border-radius: 5px; text-align: center; width: fit-content; margin: 0 auto;">
+    ✓ Rebotando
+  </div>
+</section>
+
+<section>
+  <h2>10. Transición Hover</h2>
+  <p class="descripcion">Pasa el mouse sobre el botón para ver la transición suave</p>
+  <div class="transicion-hover">
+    ✓ Hover - Pasa el mouse aquí
+  </div>
+</section>
+
+<!-- ===== 3. GRID LAYOUT ===== -->
+<section>
+  <h2>11. Grid Básico (3 Columnas)</h2>
+  <p class="descripcion">Grid simple con 3 columnas iguales</p>
+  <div class="grid-basico">
+    <div>Columna 1</div>
+    <div>Columna 2</div>
+    <div>Columna 3</div>
+    <div>Columna 4</div>
+    <div>Columna 5</div>
+    <div>Columna 6</div>
+  </div>
+</section>
+
+<section>
+  <h2>12. Grid con Áreas Nombradas</h2>
+  <p class="descripcion">Layout completo con header, sidebar, main, aside y footer</p>
+  <div class="grid-areas">
+    <div class="grid-areas-header">Header</div>
+    <div class="grid-areas-sidebar">Sidebar</div>
+    <div class="grid-areas-main">Main Content</div>
+    <div class="grid-areas-aside">Aside</div>
+    <div class="grid-areas-footer">Footer</div>
+  </div>
+</section>
+
+<section>
+  <h2>13. Grid Responsivo</h2>
+  <p class="descripcion">Grid que se adapta automáticamente al tamaño de pantalla</p>
+  <div class="grid-responsivo">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+    <div>Item 4</div>
+    <div>Item 5</div>
+    <div>Item 6</div>
+  </div>
+</section>
+
+<section>
+  <h2>14. Grid con Diferentes Tamaños</h2>
+  <p class="descripcion">Elemento grande ocupa 2x2, los demás son normales</p>
+  <div class="grid-masivo">
+    <div class="item-grande">Item Grande (2x2)</div>
+    <div class="item-normal">Item 2</div>
+    <div class="item-normal">Item 3</div>
+    <div class="item-normal">Item 4</div>
+    <div class="item-normal">Item 5</div>
+    <div class="item-normal">Item 6</div>
+  </div>
+</section>
+
+<!-- ===== 4. FLEXBOX ===== -->
+<section>
+  <h2>15. Flexbox Básico</h2>
+  <p class="descripcion">Elementos en fila con gap y flex wrap</p>
+  <div class="flex-basico">
+    <div>Flex 1</div>
+    <div>Flex 2</div>
+    <div>Flex 3</div>
+    <div>Flex 4</div>
+  </div>
+</section>
+
+<section>
+  <h2>16. Flexbox Columna</h2>
+  <p class="descripcion">Elementos apilados en columna</p>
+  <div class="flex-columna">
+    <div>Fila 1</div>
+    <div>Fila 2</div>
+    <div>Fila 3</div>
+  </div>
+</section>
+
+<!-- ===== 5. EFECTOS ADICIONALES ===== -->
+<section>
+  <h2>17. Sombra (box-shadow)</h2>
+  <p class="descripcion">Elemento con sombra suave</p>
+  <div class="sombra">
+    ✓ Elemento con sombra
+  </div>
+</section>
+
+<section>
+  <h2>18. Sombra Hover</h2>
+  <p class="descripcion">La sombra aumenta al pasar el mouse</p>
+  <div class="sombra-hover" style="background-color: #ecf0f1; padding: 2rem; border-radius: 5px; text-align: center; cursor: pointer;">
+    ✓ Pasa el mouse para ver la sombra aumentar
+  </div>
+</section>
+
+<section>
+  <h2>19. Gradiente</h2>
+  <p class="descripcion">Fondo con gradiente lineal</p>
+  <div class="gradiente">
+    ✓ Elemento con gradiente
+  </div>
+</section>
+
+<section>
+  <h2>20. Bordes Redondeados</h2>
+  <p class="descripcion">Elemento con border-radius</p>
+  <div class="bordes-redondeados">
+    ✓ Bordes redondeados
+  </div>
+</section>
+
+<section>
+  <h2>21. Bordes</h2>
+  <p class="descripcion">Elemento con borde definido</p>
+  <div class="borde">
+    ✓ Elemento con borde
+  </div>
+</section>
+
+<!-- Nota responsive -->
+<section>
+  <h2>22. Responsive (Redimensiona la ventana)</h2>
+  <p class="descripcion">Prueba a redimensionar la ventana para ver cómo se adaptan los elementos en diferentes tamaños de pantalla:</p>
+  <ul style="margin-left: 2rem;">
+    <li><strong>Desktop (>1024px):</strong> Grid de 3 columnas</li>
+    <li><strong>Tablet (768px - 1023px):</strong> Grid de 2 columnas</li>
+    <li><strong>Mobile (<768px):</strong> Grid de 1 columna</li>
+  </ul>
+</section>
+
+</body>
+</html>

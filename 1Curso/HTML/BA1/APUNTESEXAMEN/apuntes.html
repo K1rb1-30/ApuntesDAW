@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apuntes HTML: resumen de etiquetas</title>
+  <!-- Documento de referencia: resumen compacto de etiquetas HTML para examen.
+       Cada bloque contiene un título visual, explicación y un ejemplo. -->
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif;line-height:1.4;padding:1rem}
+    h1,h2{color:#064a8a}
+    code{background:#f4f4f4;padding:.1rem .25rem;border-radius:3px}
+    section{margin-bottom:1.25rem;padding:.6rem;border-left:4px solid #ddd;background:#fff}
+    ul{margin:0.25rem 0 0 1.2rem}
+    pre{background:#f8f8f8;padding:.5rem;border-radius:4px;overflow:auto}
+  </style>
+</head>
+<body>
+
+<h1>Resumen de etiquetas HTML (para examen)</h1>
+
+<section>
+  <h2>1. Estructura básica</h2>
+  <p><strong>&lt;!doctype html&gt;</strong> — declara HTML5. <strong>&lt;html&gt;</strong>, <strong>&lt;head&gt;</strong>, <strong>&lt;body&gt;</strong>.</p>
+  <pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Mi página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+
+<section>
+  <h2>2. Metadatos y recursos</h2>
+  <ul>
+    <li>Meta, title, link, style, script.</li>
+  </ul>
+  <pre><code>&lt;head&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
+  &lt;style&gt;/* CSS rápido */&lt;/style&gt;
+  &lt;script src="app.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+</section>
+
+<section>
+  <h2>3. Estructura semántica</h2>
+  <p>Uso de etiquetas semánticas para mejorar accesibilidad y SEO.</p>
+  <pre><code>&lt;header&gt;Cabecera con logo y nav&lt;/header&gt;
+&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;
+&lt;main&gt;
+  &lt;article&gt;&lt;h2&gt;Artículo&lt;/h2&gt;&lt;p&gt;Contenido...&lt;/p&gt;&lt;/article&gt;
+  &lt;aside&gt;Barra lateral&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Pie de página&lt;/footer&gt;</code></pre>
+</section>
+
+<section>
+  <h2>4. Encabezados y texto</h2>
+  <p>Ejemplos de títulos, párrafos, énfasis y bloques de código.</p>
+  <pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;p&gt;Un &lt;strong&gt;párrafo&lt;/strong&gt; con &lt;em&gt;énfasis&lt;/em&gt;.&lt;br&gt;Nueva línea.&lt;/p&gt;
+&lt;blockquote&gt;Cita larga...&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;console.log('hola');&lt;/code&gt;&lt;/pre&gt;</code></pre>
+</section>
+
+<section>
+  <h2>5. Agrupación genérica</h2>
+  <p>Div y span para agrupar cuando no hay semántica adecuada.</p>
+  <pre><code>&lt;div class="tarjeta"&gt;
+  &lt;h3&gt;Título tarjeta&lt;/h3&gt;
+  &lt;span class="etiqueta"&gt;Nuevo&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+</section>
+
+<section>
+  <h2>6. Enlaces y navegación</h2>
+  <p>Ejemplo de enlace y menú de navegación.</p>
+  <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contacto" target="_self"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+</section>
+
+<section>
+  <h2>7. Imágenes y multimedia</h2>
+  <p>Imagen con alt, picture responsive y video con subtítulos.</p>
+  <pre><code>&lt;img src="logo.png" alt="Logo de la empresa" loading="lazy"&gt;
+
+&lt;picture&gt;
+  &lt;source srcset="imagen.webp" type="image/webp"&gt;
+  &lt;img src="imagen.jpg" alt="Descripción"&gt;
+&lt;/picture&gt;
+
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;track kind="subtitles" srclang="es" src="sub.vtt" label="Español"&gt;
+&lt;/video&gt;</code></pre>
+</section>
+
+<section>
+  <h2>8. Listas</h2>
+  <p>Listas ordenadas, desordenadas y definiciones.</p>
+  <pre><code>&lt;ul&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Primero&lt;/li&gt;
+  &lt;li&gt;Segundo&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de marcado&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+</section>
+
+<section>
+  <h2>9. Tablas</h2>
+  <p>Ejemplo de tabla semántica con thead y tbody.</p>
+  <pre><code>&lt;table&gt;
+  &lt;caption&gt;Ventas 2025&lt;/caption&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Mes&lt;/th&gt;&lt;th&gt;Ventas&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Enero&lt;/td&gt;&lt;td&gt;1000&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Febrero&lt;/td&gt;&lt;td&gt;1200&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</section>
+
+<section>
+  <h2>10. Formularios y controles</h2>
+  <p>Formulario con etiquetas, distintos tipos y agrupación.</p>
+  <pre><code>&lt;form action="/enviar" method="post"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input id="nombre" name="nombre" type="text" required&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Preferencias&lt;/legend&gt;
+    &lt;label&gt;&lt;input type="checkbox" name="news"&gt; Newsletter&lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;label for="pais"&gt;País:&lt;/label&gt;
+  &lt;select id="pais"&gt;&lt;option&gt;España&lt;/option&gt;&lt;/select&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+</section>
+
+<section>
+  <h2>11. Elementos interactivos y web components</h2>
+  <p>Detalles desplegables, dialog y template.</p>
+  <pre><code>&lt;details&gt;
+  &lt;summary&gt;Más información&lt;/summary&gt;
+  &lt;p&gt;Texto oculto al inicio.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;template id="tpl"&gt;&lt;div class="item"&gt;Plantilla&lt;/div&gt;&lt;/template&gt;</code></pre>
+</section>
+
+<section>
+  <h2>12. APIs y atributos globales importantes</h2>
+  <p>Uso de id, class, data-*, aria-* y loading.</p>
+  <pre><code>&lt;div id="miId" class="destacado" data-info="123" role="region" aria-label="Sección principal"&gt;
+  &lt;img src="foto.jpg" alt="Foto" loading="lazy"&gt;
+&lt;/div&gt;</code></pre>
+</section>
+
+<section>
+  <h2>13. Etiquetas obsoletas / evitar</h2>
+  <p>Ejemplos de etiquetas heredadas que no se deben usar; sustituir por CSS/semántica.</p>
+  <pre><code>&lt;!-- Evitar --&gt;
+&lt;center&gt;Texto centrado con &lt;font&gt; color="red"&lt;/font&gt;&lt;/center&gt;
+
+&lt;!-- Usar en su lugar --&gt;
+&lt;div style="text-align:center;color:red"&gt;Texto centrado&lt;/div&gt;</code></pre>
+</section>
+
+<section>
+  <h2>14. Consejos rápidos para el examen</h2>
+  <ul>
+    <li>Semántica > presentacional. Accesibilidad y atributos importantes.</li>
+  </ul>
+  <pre><code>&lt;!-- Ejemplo rápido: formulario accesible --&gt;
+&lt;label for="email"&gt;Email&lt;/label&gt;
+&lt;input id="email" type="email" aria-required="true" required&gt;</code></pre>
+</section>
+
+<!-- Fin de apuntes -->
+</body>
+</html>
