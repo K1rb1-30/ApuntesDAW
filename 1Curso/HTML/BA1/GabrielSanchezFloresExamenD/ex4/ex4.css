@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr 4fr;
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-areas:
+    'A F E '
+    'A F C '
+    'A D C '
+    'A D B ';
+}
+
+#a {
+    grid-area: A;
+    background-color: red;
+}
+
+#b {
+    grid-area: B;
+    background-color: blue;
+}
+
+#c {
+    grid-area: C;
+    background-color: green;
+}
+
+#d {
+    grid-area: D;
+    background-color: yellow;
+}
+
+#e {
+    grid-area: E;
+    background-color: black;
+}
+#f {
+    grid-area: F;
+    background-color: pink;
+}
