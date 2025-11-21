@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bustia>
+    <cartas>
+        <carta>
+            <enviador>
+                <nom>
+                    Pepe
+                </nom>
+                <correo>
+                    pepe@
+                </correo>
+            </enviador>
+            <destinatari>
+                <nom>Juan</nom>
+                <correo>juan@</correo>
+            </destinatari>
+            <datetime>
+                <dia>30</dia>
+                <mes>02</mes>
+                <any>2021</any>
+                <hora>12</hora>
+                <minu>12</minu>
+                <segon>21</segon>
+            </datetime>
+            
+        </carta>
+    </cartas>
+</bustia>
