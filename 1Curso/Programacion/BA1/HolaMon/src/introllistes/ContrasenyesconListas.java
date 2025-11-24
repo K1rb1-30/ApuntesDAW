@@ -1,9 +1,11 @@
-package arrayssplit;
+package introllistes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
-public class Contrasenyes {
+public class ContrasenyesconListas {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,18 +13,18 @@ public class Contrasenyes {
 		
 		int vectorT = sc.nextInt();
 		
-		String[] listapalabras = new String[vectorT];
-		String[] listacontrasenyas = new String[vectorT];
+		
+		ArrayList<String> listapalabras = new ArrayList<>();
+		ArrayList<String> listacontrasenyas = new ArrayList<>();
 		
 		for(int i = 0; i < vectorT; i++) {
-			listapalabras[i] = sc.next();
+			listapalabras.add(sc.next());
 			
 		}
 		
 		for(int r = 0; r < vectorT; r++) {
-			listacontrasenyas[r] = sc.next();
+			listacontrasenyas.add(sc.next());
 		}
-		
 		
 		int vectorN = sc.nextInt();
 		
@@ -30,20 +32,9 @@ public class Contrasenyes {
 			String comprouser = sc.next();
 			String comprocontrase = sc.next();
 			
-			boolean userencontrado = false;
-			boolean pswdencontrado = false;
+			boolean userencontrado = listapalabras.contains(comprouser);
+			boolean pswdencontrado = listacontrasenyas.contains(comprocontrase);
 			
-			for(int q = 0; q < listapalabras.length; q++) {
-				if(comprouser.equals(listapalabras[q])) {
-					userencontrado = true;
-				}
-			}
-			
-			for(int t = 0; t < listapalabras.length; t++) {
-				if(comprocontrase.equals(listacontrasenyas[t])) {
-					pswdencontrado = true;
-				}
-			}
 			
 			if(!userencontrado) {
 				System.out.println("usuari no trobat");
@@ -54,12 +45,12 @@ public class Contrasenyes {
 			}
 		}
 		
-		Arrays.sort(listapalabras);
 		
-		for(int u = 0; u < listapalabras.length; u++) {
-			System.out.print(listapalabras[u] + " ");
+		Collections.sort(listapalabras);
+		
+		for(String lista : listapalabras) {
+			System.out.print(lista + " ");
 		}
-		
 		
 	}
 
