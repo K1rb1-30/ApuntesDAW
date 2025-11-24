@@ -1,0 +1,33 @@
+{
+    "pokemon": [
+        {
+            "id" : 1,
+            "name": "Bulbasaur",
+            "type": ["Grass", "Poison"],
+            "abilities": ["Overgrow", "Chlorophyll"],
+            "attack": 49,
+            "defense": 49
+            
+        },
+
+        {
+            "id" : 2,
+            "name": "Ivysaur",
+            "type": ["Grass", "Poison"],
+            "abilities": ["Overgrow", "Chlorophyll"],
+            "attack": 62,
+            "defense": 63
+        },
+
+        {
+            "id" : 3,
+            "name": "Venusaur",
+            "type": ["Grass", "Poison"],
+            "abilities": ["Overgrow", "Chlorophyll"],
+            "attack": 82,
+            "defense": 83
+        }
+
+
+    ]
+}

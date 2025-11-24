@@ -1,0 +1,26 @@
+{ 
+    "personas": [
+    {
+        "nombre": "Patricia",
+        "telefono": "123456789",
+        "correu": "a@correu.cat",
+        "data_naixement": {
+            "dia": 1,
+            "mes": 1,
+            "any": 2000
+        }
+    },
+
+    {
+        "nombre": "Cecilia Lopez",
+        "telefono": "987654321",
+        "correu": "b@correu.cat",
+        "data_naixement": {
+            "dia": 7,
+            "mes": 7,
+            "any": 2007
+        }
+    }
+
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "bustia": [
+        {
+            "remitente": {
+                "nombre": "Pepe",
+                "correu": "pepe@exemple.com"
+            },
+            "destinatario": {
+                "nombre": "Juan",
+                "correu": "juan@example.com"
+            },
+            "data": {
+                "dia": 30,
+                "mes": 2,
+                "any": 2021,
+                "hora": 13,
+                "minut": 13,
+                "segon": 1
+            },
+            "text": "Em falta gent a juny"
+        },
+        {
+            "remitente": {
+                "nombre": "Juan",
+                "correu": "juan@example.com"
+            },
+            "destinatario": {
+                "nombre": "Pepe",
+                "correu": "pepe@exemple.com"
+            },
+            "data": {
+                "dia": 29,
+                "mes": 2,
+                "any": 2031,
+                "hora": 11,
+                "minut": 11,
+                "segon": 13
+            },
+            "text": "A mi em falta paracetamol"
+        }
+
+    ]
+        
+}

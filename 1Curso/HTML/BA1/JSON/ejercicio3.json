@@ -1,0 +1,33 @@
+{
+    "artistas": [
+        {
+            "nombre": "Eslabon Armado",
+            "albumes" : [
+                {
+                    "titulo": "Desvelado",
+                    "canciones":[
+                        {
+                            "titulo": "Ella Baila Sola"
+                        }
+                    ]
+                }
+                
+            ] 
+        },
+        {
+            "nombre": "Morgan Wallen",
+            "albumes" : [
+                {
+                    "titulo": "One thing at a time",
+                    "canciones":[
+                        {
+                            "titulo": "Lasrt night"
+                        }
+                    ]
+                }
+                
+            ] 
+        }
+
+    ]
+}
