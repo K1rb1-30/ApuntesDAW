@@ -3,12 +3,12 @@ package introllistes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Colarse {
+public class Repetits {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(System.in);
 		
 		int casos = sc.nextInt();
 		
@@ -22,18 +22,25 @@ public class Colarse {
 				lista.add(sc.nextInt());
 			}
 			
-			
-			int element = sc.nextInt();
-			int posicio = sc.nextInt();
-			
-			lista.add(posicio, element);
+			int contador = 0;
 			
 			for(Integer numero : lista) {
-				System.out.print(numero + " ");
+				contador = 0;
+				if(lista.contains(numero)) {
+					contador++;
+				}
 			}
 			
+			System.out.println(contador);
 			
+			if(contador != 1) {
+				System.out.println("SI");
+			}else {
+				System.out.println("NO");
+			}
+			
+		}
 
 	}
 
-}}
+}

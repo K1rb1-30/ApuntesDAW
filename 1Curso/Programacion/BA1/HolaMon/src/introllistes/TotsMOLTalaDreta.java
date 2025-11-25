@@ -1,13 +1,13 @@
 package introllistes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
-public class Colarse {
+public class TotsMOLTalaDreta {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		Scanner sc = new Scanner(System.in);
 		
 		int casos = sc.nextInt();
@@ -23,17 +23,16 @@ public class Colarse {
 			}
 			
 			
-			int element = sc.nextInt();
-			int posicio = sc.nextInt();
+			int derecha = sc.nextInt();
 			
-			lista.add(posicio, element);
+			Collections.rotate(lista, derecha);
 			
 			for(Integer numero : lista) {
 				System.out.print(numero + " ");
 			}
 			
-			
-
+			System.out.println();
 	}
 
-}}
+}
+}

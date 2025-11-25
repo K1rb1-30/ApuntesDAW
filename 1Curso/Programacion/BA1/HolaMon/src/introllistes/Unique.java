@@ -3,11 +3,10 @@ package introllistes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Colarse {
+public class Unique {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		Scanner sc = new Scanner(System.in);
 		
 		int casos = sc.nextInt();
@@ -16,24 +15,24 @@ public class Colarse {
 			
 			int capacidad = sc.nextInt();
 			
-			ArrayList<Integer> lista = new ArrayList<>();
+			sc.nextLine();
+			
+			ArrayList<String> lista = new ArrayList<>();
 			
 			for(int e = 0; e < capacidad; e++) {
-				lista.add(sc.nextInt());
+				
+				String palabra = sc.nextLine();
+				
+				if(lista.contains(palabra)) {
+					
+				}else {
+					lista.add(palabra);
+				}
 			}
 			
+			System.out.println(lista);
 			
-			int element = sc.nextInt();
-			int posicio = sc.nextInt();
-			
-			lista.add(posicio, element);
-			
-			for(Integer numero : lista) {
-				System.out.print(numero + " ");
-			}
-			
-			
-
+		}
 	}
 
-}}
+}
