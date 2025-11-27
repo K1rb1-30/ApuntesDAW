@@ -1,6 +1,7 @@
 package introllistes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Trileros {
@@ -29,7 +30,7 @@ public class Trileros {
 			int segundo = sc.nextInt();
 			
 			if(primero != -1 && segundo != -1) {
-				triler.set(segundo, triler.get(primero));
+				Collections.swap(triler, primero, segundo);
 				
 			}else {
 				flag = true;
@@ -39,6 +40,12 @@ public class Trileros {
 		}
 		
 		System.out.println(triler);
+		
+		for(Integer bolita : triler) {
+			if(bolita == 1) {
+				System.out.println();
+			}
+		}
 		
 
 	}

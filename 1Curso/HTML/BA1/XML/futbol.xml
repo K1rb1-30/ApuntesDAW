@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Lalliga>
+<equip id="1">
+  <nom>Betis</nom>
+  <ciutat>Sevilla</ciutat>
+  <entrenador>
+    <nom>jorge</nom>
+    <cognom>Fuente</cognom>
+    <nacionalitat>Espanyola</nacionalitat>
+  </entrenador>
+  <jugadors>
+    <jugador internacional="false">
+        <nom>Pepe</nom>
+        <cognom>Lopez</cognom>
+        <dorsal>10</dorsal>
+        <posicio>Delanter</posicio>
+        <nacionalitat>Espanyola</nacionalitat>
+    </jugador>
+    <jugador internacional="true">
+        <nom>Alex</nom>
+        <cognom>Lopez</cognom>
+        <dorsal>30</dorsal>
+        <posicio>migcampista</posicio>
+        <nacionalitat>Espanyola</nacionalitat>
+    </jugador>
+    <jugador internacional="true">
+        <nom>Ahmed</nom>
+        <cognom>tre</cognom>
+        <dorsal>24</dorsal>
+        <posicio>Defensa</posicio>
+        <nacionalitat>Marroqui</nacionalitat>
+    </jugador>
+  </jugadors>
+
+  <estadi>
+    <nom>Benito Villamarin</nom>
+    <capacitat>60000</capacitat>
+    <anydeconstruccio>1929</anydeconstruccio>
+    </estadi>
+</equip>
+
+<equip id="2">
+  <nom>Valencia</nom>
+  <ciutat>Valencia</ciutat>
+  <entrenador>
+    <nom>Carlos</nom>
+    <cognom>Garcia</cognom>
+    <nacionalitat>Espanyola</nacionalitat>
+  </entrenador>
+  <jugadors>
+    <jugador internacional="true">
+        <nom>Mario</nom>
+        <cognom>Suarez</cognom>
+        <dorsal>8</dorsal>
+        <posicio>migcampista</posicio>
+        <nacionalitat>Espanyola</nacionalitat>
+    </jugador>
+    <jugador internacional="false">
+        <nom>Diego</nom>
+        <cognom>Lopez</cognom>
+        <dorsal>1</dorsal>
+        <posicio>porter</posicio>
+        <nacionalitat>Espanyola</nacionalitat>
+    </jugador>
+    <jugador internacional="true">
+        <nom>Pepe</nom>
+        <cognom>Sac</cognom>
+        <dorsal>12</dorsal>
+        <posicio>defensa</posicio>
+        <nacionalitat>Espanyola</nacionalitat>
+    </jugador>
+  </jugadors>
+
+  <estadi>
+    <nom>Mestalla</nom>
+    <capacitat>55000</capacitat>
+    <anydeconstruccio>1923</anydeconstruccio>
+    </estadi>
+</equip>
+</Lalliga>

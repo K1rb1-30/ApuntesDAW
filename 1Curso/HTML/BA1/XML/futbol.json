@@ -1,0 +1,94 @@
+{
+    "laliga": [
+        {
+            "nombre": "Betis",
+            "id": 4,
+            "ciudad": "Sevilla",
+            "entrenador": {
+                    "nombre": "Manuel",
+                    "apellido": "Pellegrini",
+                    "nacionalidad": "Chilena"
+                },
+
+            "jugadores": [
+                    {   
+                        "internacional": true,
+                        "nombre": "Borja",
+                        "apellido": "Iglesias",
+                        "posicion": "Delantero",
+                        "nacionalidad": "Española",
+                        "numero": 9
+                    },
+                    {
+                        "internacional": true,
+                        "nombre": "Nabil",
+                        "apellido": "Fekir",
+                        "posicion": "Centrocampista",
+                        "nacionalidad": "Francesa",
+                        "numero": 8
+                    },
+                    {
+                        "internacional": true,
+                        "nombre": "Claudio",
+                        "apellido": "Bravo",
+                        "posicion": "Portero",
+                        "nacionalidad": "Chilena",
+                        "numero": 1
+                    }
+                ],
+                
+                "estadio": "Benito Villamarín",
+                "construccion": 1929,
+                "capacidad": 60723
+        },
+        {
+            "nombre": "Barcelona",
+            "id": 1,
+                "ciudad": "Barcelona",
+                "entrenador": {
+                    "nombre": "Hansi",
+                    "apellido": "Flick",
+                    "nacionalidad": "Alemana"
+                },
+
+                "jugadores": [
+                    {   
+                        "internacional": true,
+                        "nombre": "Robert",
+                        "apellido": "Lewandowski",
+                        "posicion": "Delantero",
+                        "nacionalidad": "Polaca",
+                        "numero": 9
+                    },
+                    {
+                        "internacional": true,
+                        "nombre": "Pedri",
+                        "apellido": "González",
+                        "posicion": "Centrocampista",
+                        "nacionalidad": "Española",
+                        "numero": 16
+                    },
+                    {
+                        "internacional": true,
+                        "nombre": "Marc-André",
+                        "apellido": "ter Stegen",
+                        "posicion": "Portero",
+                        "nacionalidad": "Alemana",
+                        "numero": 1
+                    }
+                ],
+                
+                "estadio": "Nou Spotify Camp Nou",
+                "construccion": 2024,
+                "capacidad": 105000
+        }
+    ]
+        
+            
+
+            
+            
+            
+        
+    
+}

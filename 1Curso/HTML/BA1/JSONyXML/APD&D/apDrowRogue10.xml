@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DD>
+    <personaje id= "10">
+        <nombre>Drow Rogue 10</nombre>
+        <AC></AC>
+        <HitPoints></HitPoints>
+        <HitDice></HitDice>
+        <Speed></Speed>
+        <AbilityScores>
+            <STR></STR>
+            <DEX></DEX>
+            <CON></CON>
+            <INT></INT>
+            <WIS></WIS>
+            <CHA></CHA>
+        </AbilityScores>
+    </personaje>
+</DD>

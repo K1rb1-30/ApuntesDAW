@@ -1,0 +1,223 @@
+{
+    "mobs": [
+        {
+            "name": "Aranya",
+            "tipo": "Hostil",
+
+            "combat": {
+                "health": 40,
+                "attack": 6,
+                "ArmorPoints": 2,
+                "speed": 1.2
+            },
+            
+            
+            "comportamiento": {
+                "active": "night",
+                "typeatack": "cosacos",
+                "biomes": ["forest", "plains", "swamp"],
+                "levelLightSpawn": 7
+            },
+
+            "drops": [
+                {
+                    "item": "String",
+                    "quantity": {
+                        "min": 0,
+                        "max": 2
+                    },
+                    "chance": "Common",
+                    "condition": {
+                        "especial": true,
+                        "tool": "Sword"
+                    }
+                },
+                {
+                    "item": "Spider Eye",
+                    "quantity":{
+                        "min": 0,
+                        "max": 1
+                    },
+                    "chance": "Rare",
+                    "condition": {
+                        "especial": false
+                    }
+                }
+            ],
+
+            "abilities": [
+                {
+                    "name": "Web Shot",
+                    "description": "Shoots a web that slows down enemies."
+                },
+                {
+                    "name": "Poison Bite",
+                    "description": "Bites the target, inflicting poison damage over time."
+                }
+            ],
+
+            "inmuneTo": [
+                "Poison",
+                "Wither"
+            ],
+
+            "weaknesses": [
+                "Fire",
+                "Light"
+            ],
+
+            "xp": 5
+            
+        },
+
+        {
+            "name": "Enderman",
+            "tipo": "Neutral",
+
+            "combat": {
+                "health": 40,
+                "attack": 7,
+                "ArmorPoints": 0,
+                "speed": 1.0
+            },
+            
+            
+            "comportamiento": {
+                "active": "any",
+                "typeatack": "melee",
+                "biomes": ["forest", "plains", "desert", "nether"],
+                "levelLightSpawn": 7
+            },
+
+            "drops": [
+                {
+                    "item": "Ender Pearl",
+                    "quantity": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "chance": "Uncommon",
+                    "condition": {
+                        "especial": false
+                    }
+                }
+            ],
+
+            "abilities": [
+                {
+                    "name": "Teleportation",
+                    "description": "Can teleport short distances to evade attacks or reach players."
+                }
+            ],
+
+            "inmuneTo": [
+                "Projectiles"
+            ],
+
+            "weaknesses": [
+                "Water"
+            ],
+
+            "xp": 10
+        },
+
+        {
+            "name": "sheep",
+            "tipo": "Passive",
+            "combat": {
+                "health": 8,
+                "attack": 0,
+                "ArmorPoints": 0,
+                "speed": 0.23
+            },
+            "comportamiento": {
+                "active": "any",
+                "typeatack": "none",
+                "biomes": ["forest", "plains", "mountains"],
+                "levelLightSpawn": 15
+            },
+            "drops": [
+                {
+                    "item": "Wool",
+                    "quantity": {
+                        "min": 1,
+                        "max": 3
+                    },
+                    "chance": "Common",
+                    "condition": {
+                        "especial": true,
+                        "tool": "Shears"
+                    }
+                },
+                {
+                    "item": "Raw Mutton",
+                    "quantity": {
+                        "min": 1,
+                        "max": 2
+                    },
+                    "chance": "Common",
+                    "condition": {
+                        "especial": false
+                    }
+                }
+            ],
+            "abilities": [],
+            "inmuneTo": [],
+            "weaknesses": [
+                "Fire"
+            ],
+            "xp": 1
+        },
+
+        {
+            "name": "Wither",
+            "tipo": "Boss",
+            "combat": {
+                "health": 300,
+                "attack": 10,
+                "ArmorPoints": 4,
+                "speed": 0.6
+            },
+            "comportamiento": {
+                "active": "any",
+                "typeatack": "ranged",
+                "biomes": ["nether", "end"],
+                "levelLightSpawn": 0
+            },
+            "drops": [
+                {
+                    "item": "Nether Star",
+                    "quantity": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "chance": "Guaranteed",
+                    "condition": {
+                        "especial": false
+                    }
+                }
+            ],
+            "abilities": [
+                {
+                    "name": "Wither Skull",
+                    "description": "Shoots explosive skulls that inflict the Wither effect."
+                },
+                {
+                    "name": "Regeneration",
+                    "description": "Regenerates health over time."
+                }
+            ],
+            "inmuneTo": [
+                "Poison",
+                "Wither",
+                "Projectiles"
+            ],
+            "weaknesses": [
+                "Water",
+                "Healing Potions"
+            ],
+            "xp": 50
+        }
+        
+    ]
+}
