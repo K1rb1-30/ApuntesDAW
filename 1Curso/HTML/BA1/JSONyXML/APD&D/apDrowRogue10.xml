@@ -3,17 +3,125 @@
 <DD>
     <personaje id= "10">
         <nombre>Drow Rogue 10</nombre>
-        <AC></AC>
-        <HitPoints></HitPoints>
-        <HitDice></HitDice>
-        <Speed></Speed>
+        <AC>17</AC>
+        <HitPoints>53</HitPoints>
+        <HitDice>10d8</HitDice>
+        <Speed>30ft</Speed>
         <AbilityScores>
-            <STR></STR>
-            <DEX></DEX>
-            <CON></CON>
-            <INT></INT>
-            <WIS></WIS>
-            <CHA></CHA>
+            <STR>
+                <points>8</points>
+                <adicional>0</adicional>
+            </STR>
+            <DEX>
+                <points>20</points>
+                <adicional>5</adicional>
+            </DEX>
+            <CON>
+                <points>10</points>
+                <adicional>0</adicional>
+            </CON>
+            <INT><points>13</points>
+                <adicional>1</adicional>
+            </INT>
+            <WIS>
+                <points>12</points>
+                <adicional>1</adicional>
+            </WIS>
+            <CHA>
+                <points>18</points>
+                <adicional>4</adicional>
+            </CHA>
         </AbilityScores>
+        <Background category="Charlatan">
+            <Specialcaracteristics>
+                <Specialcaracteristic>
+                    <name>False Identity</name>
+                    <description>You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.</description>
+                </Specialcaracteristic>
+            </Specialcaracteristics>
+            <opcional>
+
+            </opcional>
+        </Background>
+        <Proficiencies>
+            <bonus>4</bonus>
+            <SavingThrows>
+                <SavingThrow>
+                    <name>Dexterity</name>
+                    <additional>9</additional>
+                </SavingThrow>
+                <SavingThrow>
+                    <name>Inteligence</name>
+                    <additional>5</additional>
+                </SavingThrow>
+            </SavingThrows>
+            <Skills>
+                <Skill>
+                    <name>Deception</name>
+                    <additional>12</additional>
+                </Skill>
+                <Skill>
+                    <name>Insight</name>
+                    <additional>9</additional>
+                </Skill>
+                <Skill>
+                    <name>Investigation</name>
+                    <additional>5</additional>
+                </Skill>
+                <Skill>
+                    <name>Perception</name>
+                    <additional>9</additional>
+                </Skill>
+                <Skill>
+                    <name>Persuasion</name>
+                    <additional>8</additional>
+                </Skill>
+                <Skill>
+                    <name>Sleight of Hand</name>
+                    <additional>9</additional>
+                </Skill>
+                <Skill>
+                    <name>Stealth</name>
+                    <additional>13</additional>
+                </Skill>
+            </Skills>
+            <Tools>
+                <Tool>Thieves' Tools</Tool>
+                <Tool>Disguise Kit</Tool>
+                <Tool>poisiner's kit</Tool>
+            </Tools>
+            <Armors>
+                <Armor>light armor</Armor>
+            </Armors>
+            <Weapons>
+                <Weapon>simple weapons</Weapon>
+                <Weapon>hand crossbows</Weapon>
+                <Weapon>longswords</Weapon>
+                <Weapon>rapiers</Weapon>
+                <Weapon>shortswords</Weapon>
+            </Weapons>
+            
+        </Proficiencies>
+        <Features>
+            <raceFeatures></raceFeatures>
+            <classFeatures>Rogue</classFeatures>
+        </Features>
+
+        <Actions>
+            <attacks>
+                <attack>
+                    <name></name>
+                    <type></type>
+                    <bonus></bonus>
+                    <reach></reach>
+                    <target></target>
+                    <damage>
+                        <damageType></damageType>
+                        <damageDice></damageDice>
+                        <extraDamage></extraDamage>
+                    </damage>
+                </attack>
+            </attacks>
+        </Actions>
     </personaje>
 </DD>

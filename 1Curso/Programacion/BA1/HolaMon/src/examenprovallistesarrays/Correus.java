@@ -42,13 +42,11 @@ public class Correus {
 			String dominic = "@ies-sabadell.cat";
 			
 			
-			String any = listaAnys.get(y);
-			char anyc = any.charAt(2);
-			char anyc2 = any.charAt(3);
+			String any = listaAnys.get(y).substring(2,4);
 			
 			String correusinany = letranom + cognom + dominic;
 			
-			String correuany = letranom + cognom + anyc + anyc2 + dominic;
+			String correuany = letranom + cognom + any + dominic;
 			
 			if(correus.contains(correusinany)) {
 				correus.add(correuany);
@@ -58,10 +56,13 @@ public class Correus {
 			
 		}
 		
-		int ultimos = correus.size() -1;
-		String ulti = correus.get(ultimos);
 		
+		// Ultimo 
+		
+		String ultimo = correus.get(quantitat -1);
+		correus.remove(ultimo);
 		Collections.sort(correus);
+		correus.add(0, ultimo);
 		//correus.set(0, ulti);
 		
 		System.out.println(correus);

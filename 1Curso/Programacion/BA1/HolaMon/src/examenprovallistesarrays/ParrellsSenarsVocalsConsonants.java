@@ -22,15 +22,18 @@ public class ParrellsSenarsVocalsConsonants {
 			if(i % 2 != 0) {
 				stringb.setCharAt(i, '*');
 			}else if( i % 2 == 0 && (c == 'a'|| c == 'e' || c == 'i' || c == 'o'|| c == 'u')) {
-				stringb.setCharAt(i, '*');
+				stringb.deleteCharAt(i);
 				countvocals++;
+				i = -1;
 			}
-			
-			System.out.println(stringb);
 			
 		}
 		
-		System.out.println(stringb);
+		if(stringb.length() == 0) {
+			System.out.println("Buida");
+		}else {
+			System.out.println(stringb);
+		}
 		System.out.println(countvocals + " vocals eliminades");
 		
 		

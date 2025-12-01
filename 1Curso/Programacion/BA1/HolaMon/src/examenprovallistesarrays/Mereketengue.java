@@ -35,10 +35,10 @@ Scanner sc = new Scanner(System.in);
 		boolean mere = false;
 		boolean salsa = false;
 		
-		for (int t = 0; t < lista.length; t++) {
-			if(lista[t].equals("Mereketengue")) {
+		for (String paraula : lista) {
+			if(paraula.equals("Mereketengue")) {
 				mere = true;
-			}else if(lista[t].equals("Salsa")) {
+			}else if(paraula.equals("Salsa")) {
 				salsa = true;
 			}
 		}
@@ -53,6 +53,8 @@ Scanner sc = new Scanner(System.in);
 			}
 			
 		}
+		
+		System.out.println();
 		
 		if(mere && salsa) {
 			System.out.println("Mereketengue i Salsa");
