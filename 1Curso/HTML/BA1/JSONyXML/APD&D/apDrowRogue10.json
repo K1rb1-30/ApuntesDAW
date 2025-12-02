@@ -1,0 +1,255 @@
+{
+    "ddcharacters":[
+        {
+            "id":10,
+            "Name":"Drow Rogue 10",
+            "AC":17,
+            "HitPoints":53,
+            "HitDice":"10d8",
+            "Speed":30,
+            "AbilityScores": [
+                {
+                    "name":"STR",
+                    "value":10,
+                    "adicional":0
+                },
+                {
+                    "name":"DEX",
+                    "value":20,
+                    "adicional":5
+                },
+                {
+                    "name":"CON",
+                    "value":10,
+                    "adicional":0
+                },
+                {
+                    "name":"INT",
+                    "value":13,
+                    "adicional":1
+                },
+                {
+                    "name":"WIS",
+                    "value":12,
+                    "adicional":1
+                },
+                {
+                    "name":"CHA",
+                    "value":18,
+                    "adicional":4
+                }
+            ],
+            "Background":{
+                "Category": "Charlatan",
+                "SpecialCaracteristics": [
+                    {
+                        "name": "False Identity",
+                        "description": "You have created a second identity that includes documentation, establisheacquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy."
+                    }
+                ],
+                "Faction": {
+                    "name": "Zhentarim",
+                    "description": "You are a member of the Zhentarim, an organization of welltrained mercenaries, savvy rogues, and crafty warlocks who seek to expand their influence and power."
+                },
+
+                "NormalCaracteristics": {
+                    "PersonalityTraits": "I fall in and out of love easily, and am always pursuing someone.",
+                    "Ideals": "Independence. I am a free spirit—no one tells me what to do.",
+                    "Bonds": "I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.",
+                    "Flaws": "You’re convinced that no one could ever fool you the way you fool others."
+                },
+
+                "OpcionalCaracteristics": [
+                    {
+                        "name": "",
+                        "description": ""
+                    }
+                ]
+            },
+
+            "Proficiencies": {
+                "Bonus":4,
+                "SavingTrhrows": [
+                    {
+                        "name":"Dexterity",
+                        "additional":9
+                    },
+                    {
+                        "name":"Intelligence",
+                        "additional":5
+                    }
+                ],
+                "Skills": [
+                    {
+                        "name": "Deception",
+                        "additional":12
+                    },
+                    {
+                        "name": "Insight",
+                        "additional":9
+                    },
+                    {
+                        "name": "Investigation",
+                        "additional":5
+                    },
+                    {
+                        "name": "Perception",
+                        "additional":9
+                    },
+                    {
+                        "name": "Persuasion",
+                        "additional":8
+                    },
+                    {
+                        "name": "Sleight of Hand",
+                        "additional":9
+                    },
+                    {
+                        "name": "Stealth",
+                        "additional":13
+                    }
+                ],
+                "Armors": [
+                    "light armor"
+                ],
+                "Weapons": [
+                    "simple weapons",
+                    "hand crossbows",
+                    "longswords",
+                    "rapiers",
+                    "shortswords"
+                ],
+                "Tools": [
+                    "Thieves' Tools",
+                    "Disguise Kit",
+                    "poisiner's kit"
+                ],
+                "Languages": [
+                    "Common",
+                    "Elvish",
+                    "Undercommon",
+                    "thieves' cant"
+                ]
+            },
+            "FeaturesAndTraits": {
+                "race" : {
+                    "name":"Drow",
+                    "Traits": [
+                        {
+                            "name": "Superior Darkvision",
+                            "description": "You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light."
+                        },
+                        {
+                            "name": "Sunlight Sensitivity",
+                            "description": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight."
+                        },
+                        {
+                            "name": "Fey Ancestry",
+                            "description": "You have advantage on saving throws against being charmed, and magic can’t put you to sleep."
+                        },
+                        {
+                            "name": "Trance",
+                            "description": "Instead of sleeping, you meditate deeply, remaining semiconscious, for 4 hours a day, gaining the same benefit that a human does from 8 hours of sleep."
+                        },
+                        {
+                            "name": "Drow Magic",
+                            "description": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells."
+                        }
+                        
+                    ]
+                },
+                "class" : {
+                    "name":"Rogue",
+                    "Features": [
+                        {
+                            "name": "Evasion",
+                            "description": " When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+                        },
+                        {
+                            "name": "Infiltration Expertise",
+                            "description": "You can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profression, and affiliations for an identity. You can’t etablish an identity that belongs to someone else. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to."
+                        },
+                        {
+                            "name": "Sneak Attack",
+                            "description": "Once per turn, you can deal an extra 5d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll."
+                        },
+                        {
+                            "name": "Assassinate",
+                            "description": "You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit."
+                        },
+                        {
+                            "name": "Uncanny Dodge",
+                            "description": "When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you."
+                        }
+                    ]
+                }
+
+            },
+            "Actions":{
+                "attacks": [
+                    {
+                        "name": "Shortsword",
+                        "type": "Melee Weapon Attack",
+                        "bonustoHit": 9,
+                        "reach": "5",
+                        "target": "one target",
+                        "damage": {
+                            "damageType": "piercing damage",
+                            "damageDice": "1d8",
+                            "extraDamage": 5
+                        },
+                        "optional": {
+                            "description": ""
+                        }
+                    },
+                    {
+                        "name": "Dagger",
+                        "type": "Melee Weapon Attack",
+                        "bonustoHit": 9,
+                        "reach": "5",
+                        "target": "one target",
+                        "damage": {
+                            "damageType": "piercing damage",
+                            "damageDice": "1d4",
+                            "extraDamage": 5
+                        },
+                        "optional": {
+                            "description": ""
+                        }
+                    },
+                   {
+                        "name": "Hand Crossbow",
+                        "type": "Ranged Weapon Attack",
+                        "bonustoHit": 9,
+                        "reach": "80/320",
+                        "target": "one target",
+                        "damage": {
+                            "damageType": "piercing damage",
+                            "damageDice": "1d6",
+                            "extraDamage": 5
+                        },
+                        "optional": {
+                            "description": ""
+                        }
+                    },
+                    {
+                        "name": "Spellcasting",
+                        "type": "Drow Magic(drow trait)",
+                        "bonustoHit": "",
+                        "reach": "",
+                        "target": "",
+                        "damage": {
+                            "damageType": "",
+                            "damageDice": "",
+                            "extraDamage": ""
+                        },
+                        "optional": {
+                            "description": "helm of telepathy"
+                        }
+                    }
+
+                ]
+            }
+        }
+    ]
+}

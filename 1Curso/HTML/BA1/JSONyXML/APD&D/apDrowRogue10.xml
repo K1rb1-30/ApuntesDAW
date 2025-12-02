@@ -6,7 +6,7 @@
         <AC>17</AC>
         <HitPoints>53</HitPoints>
         <HitDice>10d8</HitDice>
-        <Speed>30ft</Speed>
+        <Speed>30</Speed>
         <AbilityScores>
             <STR>
                 <points>8</points>
@@ -36,15 +36,43 @@
             <Specialcaracteristics>
                 <Specialcaracteristic>
                     <name>False Identity</name>
-                    <description>You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.</description>
+                    <description>
+                        You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.
+                    </description>
                 </Specialcaracteristic>
             </Specialcaracteristics>
-            <opcional>
 
-            </opcional>
+            <Faction>
+                <name>Zhentarim</name>
+                <description>
+                    You are a member of the Zhentarim, an organization of welltrained mercenaries, savvy rogues, and crafty warlocks who seek to expand their influence and power.
+                </description>
+            </Faction>
+
+            <NormalCaracteristics>
+                <PersonalityTrait>
+                    I fall in and out of love easily, and am always pursuing someone.
+                </PersonalityTrait>
+                <Ideals>
+                    Independence. I am a free spirit—no one tells me what to do.
+                </Ideals>
+                <Bonds>
+                    I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.
+                </Bonds>
+                <Flaws>
+                    You’re convinced that no
+                    one could ever fool you the way you fool others.
+                </Flaws>
+            </NormalCaracteristics>
+            <opcionalCaracteristics>
+                <opcionalCaracteristic>
+                    <name></name>
+                    <description></description>
+                </opcionalCaracteristic>
+            </opcionalCaracteristics>
         </Background>
         <Proficiencies>
-            <bonus>4</bonus>
+            <Proficiencybonus>4</Proficiencybonus>
             <SavingThrows>
                 <SavingThrow>
                     <name>Dexterity</name>
@@ -85,11 +113,6 @@
                     <additional>13</additional>
                 </Skill>
             </Skills>
-            <Tools>
-                <Tool>Thieves' Tools</Tool>
-                <Tool>Disguise Kit</Tool>
-                <Tool>poisiner's kit</Tool>
-            </Tools>
             <Armors>
                 <Armor>light armor</Armor>
             </Armors>
@@ -100,19 +123,137 @@
                 <Weapon>rapiers</Weapon>
                 <Weapon>shortswords</Weapon>
             </Weapons>
+            <Tools>
+                <Tool>Thieves' Tools</Tool>
+                <Tool>Disguise Kit</Tool>
+                <Tool>poisiner's kit</Tool>
+            </Tools>
+            <Languages>
+                <Language>Common</Language>
+                <Language>Elvish</Language>
+                <Language>Undercommon</Language>
+                <Language>thieves' cant</Language>
+            </Languages>
             
         </Proficiencies>
-        <Features>
-            <raceFeatures></raceFeatures>
-            <classFeatures>Rogue</classFeatures>
-        </Features>
+        <FeaturesAndTraits>
+            <raceTraits race="Drow">
+                <raceTrait>
+                    <name>Superior Darkvision</name>
+                    <description>
+                        You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light.
+                    </description>
+                </raceTrait>
+                <raceTrait>
+                    <name>Sunlight Sensitivity</name>
+                    <description>
+                        You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.
+                    </description>
+                </raceTrait>
+                <raceTrait>
+                    <name>Fey Ancestry</name>
+                    <description>
+                        You have advantage on saving throws against being charmed, and magic can’t put you to sleep.
+                    </description>
+                </raceTrait>
+                <raceTrait>
+                    <name>Trance</name>
+                    <description>
+                        Instead of sleeping, you meditate deeply, remaining semiconscious, for 4 hours a day, gaining the same benefit that a human does from 8 hours of sleep.
+                    </description>
+                </raceTrait>
+                <raceTrait>
+                    <name>Drow Magic</name>
+                    <description>
+                       You know the dancing lights cantrip, and you can cast the darkness and the faerie fire spell once per day (save DC 16). Charisma is your spellcasting ability for these spells.
+                    </description>
+                </raceTrait>
+            </raceTraits>
+            <classFeatures class="Rogue">
+                <classFeature>
+                    <name>Evasion</name>
+                    <description>
+                        When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.
+                    </description>
+                </classFeature>
+                <classFeature>
+                    <name>Infiltration Expertise</name>
+                    <description>
+                         You can unfailingly create false identities for yourself. You must spend seven days and 25 gp to establish the history, profression, and affiliations for an identity. You can’t etablish an identity that belongs to someone else. Thereafter, if you adopt the new identity as a disguise, other creatures believe you to be that person until given an obvious reason not to.
+                    </description>
+                </classFeature>
+                <classFeature>
+                    <name>Sneak Attack</name>
+                    <description>
+                        Once per turn, you can deal an extra 5d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don’t need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t incapacitated, and you don’t have disadvantage on the attack roll.
+                    </description>
+                </classFeature>
+                <classFeature>
+                    <name>Assassinate</name>
+                    <description>
+                        You have advantage on attack rolls against any creature that hasn’t taken a turn in the combat yet. In addition, any hit you score against a creature that is surprised is a critical hit.
+                    </description>
+                </classFeature>
+                <classFeature>
+                    <name>Uncanny Dodge</name>
+                    <description>
+                        When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack’s damage against you.
+                    </description>
+                </classFeature>
+            </classFeatures>
+        </FeaturesAndTraits>
 
         <Actions>
             <attacks>
                 <attack>
-                    <name></name>
-                    <type></type>
-                    <bonus></bonus>
+                    <name>Shortsword</name>
+                    <type>Melee Weapon Attack</type>
+                    <bonustoHit>9</bonustoHit>
+                    <reach>5</reach>
+                    <target>one target</target>
+                    <damage>
+                        <damageType>piercing damage</damageType>
+                        <damageDice>1d6</damageDice>
+                        <extraDamage>5</extraDamage>
+                    </damage>
+                    <optional>
+                        <description></description>
+                    </optional>
+                </attack>
+                <attack>
+                    <name>Dagger</name>
+                    <type>Melee Weapon Attack</type>
+                    <bonustoHit>9</bonustoHit>
+                    <reach>5</reach>
+                    <target>one target</target>
+                    <damage>
+                        <damageType>piercing damage</damageType>
+                        <damageDice>1d4</damageDice>
+                        <extraDamage>5</extraDamage>
+                    </damage>
+                    <optional>
+                        <description></description>
+                    </optional>
+                </attack>
+                <attack>
+                    <name>Hand Crossbow</name>
+                    <type>Ranged Weapon Attack</type>
+                    <bonustoHit>9</bonustoHit>
+                    <reach>80/320</reach>
+                    <target>one target</target>
+                    <damage>
+                        <damageType>piercing damage</damageType>
+                        <damageDice>1d6</damageDice>
+                        <extraDamage>5</extraDamage>
+                    </damage>
+                    <optional>
+                        <description></description>
+                    </optional>
+                </attack>
+                <attack>
+                    <name>Spellcasting</name>
+                    <type>Drow Magic(drow trait)</type>
+                    <bonustoHit></bonustoHit>
                     <reach></reach>
                     <target></target>
                     <damage>
@@ -120,6 +261,9 @@
                         <damageDice></damageDice>
                         <extraDamage></extraDamage>
                     </damage>
+                    <optional>
+                        <description>helm of telepathy</description>
+                    </optional>
                 </attack>
             </attacks>
         </Actions>
