@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<DD>
+<ddCharacters>
     <personaje id= "10">
         <nombre>Drow Rogue 10</nombre>
-        <AC>17</AC>
-        <HitPoints>53</HitPoints>
-        <HitDice>10d8</HitDice>
-        <Speed>30</Speed>
-        <AbilityScores>
+        <characterCaracteristics>
+            <AC>17</AC>
+            <hit>
+                <hitPoints>53</hitPoints>
+                <hitDice>10d8</hitDice>
+            </hit>
+            <speed>30</speed>
+        </characterCaracteristics>
+        <abilityScores>
             <STR>
                 <points>8</points>
                 <adicional>0</adicional>
@@ -31,112 +35,111 @@
                 <points>18</points>
                 <adicional>4</adicional>
             </CHA>
-        </AbilityScores>
-        <Background category="Charlatan">
-            <Specialcaracteristics>
-                <Specialcaracteristic>
+        </abilityScores>
+        <background category="Charlatan">
+            <specialCaracteristics>
+                <specialCaracteristic>
                     <name>False Identity</name>
                     <description>
                         You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy.
                     </description>
-                </Specialcaracteristic>
-            </Specialcaracteristics>
+                </specialCaracteristic>
+            </specialCaracteristics>
 
-            <Faction>
-                <name>Zhentarim</name>
+            <faction name="Zhentarim">
                 <description>
                     You are a member of the Zhentarim, an organization of welltrained mercenaries, savvy rogues, and crafty warlocks who seek to expand their influence and power.
                 </description>
-            </Faction>
+            </faction>
 
-            <NormalCaracteristics>
-                <PersonalityTrait>
+            <normalCaracteristics>
+                <personalityTrait>
                     I fall in and out of love easily, and am always pursuing someone.
-                </PersonalityTrait>
-                <Ideals>
+                </personalityTrait>
+                <ideals>
                     Independence. I am a free spirit—no one tells me what to do.
-                </Ideals>
-                <Bonds>
+                </ideals>
+                <bonds>
                     I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.
-                </Bonds>
-                <Flaws>
+                </bonds>
+                <flaws>
                     You’re convinced that no
                     one could ever fool you the way you fool others.
-                </Flaws>
-            </NormalCaracteristics>
+                </flaws>
+            </normalCaracteristics>
             <opcionalCaracteristics>
                 <opcionalCaracteristic>
                     <name></name>
                     <description></description>
                 </opcionalCaracteristic>
             </opcionalCaracteristics>
-        </Background>
-        <Proficiencies>
-            <Proficiencybonus>4</Proficiencybonus>
-            <SavingThrows>
-                <SavingThrow>
+        </background>
+        <proficiencies>
+            <proficiencyBonus>4</proficiencyBonus>
+            <savingThrows>
+                <savingThrow>
                     <name>Dexterity</name>
                     <additional>9</additional>
-                </SavingThrow>
-                <SavingThrow>
+                </savingThrow>
+                <savingThrow>
                     <name>Inteligence</name>
                     <additional>5</additional>
-                </SavingThrow>
-            </SavingThrows>
-            <Skills>
-                <Skill>
+                </savingThrow>
+            </savingThrows>
+            <skills>
+                <skill>
                     <name>Deception</name>
                     <additional>12</additional>
-                </Skill>
-                <Skill>
+                </skill>
+                <skill>
                     <name>Insight</name>
                     <additional>9</additional>
-                </Skill>
-                <Skill>
+                </skill>
+                <skill>
                     <name>Investigation</name>
                     <additional>5</additional>
-                </Skill>
-                <Skill>
+                </skill>
+                <skill>
                     <name>Perception</name>
                     <additional>9</additional>
-                </Skill>
-                <Skill>
+                </skill>
+                <skill>
                     <name>Persuasion</name>
                     <additional>8</additional>
-                </Skill>
-                <Skill>
+                </skill>
+                <skill>
                     <name>Sleight of Hand</name>
                     <additional>9</additional>
-                </Skill>
-                <Skill>
+                </skill>
+                <skill>
                     <name>Stealth</name>
                     <additional>13</additional>
-                </Skill>
-            </Skills>
-            <Armors>
-                <Armor>light armor</Armor>
-            </Armors>
-            <Weapons>
-                <Weapon>simple weapons</Weapon>
-                <Weapon>hand crossbows</Weapon>
-                <Weapon>longswords</Weapon>
-                <Weapon>rapiers</Weapon>
-                <Weapon>shortswords</Weapon>
-            </Weapons>
-            <Tools>
-                <Tool>Thieves' Tools</Tool>
-                <Tool>Disguise Kit</Tool>
-                <Tool>poisiner's kit</Tool>
-            </Tools>
-            <Languages>
-                <Language>Common</Language>
-                <Language>Elvish</Language>
-                <Language>Undercommon</Language>
-                <Language>thieves' cant</Language>
-            </Languages>
+                </skill>
+            </skills>
+            <armors>
+                <armor>light armor</armor>
+            </armors>
+            <weapons>
+                <weapon>simple weapons</weapon>
+                <weapon>hand crossbows</weapon>
+                <weapon>longswords</weapon>
+                <weapon>rapiers</weapon>
+                <weapon>shortswords</weapon>
+            </weapons>
+            <tools>
+                <tool>Thieves' Tools</tool>
+                <tool>Disguise Kit</tool>
+                <tool>poisiner's kit</tool>
+            </tools>
+            <languages>
+                <language>Common</language>
+                <language>Elvish</language>
+                <language>Undercommon</language>
+                <language>thieves' cant</language>
+            </languages>
             
-        </Proficiencies>
-        <FeaturesAndTraits>
+        </proficiencies>
+        <featuresAndTraits>
             <raceTraits race="Drow">
                 <raceTrait>
                     <name>Superior Darkvision</name>
@@ -201,9 +204,9 @@
                     </description>
                 </classFeature>
             </classFeatures>
-        </FeaturesAndTraits>
+        </featuresAndTraits>
 
-        <Actions>
+        <actions>
             <attacks>
                 <attack>
                     <name>Shortsword</name>
@@ -266,6 +269,16 @@
                     </optional>
                 </attack>
             </attacks>
-        </Actions>
+            <bonusActions>
+                <bonusAction>
+                    <name>Cunning Action</name>
+                    <description>Rogue feature</description>
+                </bonusAction>
+                <bonusAction>
+                    <name>Two-Weapon Fighting</name>
+                    <description>When you take the Attack action with a shortsword in one hand, you can use a bonus action to attack with a dagger in the other hand. You don’t add your ability modifier to the damage of the bonus attack.</description>
+                </bonusAction>
+            </bonusActions>
+        </actions>
     </personaje>
-</DD>
+</ddCharacters>

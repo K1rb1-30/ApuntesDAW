@@ -1,13 +1,17 @@
 {
-    "ddcharacters":[
+    "ddCharacters":[
         {
             "id":10,
-            "Name":"Drow Rogue 10",
-            "AC":17,
-            "HitPoints":53,
-            "HitDice":"10d8",
-            "Speed":30,
-            "AbilityScores": [
+            "name":"Drow Rogue 10",
+            "characterCaracteristics": {
+                "AC":17,
+                "hit": {
+                    "hitPoints":53,
+                    "hitDice":"10d8"
+                },
+                "speed":30
+            },
+            "abilityScores": [
                 {
                     "name":"STR",
                     "value":10,
@@ -39,27 +43,27 @@
                     "adicional":4
                 }
             ],
-            "Background":{
-                "Category": "Charlatan",
-                "SpecialCaracteristics": [
+            "background":{
+                "category": "Charlatan",
+                "specialCaracteristics": [
                     {
                         "name": "False Identity",
                         "description": "You have created a second identity that includes documentation, establisheacquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy."
                     }
                 ],
-                "Faction": {
+                "faction": {
                     "name": "Zhentarim",
                     "description": "You are a member of the Zhentarim, an organization of welltrained mercenaries, savvy rogues, and crafty warlocks who seek to expand their influence and power."
                 },
 
-                "NormalCaracteristics": {
-                    "PersonalityTraits": "I fall in and out of love easily, and am always pursuing someone.",
-                    "Ideals": "Independence. I am a free spirit—no one tells me what to do.",
-                    "Bonds": "I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.",
-                    "Flaws": "You’re convinced that no one could ever fool you the way you fool others."
+                "normalCaracteristics": {
+                    "personalityTraits": "I fall in and out of love easily, and am always pursuing someone.",
+                    "ideals": "Independence. I am a free spirit—no one tells me what to do.",
+                    "bonds": "I owe everything to my mentor—a horrible person who’s probably rotting in jail somewhere.",
+                    "flaws": "You’re convinced that no one could ever fool you the way you fool others."
                 },
 
-                "OpcionalCaracteristics": [
+                "opcionalCaracteristics": [
                     {
                         "name": "",
                         "description": ""
@@ -67,9 +71,9 @@
                 ]
             },
 
-            "Proficiencies": {
-                "Bonus":4,
-                "SavingTrhrows": [
+            "proficiencies": {
+                "bonus":4,
+                "savingTrhrows": [
                     {
                         "name":"Dexterity",
                         "additional":9
@@ -79,7 +83,7 @@
                         "additional":5
                     }
                 ],
-                "Skills": [
+                "skills": [
                     {
                         "name": "Deception",
                         "additional":12
@@ -109,32 +113,32 @@
                         "additional":13
                     }
                 ],
-                "Armors": [
+                "armors": [
                     "light armor"
                 ],
-                "Weapons": [
+                "weapons": [
                     "simple weapons",
                     "hand crossbows",
                     "longswords",
                     "rapiers",
                     "shortswords"
                 ],
-                "Tools": [
+                "tools": [
                     "Thieves' Tools",
                     "Disguise Kit",
                     "poisiner's kit"
                 ],
-                "Languages": [
+                "languages": [
                     "Common",
                     "Elvish",
                     "Undercommon",
                     "thieves' cant"
                 ]
             },
-            "FeaturesAndTraits": {
+            "featuresAndTraits": {
                 "race" : {
                     "name":"Drow",
-                    "Traits": [
+                    "traits": [
                         {
                             "name": "Superior Darkvision",
                             "description": "You can see in dim light within 120 feet of you as if it were bright light, and in darkness as if it were dim light."
@@ -160,7 +164,7 @@
                 },
                 "class" : {
                     "name":"Rogue",
-                    "Features": [
+                    "features": [
                         {
                             "name": "Evasion",
                             "description": " When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
@@ -185,7 +189,7 @@
                 }
 
             },
-            "Actions":{
+            "actions":{
                 "attacks": [
                     {
                         "name": "Shortsword",
@@ -248,6 +252,16 @@
                         }
                     }
 
+                ],
+                "bonusActions": [
+                    {
+                        "name": "Cunning Action",
+                        "description": "Rogue feature"
+                    },
+                    {
+                        "name": "Two-Weapon Fighting",
+                        "description": "When you take the Attack action with a shortsword in one hand, you can use a bonus action to attack with a dagger in the other hand. You don’t add your ability modifier to the damage of the bonus attack."
+                    }
                 ]
             }
         }
