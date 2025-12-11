@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.bord {
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
