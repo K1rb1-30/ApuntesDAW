@@ -8,3 +8,8 @@
 ![[Pasted image 20260108175922.png]]
 
 
+# Hero Section
+
+## Inspo
+
+![[Pasted image 20260109200656.png]]
