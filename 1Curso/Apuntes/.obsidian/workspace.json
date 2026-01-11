@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/Repaso Examen 2 BBDD subconsultas.md",
+                "file": "HTML/HTML/ProjecteOCS/Diseño.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BBDD/Repaso Examen 2 BBDD subconsultas.md",
+                "file": "HTML/HTML/ProjecteOCS/Diseño.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BBDD/Repaso Examen 2 BBDD subconsultas.md",
+                "file": "HTML/HTML/ProjecteOCS/Diseño.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BBDD/Repaso Examen 2 BBDD subconsultas.md"
+                "file": "HTML/HTML/ProjecteOCS/Diseño.md"
               }
             }
           }
@@ -173,11 +173,13 @@
   },
   "active": "8e898d84ae95a94d",
   "lastOpenFiles": [
+    "HTML/HTML/ProjecteOCS/ODS ELEGIDAS.md",
+    "HTML/HTML/ProjecteOCS/Diseño.md",
+    "BBDD/Repaso Examen 2 BBDD subconsultas.md",
     "BBDD/EXAMEN DE PRUEBA.md",
     "BBDD/EXIST.md",
     "BBDD/Consultas Multitablas.md",
     "BBDD/Funciones nuevas.md",
-    "BBDD/Repaso Examen 2 BBDD subconsultas.md",
     "BBDD/Subconsultas.md",
     "BBDD/UNION.md",
     "BBDD/Clausula SELECT.md",
