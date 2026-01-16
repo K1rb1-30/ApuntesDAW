@@ -43,7 +43,6 @@ public class Blacklist {
 					dic.remove(key);
 					
 				}else {
-					String[] palabra = buscar.split("");
 					if(buscar.charAt(0) == 'N') {
 						dic.put(buscar, "Nom Ocult");
 					}else {

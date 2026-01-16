@@ -1,8 +1,7 @@
 package diccionaris;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class CercaPerValorDiccionari {
 
@@ -16,7 +15,7 @@ public class CercaPerValorDiccionari {
 		
 		for (int i = 0; i < casos; i++) {
 			
-			LinkedHashMap<String, String> dic = new LinkedHashMap<>();
+			TreeMap<String, String> dic = new TreeMap<>();
 			
 			int letras = sc.nextInt();
 			
@@ -29,23 +28,24 @@ public class CercaPerValorDiccionari {
 					busca = sc.nextLine();
 				}else {
 					String[] paises = sc.nextLine().split("-");
-					String pais = paises[0];
-					String capital = paises[1];
-					dic.put(pais, capital);
-					dic.put(capital, pais);
+					dic.put(paises[0], paises[1]);
 				}
 			}
 			
+			String key = "";
+			
 			if(dic.containsValue(busca)) {
-				for(Map.Entry<String,String> e: dic.entrySet()) {
-					if(e.getValue() == busca) {
-						dic.getOrDefault(e, busca);
-					}}	
-			}
+					
+					for(String s : dic.keySet()) {
+						if(dic.get(s).equals(busca)) {
+							key = s;
+						}
+					}	
 				
-			else {
-				System.out.println("NO HO SE");
 			}
+			
+			System.out.println(dic);
+			System.out.println(key);
 			
 			
 		}
