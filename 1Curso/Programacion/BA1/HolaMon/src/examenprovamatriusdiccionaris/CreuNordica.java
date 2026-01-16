@@ -20,10 +20,6 @@ public class CreuNordica {
 		
 		printarMatriuString(tablero);
 		
-		
-		
-		
-
 	}
 	
 	

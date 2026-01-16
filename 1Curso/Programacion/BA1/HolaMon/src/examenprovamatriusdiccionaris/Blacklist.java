@@ -20,43 +20,42 @@ public class Blacklist {
 		for (int i = 0; i < casos; i++) {
 			
 			String[] paises = sc.nextLine().split(",");
-			String pais = paises[0];
-			String capital = paises[1];
-			dic.put(pais, capital);
+			dic.put(paises[0], paises[1]);
 		}
 		
-		boolean die = false;
 		
-		int contador = 0;
-		while(die == false) {
-			String buscar = sc.nextLine();
+		int contador = 500;
+		String buscar = sc.nextLine();
+		while(!buscar.equals("DIE")) {
 			
-			
-			if(buscar == "DIE") {
-				die = true;
-			}else {
 				if(dic.containsKey(buscar)) {
 					dic.remove(buscar);
 				}else if(dic.containsValue(buscar)) {
-					for(Map.Entry<String,String> e: dic.entrySet()) {
-						if(e.getValue() == buscar) {
-							dic.remove(e, e);
+					
+					String key = "";
+					
+					for(String s : dic.keySet()) {
+						if(dic.get(s).equals(buscar)) {
+							key = s;
 						}
 					}
+					
+					dic.remove(key);
+					
 				}else {
 					String[] palabra = buscar.split("");
-					if(palabra[0] == "N") {
+					if(buscar.charAt(0) == 'N') {
 						dic.put(buscar, "Nom Ocult");
 					}else {
-						String keyrandom = "50" + contador;
+						String keyrandom = "N" + contador;
 						dic.put(keyrandom, buscar);
 						contador++;
 						
 					}
 				}
+				
+				buscar = sc.nextLine();
 			}
-			
-		}
 		
 		System.out.println(dic);
 		
