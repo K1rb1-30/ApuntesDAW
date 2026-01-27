@@ -8,43 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ef7a5dc9b769430a",
+            "id": "ab06657a48e96131",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/Clausula SELECT.md",
+                "file": "Ejercicio ER y modelo relacional.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "fd637f61c886fd3e",
+            "id": "aebe1097b05881d1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/Consultas Multitablas.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8e898d84ae95a94d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "HTML/HTML/ProjecteOCS/Diseño.md",
+                "file": "Respond.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HTML/HTML/ProjecteOCS/Diseño.md",
+                "file": "Respond.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "HTML/HTML/ProjecteOCS/Diseño.md",
+                "file": "Respond.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "HTML/HTML/ProjecteOCS/Diseño.md"
+                "file": "Respond.md"
               }
             }
           }
@@ -171,10 +159,15 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "8e898d84ae95a94d",
+  "active": "aebe1097b05881d1",
   "lastOpenFiles": [
-    "HTML/HTML/ProjecteOCS/ODS ELEGIDAS.md",
+    "Ejercicio ER y modelo relacional.md",
+    "Respond.md",
+    "HTML/HTML/Excursion esquiada.md",
     "HTML/HTML/ProjecteOCS/Diseño.md",
+    "HTML/HTML/sisisi.md",
+    "HTML/HTML/Untitled.md",
+    "HTML/HTML/ProjecteOCS/ODS ELEGIDAS.md",
     "BBDD/Repaso Examen 2 BBDD subconsultas.md",
     "BBDD/EXAMEN DE PRUEBA.md",
     "BBDD/EXIST.md",
