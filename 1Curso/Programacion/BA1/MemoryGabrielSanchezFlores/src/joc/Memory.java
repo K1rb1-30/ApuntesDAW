@@ -1,6 +1,7 @@
 package joc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
@@ -77,24 +78,22 @@ public class Memory {
 		String[][] tableroMuestra = inicializarTablero(); //Primero inicializamos el tablero que se mostrara
 		String[][] tableroReal = inicializarTableroReal(); // Luego iniciamos el tablero real que sera con el que haremos las comprobaciones
 		
-		boolean ganador = false; //Esto es para que se repita el bucle de juego hasta que alguien gane
-		String nombreganador = " ";
-		Random r = new Random();
-		int turno = r.nextInt(1,3); //El juego elige aleatoriamente quien empieza siendo 1 el j1 y 2 el j2
+		boolean juegoAcabado = false; //Esto es para que se repita el bucle de juego hasta que alguien gane
+		Random r = new Random(); // Esto lo usaremos para ver que jugador empieza primero (alomejor se escala a un cara o cruz donde esto es la parte de la moneda que toca)
+		int turno = r.nextInt(1,3); //El juego elige aleatoriamente quien empieza siendo 1 el j1 y 2 el j2 (esto de momento a no ser que se haga lo de la moneda)
 		
-		while(!ganador) {
+		while(!juegoAcabado) {
 			printarTablero(tableroMuestra);
 			
 			if(turno == 1) {
 				System.out.println("Turno del jugador 1 " + j1.nom);
 				boolean acierto = seleccionDeFitxas(tableroMuestra, tableroReal);
 				if(acierto) {
-					ganador = comprovarGanador(tableroMuestra, tableroReal);
-					if(ganador == true) {
-						nombreganador = j1.nom;
-					}
+					System.out.println(j1.nom + " has ganado 1 punto");
+					j1.nPunts++; // Por cada acierto se suma un punto a las estadisticas del jugador
+					System.out.println("Tienes " + j1.nPunts);
 				}else {
-					turno = 2;
+					turno = 2; 
 				}
 				
 				
@@ -102,27 +101,47 @@ public class Memory {
 				System.out.println("Turno del jugador 2 " + j2.nom);
 				boolean acierto = seleccionDeFitxas(tableroMuestra, tableroReal);
 				if(acierto) {
-					ganador = comprovarGanador(tableroMuestra, tableroReal);
-					if(ganador == true) {
-						nombreganador = j2.nom;
-					}
+					j2.nPunts++;
 				}else {
 					turno = 1;
 				}
 			}
+			
+			juegoAcabado = comprovarAcabado(tableroMuestra, tableroReal); // Una vez uno de los dos acierta se comprueba con esta funcion si se ha acabado el juego es decir que no quedan mas fichas por levantar
 		}
 		
+		comprovarGanador(j1, j2); //Si el juego acaba se comprueba quien ha ganado
 		
-		
-		
+		System.out.println();
+		System.out.println("Gracias por jugar");
 		
 		
 	}
 
-	private static boolean comprovarGanador(String[][] tableroMuestra, String[][] tableroReal) {
+	private static void comprovarGanador(Jugador j1, Jugador j2) {
 		// TODO Auto-generated method stub
-		if(tableroMuestra.equals(tableroReal)) {
-			return true;
+		String nombreganador = ""; //Esto para mostrar el nombre del ganador cuando se acabe la partida
+		
+		if(j1.nPunts > j2.nPunts) { // comprovamos si el jugador1 tiene mas puntos
+			nombreganador = j1.nom; // Si es asi el nombre del ganador sera el del j1
+			j1.nVictories++; 
+		}else if(j1.nPunts < j2.nPunts) { //Hacemos lo mismo pero con el j2
+			nombreganador = j2.nom; 
+			j2.nVictories++;
+		}
+		System.out.println("////////////////////////////////");
+		System.out.println("EL GANADOR ES: " + nombreganador);
+		System.out.println("////////////////////////////////");
+		System.out.println();
+	}
+
+	private static boolean comprovarAcabado(String[][] tableroMuestra, String[][] tableroReal) {
+		// TODO Auto-generated method stub
+		if(Arrays.deepEquals(tableroMuestra, tableroReal)) { //Gracias a Arrays.deepEquals comprobamos si las matrices son exactamente iguales
+			System.out.println();
+			System.out.println("YA NO QUEDAN MAS FICHAS POR DESCUBRIR");
+			System.out.println();
+			return true; // si es asi devolvemos un true y sino false
 		}else {
 			return false;
 		}
