@@ -53,7 +53,7 @@ public class Memory {
 				Configuracion(j1, j2);
 				
 			}else if(eleccion == 3) {
-				Victorias();
+				Victorias(j1, j2);
 			}else if(eleccion == 4) {
 				System.out.println("SACANDO CARTUCHO ESPERA...");
 				System.out.println("La serie de partidas a finalizado.");
@@ -67,9 +67,42 @@ public class Memory {
 		
 	}
 
-	private static void Victorias() {
+	private static void Victorias(Jugador j1, Jugador j2) {
 		// TODO Auto-generated method stub
 		
+		sc.nextLine(); // esto es el bug para que no se salga automaticamente
+		String salir = null;
+		
+		while(salir == null) {
+			System.out.println("////////////////////////////");
+			System.out.println("----RANKING DE VICTORIAS----");
+			System.out.println();
+			comprovarTop(j1, j2);
+			System.out.println();
+			System.out.println("////////////////////////////");
+			
+			System.out.print("Presiona cualquier tecla para salir del RANKING: ");
+			salir = sc.nextLine();
+			System.out.println();
+		}
+		
+	}
+
+	private static void comprovarTop(Jugador j1, Jugador j2) {
+		// TODO Auto-generated method stub
+		if(j1.nVictories > j2.nVictories) {
+			System.out.println("- 1º " + j1.nom + " nºVictorias " + j1.nVictories);
+			System.out.println();
+			System.out.println("- 2º " + j2.nom + " nºVictorias " + j2.nVictories);
+		}else if(j1.nVictories < j2.nVictories) {
+			System.out.println("- 1º " + j2.nom + " nºVictorias " + j2.nVictories);
+			System.out.println();
+			System.out.println("- 2º " + j1.nom + " nºVictorias " + j1.nVictories);
+		}else if(j1.nVictories == j2.nVictories) {
+			System.out.println("- EMPATE " + j2.nom + " nºVictorias " + j2.nVictories);
+			System.out.println();
+			System.out.println("- EMPATE " + j1.nom + " nºVictorias " + j1.nVictories);
+		}
 	}
 
 	private static void Juego(Jugador j1, Jugador j2) {
@@ -86,7 +119,7 @@ public class Memory {
 			printarTablero(tableroMuestra);
 			
 			if(turno == 1) {
-				System.out.println("Turno del jugador 1 " + j1.nom);
+				System.out.println("Turno del jugador 1: " + j1.nom);
 				boolean acierto = seleccionDeFitxas(tableroMuestra, tableroReal);
 				if(acierto) {
 					System.out.println(j1.nom + " has ganado 1 punto");
@@ -98,7 +131,7 @@ public class Memory {
 				
 				
 			}else if(turno == 2) {
-				System.out.println("Turno del jugador 2 " + j2.nom);
+				System.out.println("Turno del jugador 2: " + j2.nom);
 				boolean acierto = seleccionDeFitxas(tableroMuestra, tableroReal);
 				if(acierto) {
 					j2.nPunts++;
@@ -113,7 +146,7 @@ public class Memory {
 		comprovarGanador(j1, j2); //Si el juego acaba se comprueba quien ha ganado
 		
 		System.out.println();
-		System.out.println("Gracias por jugar");
+		System.out.println("Gracias por jugar.");
 		
 		
 	}
@@ -121,6 +154,7 @@ public class Memory {
 	private static void comprovarGanador(Jugador j1, Jugador j2) {
 		// TODO Auto-generated method stub
 		String nombreganador = ""; //Esto para mostrar el nombre del ganador cuando se acabe la partida
+		boolean empate = false;
 		
 		if(j1.nPunts > j2.nPunts) { // comprovamos si el jugador1 tiene mas puntos
 			nombreganador = j1.nom; // Si es asi el nombre del ganador sera el del j1
@@ -128,10 +162,20 @@ public class Memory {
 		}else if(j1.nPunts < j2.nPunts) { //Hacemos lo mismo pero con el j2
 			nombreganador = j2.nom; 
 			j2.nVictories++;
+		}else if(j1.nPunts == j2.nPunts) { //En caso de empate ningun jugador ganara puntos
+			empate = true;
 		}
-		System.out.println("////////////////////////////////");
-		System.out.println("EL GANADOR ES: " + nombreganador);
-		System.out.println("////////////////////////////////");
+		
+		if(empate) {
+			System.out.println("////////////////////////////////");
+			System.out.println("HA HABIDO UN EMPATE");
+			System.out.println("Ningun jugador obtendra puntos de Victoria.");
+			System.out.println("////////////////////////////////");
+		}else {
+			System.out.println("////////////////////////////////");
+			System.out.println("EL GANADOR ES: " + nombreganador);
+			System.out.println("////////////////////////////////");
+		}
 		System.out.println();
 	}
 
@@ -249,7 +293,7 @@ public class Memory {
 			}
 		}
 		
-		printarTablero(tableroReal); // Quitar esto depues
+//		printarTablero(tableroReal); // Quitar esto depues
 		
 		return tableroReal;
 	}
@@ -258,7 +302,7 @@ public class Memory {
 		// TODO Auto-generated method stub
 		String[][] tablero = new String[sizetableroX][sizetableroY];
 		omplirTablero(tablero, "X");
-		printarTablero(tablero);
+//		printarTablero(tablero); // Quitar esto depues
 		
 		return tablero;
 	}
@@ -304,69 +348,10 @@ public class Memory {
 			
 			int eleccion = sc.nextInt();
 			
-			if(eleccion == 1) {
-				boolean salirJug = false;
-				
-				while(!salirJug) {
-					System.out.println("---------Elige un jugador a configurar--------");
-					System.out.println();
-					System.out.println(" 1. Configurar nombre Jugador 1");
-					System.out.println(" 2. Configurar nombre Jugador 2");
-					System.out.println(" 3. Volver a Configuración");
-					System.out.println();
-					System.out.println("---------------------------------");
-					
-					int eleccionJug = sc.nextInt();
-						
-					if(eleccionJug == 1) {
-						System.out.print("Escribe el nombre del jugador 1: ");
-						j1.nom = sc.next();
-						System.out.println("El nombre del Jugador 1 es " + j1.nom);
-					}else if(eleccionJug == 2) {
-						System.out.print("Escribe el nombre del jugador 2: ");
-						j2.nom = sc.next();
-						System.out.println("El nombre del Jugador 2 es " + j2.nom);
-					}else if(eleccionJug == 3){
-						salirJug = true;
-					}		
-				}
-				
+			if(eleccion == 1) {	
+				configurarJugadores(j1, j2);
 			}else if(eleccion == 2) {
-				
-				boolean salirTablero = false;
-				
-				while(!salirTablero) {
-					System.out.println("---------Elige el tamaño del tablero--------");
-					if(sizetableroX != 0 && sizetableroY != 0) {
-						System.out.println("Este es el tamaño de tablero actual:");
-						inicializarTablero();
-					}else {
-						System.out.println("------------------ALERTA---------------------");
-						System.out.println("Actualmente el tablero no tiene ningun tamaño");
-						System.out.println("Configura sus filas y columnas para poder visualizarlo y jugar.");
-						System.out.println("---------------------------------------------");
-					}
-					
-					System.out.println(" 1. Configurar filas");
-					System.out.println(" 2. Configurar Columnas");
-					System.out.println(" 3. Volver a Configuración");
-					System.out.println();
-					System.out.println("---------------------------------");
-					int eleccionTablero = sc.nextInt();
-					
-					if(eleccionTablero == 1) {
-						System.out.print("Escribe las Filas (eje X) que quieres que tenga el tablero: ");
-						sizetableroX = sc.nextInt();
-						System.out.println("Las Filas del tablero se estableceran a " + sizetableroX);
-					}else if(eleccionTablero == 2) {
-						System.out.print("Escribe las Columnas (Eje Y) que quieres que tenga el tablero: ");
-						sizetableroY = sc.nextInt();
-						System.out.println("Las Columnas del tablero se estableceran a " + sizetableroY);
-					}else if(eleccionTablero == 3){
-						salirTablero = true;
-					}
-					
-				}
+				configurarTablero(j1, j2);
 				
 			}else if(eleccion == 3) {
 				System.out.println("SALIENDO DE LA CONFIGURACION GUARDANDO CAMBIOS ESPERA...");
@@ -377,12 +362,76 @@ public class Memory {
 		}
 		
 		
+	}
+
+	private static void configurarTablero(Jugador j1, Jugador j2) {
+		// TODO Auto-generated method stub
+		boolean salirTablero = false;
 		
+		while(!salirTablero) {
+			System.out.println("---------Elige el tamaño del tablero--------");
+			if(sizetableroX != 0 && sizetableroY != 0) { // si hemos seleccionado un tamaño valido se muestra el tablero
+				System.out.println("Este es el tamaño de tablero actual:");
+				String[][] tableromuestra = inicializarTablero(); //se inicializa el tablero de muestra con los tamaños indicados en las variables globales
+				printarTablero(tableromuestra);
+			}else {
+				System.out.println("------------------ALERTA---------------------");
+				System.out.println("Actualmente el tablero no tiene ningun tamaño");
+				System.out.println("Configura sus filas y columnas para poder visualizarlo y jugar.");
+				System.out.println("---------------------------------------------");
+			}
+			
+			System.out.println(" 1. Configurar filas");
+			System.out.println(" 2. Configurar Columnas");
+			System.out.println(" 3. Volver a Configuración");
+			System.out.println();
+			System.out.println("---------------------------------");
+			int eleccionTablero = sc.nextInt();
+			
+			if(eleccionTablero == 1) {
+				System.out.print("Escribe las Filas (eje X) que quieres que tenga el tablero: ");
+				sizetableroX = sc.nextInt();
+				System.out.println("Las Filas del tablero se estableceran a " + sizetableroX);
+			}else if(eleccionTablero == 2) {
+				System.out.print("Escribe las Columnas (Eje Y) que quieres que tenga el tablero: ");
+				sizetableroY = sc.nextInt();
+				System.out.println("Las Columnas del tablero se estableceran a " + sizetableroY);
+			}else if(eleccionTablero == 3){
+				salirTablero = true;
+			}
+			
+		}
+	}
+
+	private static void configurarJugadores(Jugador j1, Jugador j2) {
+		// TODO Auto-generated method stub
+		boolean salirJug = false;
 		
-		
-		
-		
-		
+		while(!salirJug) {
+			System.out.println("---------Elige un jugador a configurar--------");
+			System.out.println();
+			System.out.println(" 1. Configurar nombre Jugador 1");
+			System.out.println(" 2. Configurar nombre Jugador 2");
+			System.out.println(" 3. Volver a Configuración");
+			System.out.println();
+			System.out.println("---------------------------------");
+			
+			int eleccionJug = sc.nextInt();
+				sc.nextLine();// arreglo de bug para que se pongan bien los jugadores
+				
+			if(eleccionJug == 1) {
+				System.out.print("Escribe el nombre del jugador 1: ");
+				j1.nom = sc.nextLine(); // escribimos el nombre del jugador 1
+				System.out.println("El nombre del Jugador 1 es " + j1.nom);
+			}else if(eleccionJug == 2) {
+				System.out.print("Escribe el nombre del jugador 2: ");
+				j2.nom = sc.next(); // escribimos el nombre del jugador 2
+				System.out.println("El nombre del Jugador 2 es " + j2.nom);
+			}else if(eleccionJug == 3){
+				salirJug = true; // esto es para salir del menu del jugador
+			}
+			
+		}
 	}
 
 }
