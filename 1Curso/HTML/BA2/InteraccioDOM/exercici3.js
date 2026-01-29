@@ -1,4 +1,8 @@
-const nombre = document.getElementById("nom")
+
 function enviar(){
-    p.innerText = `Hola, ${nombre}`
+    const nombre = document.getElementById("nom").value
+    document.getElementById("texto").innerText = `Hola, ${nombre}! El formulari s'ha enviat correctament.`
+
+
+
 }
