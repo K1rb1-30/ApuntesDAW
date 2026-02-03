@@ -76,15 +76,15 @@ public class LightsOut {
 		
 		InicialitzarTaulell(taulell);
 		
-		graphicMode(j1 , taulell);
+//		 graphicMode(j1 , taulell);
 		
-//		while(!fi) {
-//			mostrarTaulell(taulell);
-//			Posicio p = seleccionarPosicio(taulell);
-//			canviarLlums(p,taulell);
-//			fi = comprovarVictoria(taulell);
-//			nMoviments++;
-//		}
+		while(!fi) {
+			mostrarTaulell(taulell);
+			Posicio p = seleccionarPosicio(taulell);
+			canviarLlums(p,taulell);
+			fi = comprovarVictoria(taulell);
+			nMoviments++;
+		}
 		
 		System.out.println("El Juego a terminado, has ganado con " + nMoviments + " Movimientos" );
 		
@@ -101,7 +101,7 @@ public class LightsOut {
 		int [] colors = { 0xF000000, 0xFFFFFF};
 		
 		b.setColors(colors);
-		b.draw(taulell, 'c');
+		
 
 		do {
 			
@@ -112,9 +112,11 @@ public class LightsOut {
 			boolean fi = false;
 			int nMoviments = 0;
 			
+			b.draw(taulell, 'c');
+			
 			while(!fi) {
 				mostrarTaulell(taulell);
-				Posicio p = seleccionarPosicio(taulell);
+				Posicio p = seleccionarPosicio(taulell, b);
 				canviarLlums(p,taulell);
 				fi = comprovarVictoria(taulell);
 				nMoviments++;
@@ -192,8 +194,8 @@ public class LightsOut {
 				
 		while(!correcto1) {
 			System.out.println("Selecciona una casillas por fila(x) y columna(y) (ej. 3 0): ");
-			fila1 = sc.nextInt(); // coordenadas de fila
-			columna1 = sc.nextInt(); // coordenadas de columna
+			fila1 = b.getCurrentMouseRow(); // coordenadas de fila
+			columna1 = b.getCurrentMouseCol(); // coordenadas de columna
 			
 			if(noEsticFora(taulell, fila1, columna1)) { // Si las coordenadas no son equivocas y se selecciona una ficha que no esta descubierta 
 																												//el tablero de muestra cambiara la X por el contenido de esta misma posicion del tablero real
