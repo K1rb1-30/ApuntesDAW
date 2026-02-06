@@ -70,79 +70,79 @@ public class LightsOut {
 	private static void jugar(Jugador j1) {
 		// TODO Auto-generated method stub
 		
-		boolean fi = false;
-		int nMoviments=0;
-		int taulell[][] = new int[sizetableroY][sizetableroX];
+		boolean fi = false; // variable para ecir si el juego acaba
+		int nMoviments=0; // variable para contar el numero de moviminetos
+		int taulell[][] = new int[sizetableroY][sizetableroX]; //se crea el tablero
 		
-		InicialitzarTaulell(taulell);
+		InicialitzarTaulell(taulell); //iniciamos el tablero con esta funcion
 		
 //		 graphicMode(j1 , taulell);
 		
 		while(!fi) {
-			mostrarTaulell(taulell);
-			Posicio p = seleccionarPosicio(taulell);
-			canviarLlums(p,taulell);
-			fi = comprovarVictoria(taulell);
-			nMoviments++;
+			mostrarTaulell(taulell); //printamos el tablero
+			Posicio p = seleccionarPosicio(taulell); // la posicion elegida la indicamos con esta funcion
+			canviarLlums(p,taulell); //con esta funcion se cambian las luces
+			fi = comprovarVictoria(taulell); // comprovamos la victoria
+			nMoviments++; //añadimos el movimiento que hemos hecho
 		}
 		
-		System.out.println("El Juego a terminado, has ganado con " + nMoviments + " Movimientos" );
+		System.out.println("El Juego a terminado, has ganado con " + nMoviments + " Movimiento/s" );
 		
 	}
 
-	private static void graphicMode(Jugador j1, int[][] taulell) {
-		
-		// TODO Auto-generated method stub
-		
-		Board b = new Board();
-		Window f = new Window(b);
-
-		System.out.println("Iniciando ventana");
-		int [] colors = { 0xF000000, 0xFFFFFF};
-		
-		b.setColors(colors);
-		
-
-		do {
-			
-			try {
-				Thread.sleep(50);  //donem una mica de retard per no colapsar el buffer del mouse.
-			} catch (InterruptedException e) {} 
-			
-			boolean fi = false;
-			int nMoviments = 0;
-			
-			b.draw(taulell, 'c');
-			
-			while(!fi) {
-				mostrarTaulell(taulell);
-				Posicio p = seleccionarPosicio(taulell, b);
-				canviarLlums(p,taulell);
-				fi = comprovarVictoria(taulell);
-				nMoviments++;
-			}
-			
-			int leftCol = b.getCurrentMouseCol();
-			int leftRow = b.getCurrentMouseRow();
-			if (leftCol != -1 && leftRow != -1) {
-				System.out.println("S'ha apretat el bot� esquerra en la fila " + leftRow + " columna " + leftCol);
-			}
-			int rightCol = b.getCurrentRightMouseCol();
-			int rightRow = b.getCurrentRightMouseRow();
-			if (rightCol != -1 && rightRow != -1) {
-				System.out.println("S'ha apretat el bot� dret la fila " + rightRow + " columna " + rightCol);
-			}
-			if (!f.getPressedKeys().isEmpty()) {
-				System.out.println("Tecles apretades "+f.getPressedKeys());
-			}
-			
-
-		} while (!f.getPressedKeys().contains('\n'));
-		System.out.println("l'ultima casella clickada es:  fila " + b.getMouseRow() + "   columna: " + b.getMouseCol());
-		System.out.println("l'ultima tecla premuda es:   " + f.getKeyPressed());
-		System.out.println("Aquesta es la llista de totes les tecles que tenies apretades al premer l'enter:   "
-				+ f.getPressedKeys());
-	}
+//	private static void graphicMode(Jugador j1, int[][] taulell) {
+//		
+//		// TODO Auto-generated method stub
+//		
+//		Board b = new Board();
+//		Window f = new Window(b);
+//
+//		System.out.println("Iniciando ventana");
+//		int [] colors = { 0xF000000, 0xFFFFFF};
+//		
+//		b.setColors(colors);
+//		
+//
+//		do {
+//			
+//			try {
+//				Thread.sleep(50);  //donem una mica de retard per no colapsar el buffer del mouse.
+//			} catch (InterruptedException e) {} 
+//			
+//			boolean fi = false;
+//			int nMoviments = 0;
+//			
+//			b.draw(taulell, 'c');
+//			
+//			while(!fi) {
+//				mostrarTaulell(taulell);
+//				Posicio p = seleccionarPosicio(taulell, b);
+//				canviarLlums(p,taulell);
+//				fi = comprovarVictoria(taulell);
+//				nMoviments++;
+//			}
+//			
+//			int leftCol = b.getCurrentMouseCol();
+//			int leftRow = b.getCurrentMouseRow();
+//			if (leftCol != -1 && leftRow != -1) {
+//				System.out.println("S'ha apretat el bot� esquerra en la fila " + leftRow + " columna " + leftCol);
+//			}
+//			int rightCol = b.getCurrentRightMouseCol();
+//			int rightRow = b.getCurrentRightMouseRow();
+//			if (rightCol != -1 && rightRow != -1) {
+//				System.out.println("S'ha apretat el bot� dret la fila " + rightRow + " columna " + rightCol);
+//			}
+//			if (!f.getPressedKeys().isEmpty()) {
+//				System.out.println("Tecles apretades "+f.getPressedKeys());
+//			}
+//			
+//
+//		} while (!f.getPressedKeys().contains('\n'));
+//		System.out.println("l'ultima casella clickada es:  fila " + b.getMouseRow() + "   columna: " + b.getMouseCol());
+//		System.out.println("l'ultima tecla premuda es:   " + f.getKeyPressed());
+//		System.out.println("Aquesta es la llista de totes les tecles que tenies apretades al premer l'enter:   "
+//				+ f.getPressedKeys());
+//	}
 
 	private static boolean comprovarVictoria(int[][] taulell) {
 		// Comprueba que todo el tablero este a cero
@@ -185,7 +185,7 @@ public class LightsOut {
 
 	private static Posicio seleccionarPosicio(int[][] taulell) {
 		// TODO Auto-generated method stub
-		boolean correcto1 = false; //esto hara de que si introduces algo incorrecto como una ficha que ya esta destapada o un valor fuera de la matriz te vuelva a pedir
+		boolean correcto1 = false; //esto hara de que si introduces algo incorrecto o un valor fuera de la matriz te vuelva a pedir
 		
 		int fila1 = 0;
 		int columna1 = 0;
@@ -194,20 +194,20 @@ public class LightsOut {
 				
 		while(!correcto1) {
 			System.out.println("Selecciona una casillas por fila(x) y columna(y) (ej. 3 0): ");
-			fila1 = b.getCurrentMouseRow(); // coordenadas de fila
-			columna1 = b.getCurrentMouseCol(); // coordenadas de columna
+			fila1 = sc.nextInt(); // coordenadas de fila
+			columna1 = sc.nextInt(); // coordenadas de columna
 			
-			if(noEsticFora(taulell, fila1, columna1)) { // Si las coordenadas no son equivocas y se selecciona una ficha que no esta descubierta 
-																												//el tablero de muestra cambiara la X por el contenido de esta misma posicion del tablero real
+			if(noEsticFora(taulell, fila1, columna1)) { // Si las coordenadas no son equivocas se hara esto
+																							
 				p.x = fila1; //ponemos las coordenadas de la fila dentro del objeto posiciones
 				p.y = columna1; // igual pero con la columna
 				correcto1 = true; //devolvera true para salir del bucle
-			}else { //si seleccionas mal las coordenadas o dices alguna ficha que ya esta descubierta te mostrara este mensaje indicandote cuales son las permitidas y como se escribe el prompt
+			}else { //si seleccionas mal las coordenadas te mostrara este mensaje indicandote cuales son las permitidas y como se escribe el prompt
 				System.out.println("ERROR al indicar la ficha recuerda que es del 0 - " + (taulell.length - 1) + " y primero van las filas y luego las columnas (ej 0 "+ (taulell.length - 2) + ")." );
 			}
 		}
 		
-		return p;
+		return p; //retorna el objecte
 	}
 
 	private static boolean noEsticFora(int[][] taulell, int fila1, int columna1) {
