@@ -5,4 +5,5 @@ public class Jugador {
 	int puntos;
 	String tipoJugador;
 	int nVictorias;
+	int nTorns;
 }

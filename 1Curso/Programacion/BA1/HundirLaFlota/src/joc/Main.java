@@ -1,5 +1,6 @@
 package joc;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,23 +11,59 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		String[][] tableroj1 = new String[10][10];
-		String[][] tableroj2 = new String[10][10];
-		Posicion pos = new Posicion();
-		Jugador j1 = new Jugador();
+		//String[][] tableroj2 = new String[10][10];
+		String[][] tableroFalse = new String[10][10];
+		Posicion pos = new Posicion(); //creamos objeto posicion
+		Jugador j1 = new Jugador(); //creamos objeto Jugador
+		boolean fi = false;
+		rellenarTablero(tableroFalse, "·"); //rellenamos el tablero que se iniciara con puntos
 		
-		iniciarTablero(tableroj1, pos);
-		//iniciarTablero(tableroj2,pos); ESTO PARA CUANDO SE QUIERA HACER QUE CADA JUGADOR TENGA UN TABLERO
-		turnoJugador(tableroj1, pos, j1);
+		iniciarTablero(tableroj1, pos); //iniciamos el tablero real
 		
-		printarTablero(tableroj1);
+		while(!fi) {
+			printarTablero(tableroFalse);
+			System.out.println();
+			//printarTablero(tableroj1);
+			//iniciarTablero(tableroj2,pos); ESTO PARA CUANDO SE QUIERA HACER QUE CADA JUGADOR TENGA UN TABLERO
+			turnoJugador(tableroj1,tableroFalse ,pos, j1);
+			j1.nTorns++; //se suma un turno al jugador
+			fi = comprovarGanador(tableroj1, tableroFalse, j1); //se comprueba si se ha acabado el juego
+		}
+		
+		
+		
 	}
 
-	private static void turnoJugador(String[][] tableroj1, Posicion pos, Jugador j1) {
+	private static boolean comprovarGanador(String[][] tableroj1, String[][] tableroFalse, Jugador j1) {
 		// TODO Auto-generated method stub
-		System.out.println("Turno del jugador: " + j1.nombre );
+		if(Arrays.deepEquals(tableroFalse, tableroj1)) { //Gracias a Arrays.deepEquals comprobamos si las matrices son exactamente iguales
+			System.out.println(); // si es asi significa que el juego a acabado
+			System.out.println("YA NO QUEDAN MAS Barcos POR DESCUBRIR");
+			System.out.println();
+			System.out.println("Has terminado en: " + j1.nTorns + " Turnos");
+			return true; // si es asi devolvemos un true y sino false
+		}else {
+			return false;
+		}
+	}
+
+	private static void turnoJugador(String[][] tableroj1, String[][] tableroFalse, Posicion pos, Jugador j1) {
+		// Turno Jugador
+		System.out.println("Turno del jugador: ");
 		
 		pedirPosicion(pos, tableroj1);
+		comprovarAcierto(pos,tableroFalse, tableroj1);
 		
+	}
+
+	private static void comprovarAcierto(Posicion pos, String[][] tableroFalse, String[][] tableroj1) {
+		// TODO Auto-generated method stub
+		if(tableroj1[pos.fila][pos.columna].equals("X")) {
+			tableroFalse[pos.fila][pos.columna] = tableroj1[pos.fila][pos.columna];
+			System.out.println("Has acertado!");
+		}else {
+			System.out.println("Has fallado :(");
+		}
 	}
 
 	private static void pedirPosicion(Posicion pos, String[][] tablero) {
@@ -39,8 +76,13 @@ public class Main {
 				
 		while(!correcto1) {
 			System.out.println("Selecciona una casillas por fila(x) y columna(y) (ej. 3,a): ");
-			fila1 = sc.nextInt(); // coordenadas de fila
-			columna1 = sc.nextInt(); // coordenadas de columna
+			
+			String[] separado = sc.next().split(",");
+			
+			fila1 = Integer.parseInt(separado[0]); // coordenadas de fila
+			
+			
+			columna1 = pasarLetraNum(separado[1]); // coordenadas de columna las pasamos por esta funcion
 			
 			if(noEsticFora(tablero, fila1, columna1)) { // Si las coordenadas no son equivocas se hara esto
 																							
@@ -54,6 +96,16 @@ public class Main {
 		
 	}
 
+	private static int pasarLetraNum(String string) {
+		// transforma la letra a numero
+		char a = string.charAt(0);
+		
+		int numero = a - 97;
+		
+		//System.out.println(numero);
+		return numero;
+	}
+
 	private static void iniciarTablero(String[][] tablero, Posicion pos) {
 		// TODO Auto-generated method stub
 		
@@ -61,7 +113,6 @@ public class Main {
 		
 		Random r = new Random(); //inicializamos variable random
 		
-		// Aleatoriamente cremos unas cordenadas y las comprovamos
 		boolean sepuede = false;
 		int nSubmarinos = 8; // cambiar si se quiere añadir mas numero de submarinos
 		
