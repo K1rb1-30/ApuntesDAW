@@ -1,0 +1,9 @@
+div{
+    background-color: lime;
+    height: 100px;
+    width: 100px;
+}
+.classe1{
+    border: solid fuchsia 5px;
+    translate: 50px;
+}

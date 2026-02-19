@@ -1,8 +1,12 @@
 
+const div = document.createElement("div")
+document.body.appendChild(div)
+
 function Mostrar(){
+
     const input = document.getElementById('input')
     const nombre = document.createElement("p")
-    nombre.innerText = input ? input.value : ""
+    nombre.innerText = input.value
 
     let total = 0
     const lista = document.createElement("ul")
@@ -19,10 +23,10 @@ function Mostrar(){
     const notaSpan = calcularnota(total)
     nombre.appendChild(notaSpan)
     nombre.appendChild(document.createTextNode(` Total: ${total}`))
-    
 
-    document.body.appendChild(nombre)
-    document.body.appendChild(lista)
+    div.innerHTML = ""
+    div.appendChild(nombre)
+    div.appendChild(lista)
 }
 
 function calcularnota(total) {
