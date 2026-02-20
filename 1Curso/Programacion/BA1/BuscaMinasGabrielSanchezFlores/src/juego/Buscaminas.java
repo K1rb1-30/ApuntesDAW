@@ -35,20 +35,21 @@ public class Buscaminas {
 			switch (eleccion) {
 			case 1: {
 				//mostrarAjuda();
-				
+				break;
 			}case 2: {
 				opcions(config);
-				
+				break;
 			}case 3: {
 				jugar(config);
-				
+				break;
 			}case 4: {
 				//guanyadors();
-				
+				break;
 			}case 5: {
 				System.out.println("Saliendo del juego...");
 				System.out.println("GRACIAS POR JUGAR");
-				
+				salir = true;
+				break;
 			}
 			default:
 				
@@ -61,6 +62,7 @@ public class Buscaminas {
 		// TODO Auto-generated method stub
 		int[][] mines = new int[config.filas][config.columnas];
 		int[][] camp = new int[config.filas][config.columnas];
+		Posicion pos = new Posicion(); // Con esto tendremos as coordenadas
 		boolean partidaEnCurs;
 		int d = 0;
 		
@@ -68,9 +70,78 @@ public class Buscaminas {
 		inicialitzarCamp(camp);
 		partidaEnCurs = true;
 		
-		visualitzarCamp(mines);
+		while(partidaEnCurs) {
+			visualitzarCamp(mines);
+			System.out.println(" ");
+//			System.out.println(pos.fila);
+			demanarcoords(pos);
+//			System.out.println(pos.fila);
+			descobrir(pos.fila, pos.columna, camp, mines);
+			//partidaEnCurs = partidaAcabada(pos, camp);
+			visualitzarCamp(camp);
+		}
+		
+		
 		
 
+	}
+
+	private static void demanarcoords(Posicion pos) {
+		// REVISAR Y PROTEGER ESTO
+		System.out.println("Selecciona las coordenadas de la zona que quieres revisar ej (1 1)");
+		pos.fila = sc.nextInt() - 1;
+		pos.columna = sc.nextInt() - 1;
+		
+		
+	}
+
+	private static boolean partidaAcabada(int fila, int columna, int[][] camp) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		return false;
+	}
+
+	private static void descobrir(int fila, int columna, int[][] camp, int[][] mines) {
+		// TODO Auto-generated method stub
+		if(esticFora(mines,fila, columna) || camp[fila][columna] != 9) {
+			return;
+		}
+		
+		int n = destapar(fila, columna, mines);
+		System.out.println(n);
+		camp[fila][columna] = n;
+		
+		if(n == 0) {
+			descobrir(fila - 1, columna, camp, mines); // arriba
+			descobrir(fila + 1, columna, camp, mines); // abajo
+			descobrir(fila, columna + 1, camp, mines); // derecha
+			descobrir(fila, columna - 1, camp, mines); // izquierda
+		}
+	}
+	
+	private static int destapar(int fila, int columna, int[][] mines) {
+		// TODO Auto-generated method stub
+		int contador = 0;
+			for (int i = fila - 1; i <= fila + 1; i++) {
+				for (int j = columna - 1; j <= columna + 1; j++) {
+					if(!esticFora(mines,i,j) && mines[i][j] == 1) {
+						contador++;
+					}
+				}
+			}
+		return contador;
+	}
+
+	private static boolean esticFora(int[][] mat2, int f, int c) {
+
+		if (f < 0 || c < 0 || f > mat2.length - 1 || c > mat2[0].length - 1) {
+			return true;
+		} else {
+
+			return false;
+		}
 	}
 
 	private static void visualitzarCamp(int[][] camp) {
