@@ -1,7 +1,7 @@
 let Alumnes = {
     nom: "",
     cognoms: "",
-    nota: "",
+    nota: 10,
 }
 
-let gabriel = new Alumnes
+let gabriel = new Alumnes("Gabriel", "Sanchez", 23)
