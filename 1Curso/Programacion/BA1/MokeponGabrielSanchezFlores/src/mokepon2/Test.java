@@ -59,6 +59,8 @@ public class Test {
         
         Mokepon charmander = new Mokepon("Charmander", Tipus.FOC);
         
+        Mokepon fuecoco = new Mokepon("Fuecoco", Tipus.FOC);
+        
         MokeponCapturat elMeuCharmander = new MokeponCapturat(charmander, "Pepito", "GabrielSF");
         System.out.println(elMeuCharmander.nom);
         elMeuCharmander.diguesNom();
@@ -68,15 +70,23 @@ public class Test {
         
         MokeponCapturat pakito = piplup.capturar("Gabri", "Pakito");
         
+        MokeponCapturat pepito = capturar(fuecoco, "Gabrie", "Pepito");
+        
+        pepito.capturar("pepe", "ear");
+        
         elMeuCharmander.capturar("Gabri", "Pepe2");
         
         pakito.mote();
+        
+        System.out.println("-------------------------------------");
 
     }
 	
 	static MokeponCapturat capturar(Mokepon mok, String nomEntrenador, String nomDonat) {
 		return mok.capturar(nomEntrenador, nomDonat);
 	}
+	
+	
 
 }
 

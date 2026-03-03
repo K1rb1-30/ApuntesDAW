@@ -5,16 +5,16 @@ import java.util.Random;
 
 public class Mokepon {
 	//atributs del pokemon
-    String nom;
-    int nivell;
-    int atk;
-    int def;
-    int vel;
+    private String nom;
+    private int nivell;
+    private int atk;
+    private int def;
+    private int vel;
     
-    int exp;
-    int hp_max;
-    int hp_actual;
-    Tipus tipus;
+    private int exp;
+    private int hp_max;
+    private int hp_actual;
+    private Tipus tipus;
     
     boolean debilitat;
     

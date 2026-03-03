@@ -2,9 +2,9 @@ package mokepon2;
 
 public class MokeponCapturat extends Mokepon {
 	//posem només els atributs nous, no els de Mokepon. És a dir, posem els atributs que tindrà MokeponCapturat, però no Mokepon
-	String nomPosat;
-	String nomEntrenador;
-	int felicitat;
+	private String nomPosat;
+	private String nomEntrenador;
+	private int felicitat;
 	
 	
 	
