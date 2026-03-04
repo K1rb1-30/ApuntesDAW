@@ -36,7 +36,26 @@ SET AUTOCOMMIT = 0;
 
 # START TRANSACTION, COMMIT i ROLLBACK
 
-## 
+## START TRANSACTION
+
+**Indicar que realitzarem una transacció amb la sentència**
+## COMMIT
+
+**Si les operacions s’han completat i volem que els canvis s’apliquin de manera permanent**
+## ROLLBACK
+
+**Si durant les operacions es produeix algun error i no volem aplicar els canvis realitzats, podem desfer-los**
+
+
+# SAVEPOINT
+
+
+
+
+
+
+
+
 
 
 

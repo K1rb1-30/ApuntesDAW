@@ -55,12 +55,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "EXIST.md",
+                "file": "BA2/UPDATE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EXIST"
+              "title": "UPDATE"
+            }
+          },
+          {
+            "id": "eb0fb71d7ce3bc4a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BA2/TRANSACTIONS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TRANSACTIONS"
             }
           },
           {
@@ -78,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -226,11 +240,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "7a36a93bd2bdb01d",
+  "active": "eb0fb71d7ce3bc4a",
   "lastOpenFiles": [
+    "BA2/PROCEDURES.md",
+    "BA2/TRANSACTIONS.md",
+    "BA2/UPDATE.md",
+    "BA2/INSERT.md",
+    "EXIST.md",
     "Repaso Examen 2 BBDD subconsultas.md",
     "UNION.md",
-    "EXIST.md",
     "Subconsultas.md",
     "Funciones nuevas.md",
     "EXAMEN DE PRUEBA.md",
