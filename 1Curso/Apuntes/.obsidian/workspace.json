@@ -42,9 +42,57 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "37b8757514a37fa6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BBDD/BA2/INSERT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "188f8dcaea9988e4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BBDD/BA2/UPDATE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1db495f8aa9dd1cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BBDD/BA2/DELETE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dad15b61118fb2ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BBDD/BA2/TRANSACTIONS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -110,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bot/Cosas que tiene que tener.md",
+                "file": "BBDD/BA2/TRANSACTIONS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bot/Cosas que tiene que tener.md",
+                "file": "BBDD/BA2/TRANSACTIONS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bot/Cosas que tiene que tener.md"
+                "file": "BBDD/BA2/TRANSACTIONS.md"
               }
             }
           }
@@ -171,11 +219,17 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "fa5f4d563aaf1e16",
+  "active": "dad15b61118fb2ca",
   "lastOpenFiles": [
+    "BBDD/BA2/DELETE.md",
+    "BBDD/BA2/TRANSACTIONS.md",
+    "BBDD/BA2/UPDATE.md",
+    "BBDD/BA2/INSERT.md",
+    "Pasted image 20260303104156.png",
+    "BBDD/BA2",
+    "Bot/Cosas que tiene que tener.md",
     "Ejercicio ER y modelo relacional.md",
     "Respond.md",
-    "Bot/Cosas que tiene que tener.md",
     "Bot",
     "HTML/HTML/Excursion esquiada.md",
     "HTML/HTML/ProjecteOCS/Diseño.md",
