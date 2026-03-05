@@ -85,14 +85,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BBDD/BA2/TRANSACTIONS.md",
+                "file": "BBDD/Clausula SELECT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1474207925b3ac9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BBDD/BA2/CONCURRENCIA.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -158,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BBDD/BA2/TRANSACTIONS.md",
+                "file": "BBDD/BA2/CONCURRENCIA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +187,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "BBDD/BA2/TRANSACTIONS.md",
+                "file": "BBDD/BA2/CONCURRENCIA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BBDD/BA2/TRANSACTIONS.md"
+                "file": "BBDD/BA2/CONCURRENCIA.md"
               }
             }
           }
@@ -219,12 +231,15 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "dad15b61118fb2ca",
+  "active": "1474207925b3ac9e",
   "lastOpenFiles": [
-    "BBDD/BA2/DELETE.md",
     "BBDD/BA2/TRANSACTIONS.md",
-    "BBDD/BA2/UPDATE.md",
+    "BBDD/BA2/CONCURRENCIA.md",
+    "BBDD/Clausula SELECT.md",
+    "BBDD/BA2/DELETE.md",
     "BBDD/BA2/INSERT.md",
+    "BBDD/BA2/PROCEDURES.md",
+    "BBDD/BA2/UPDATE.md",
     "Pasted image 20260303104156.png",
     "BBDD/BA2",
     "Bot/Cosas que tiene que tener.md",
@@ -243,7 +258,6 @@
     "BBDD/Funciones nuevas.md",
     "BBDD/Subconsultas.md",
     "BBDD/UNION.md",
-    "BBDD/Clausula SELECT.md",
     "BBDD/Clausula GROUP BY.md",
     "BBDD/CapturasBBDD",
     "Programacion/Apuntes teoria IDE.md"
