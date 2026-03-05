@@ -5,11 +5,13 @@ const anys = document.getElementById("any")
 const p = document.getElementById("texto")
 
 function boto(){
-    const data1 = new Date(anys.value, mes.value, dia.value)
+    const data1 = new Date(anys.value, mes.value-1, dia.value)
 
-    const data2 = Date.now();
+    const data2 = new Date()
 
-    const diferencia = (data1.getTime() - data2.getTime()) / (1000 * 3600 * 24);
+    const diferenciaMilisegons = data2.getTime() - data1.getTime();
 
-    p.innerText = "La diferencia es de " + diferencia;
+    const diferenciaDies = Math.abs(Math.floor(diferenciaMilisegons/ (1000 * 60 * 60 * 24)))
+
+    p.innerText = "La diferencia es de " + diferenciaDies;
 }
