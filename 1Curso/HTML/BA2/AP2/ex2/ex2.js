@@ -1,7 +1,15 @@
+
 const taula = document.getElementById("taula")
 
 function Afegir(){
-    
+
+    const inCOD = document.getElementById("inCOD").value
+    const inNom = document.getElementById("inNom").value
+    const inAmplada = document.getElementById("inAmplada").value
+    const inAlçada = document.getElementById("inAlçada").value
+    const inPolzades = document.getElementById("inPolzades").value
+    const inHercis = document.getElementById("inHercis").value
+
     const monitors = [
         {
             COD: 1234,
@@ -31,6 +39,21 @@ function Afegir(){
 
         }
     ]
+
+    //Exercici 2
+    const monitor = {
+        COD: inCOD,
+        nom : inNom,
+        amplada: inAmplada,
+        alzada: inAlçada,
+        polzades: inPolzades,
+        hercis: inHercis
+    }
+
+
+    monitors.push(monitor)
+
+
 
     for (const item of monitors) {
         const row = document.createElement("tr")
