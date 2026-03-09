@@ -1,0 +1,32 @@
+table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+}
+
+.inputs {
+    display:inline-block;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.inputs input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: antiquewhite;
+    border: gainsboro solid 2px;
+}
+
+.botones{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.botones button{
+    border-radius: 5px;
+    background-color: antiquewhite;
+    border: gainsboro solid 2px;
+    padding: 5px;
+    font-weight: bold;
+}
