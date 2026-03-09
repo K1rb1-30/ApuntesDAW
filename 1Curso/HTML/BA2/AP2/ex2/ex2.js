@@ -41,6 +41,7 @@ function Afegir(){
     ]
 
     //Exercici 2
+    //if (monitors.)
     const monitor = {
         COD: inCOD,
         nom : inNom,

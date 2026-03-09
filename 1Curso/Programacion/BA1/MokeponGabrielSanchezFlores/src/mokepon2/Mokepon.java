@@ -81,7 +81,7 @@ public class Mokepon {
     	}
     }
     
-    public void pujarNivell() {
+    private void pujarNivell() {
 		// TODO Auto-generated method stub
     	Random r = new Random();
 		this.nivell++;
@@ -164,6 +164,102 @@ public class Mokepon {
 		}
 		
 	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getNivell() {
+		return nivell;
+	}
+
+	public void setNivell(int nivell) {
+		this.nivell = nivell;
+	}
+
+	public int getAtk() {
+		return atk;
+	}
+
+	public void setAtk(int atk) {
+		this.atk = atk;
+	}
+
+	public int getDef() {
+		return def;
+	}
+
+	public void setDef(int def) {
+		this.def = def;
+	}
+
+	public int getVel() {
+		return vel;
+	}
+
+	public void setVel(int vel) {
+		this.vel = vel;
+	}
+
+	public int getExp() {
+		return exp;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+
+	public int getHp_max() {
+		return hp_max;
+	}
+
+	public void setHp_max(int hp_max) {
+		this.hp_max = hp_max;
+	}
+
+	public int getHp_actual() {
+		return hp_actual;
+	}
+
+	public void setHp_actual(int hp_actual) {
+		if(hp_actual < 0) {
+			this.hp_actual = 0;
+		}else if(hp_actual > this.hp_max) {
+			this.hp_actual = this.hp_max;
+		}else {
+			this.hp_actual = hp_actual;
+		}	
+	}
+
+	public Tipus getTipus() {
+		return tipus;
+	}
+
+	public void setTipus(Tipus tipus) {
+		this.tipus = tipus;
+	}
+
+	public boolean isDebilitat() {
+		return debilitat;
+	}
+
+	public void setDebilitat(boolean debilitat) {
+		this.debilitat = debilitat;
+	}
+
+	public ArrayList<Atacs> getAtacs() {
+		return Atacs;
+	}
+
+	public void setAtacs(ArrayList<Atacs> atacs) {
+		Atacs = atacs;
+	}
+	
+	
 
 
 }

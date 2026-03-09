@@ -11,7 +11,7 @@ public class Test {
         Mokepon mikachu = new Mokepon();
         
         //podem accedir als seus atributs interns amb el punt
-        mikachu.nom = "Mikachu";
+        mikachu.setNom("Mikachu");
         
         //també podem accedir als seus mètodes interns amb el punt
         mikachu.diguesNom();
@@ -19,20 +19,20 @@ public class Test {
         System.out.println("-------------------------------------");
         mikachu.atorgarExperiencia(1000);
         
-        System.out.println(mikachu.exp + " " + mikachu.nivell);
+        System.out.println(mikachu.getExp() + " " + mikachu.getNivell());
         
         System.out.println("-------------------------------------");
         Mokepon missingNo = new Mokepon();
-        System.out.println(missingNo.nom);
+        System.out.println(missingNo.getNom());
         Mokepon marmander = new Mokepon("Marmander");
-        System.out.println(marmander.nom+" "+marmander.atk);
+        System.out.println(marmander.getNom()+" "+marmander.getAtk());
         Mokepon mulmasaur = new Mokepon("Mulmasaur", 5);  
-        System.out.println(mulmasaur.nom+" "+mulmasaur.atk);
+        System.out.println(mulmasaur.getNom()+" "+mulmasaur.getAtk());
         
         System.out.println("-------------------------------------");
         Mokepon piplup = new Mokepon("Piplup", Tipus.AIGUA);
-        System.out.println(piplup.nom+" "+piplup.atk);
-        if(piplup.tipus == Tipus.AIGUA) {
+        System.out.println(piplup.getNom()+" "+piplup.getAtk());
+        if(piplup.getTipus() == Tipus.AIGUA) {
             System.out.println("Piplup es de Aigua!");
         }
         
@@ -62,7 +62,7 @@ public class Test {
         Mokepon fuecoco = new Mokepon("Fuecoco", Tipus.FOC);
         
         MokeponCapturat elMeuCharmander = new MokeponCapturat(charmander, "Pepito", "GabrielSF");
-        System.out.println(elMeuCharmander.nom);
+        System.out.println(elMeuCharmander.getNom());
         elMeuCharmander.diguesNom();
         piplup.atacar(elMeuCharmander, 0);
         

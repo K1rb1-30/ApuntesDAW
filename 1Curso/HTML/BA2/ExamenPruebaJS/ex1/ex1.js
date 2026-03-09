@@ -14,7 +14,7 @@ function Crear(){
         ncarrosa: ncarrosa,
 
         retorna: function (){
-            return carrosa.nom
+            return `Nom: ${this.nom} i canço ${this.cancion}`
         }
     }
 

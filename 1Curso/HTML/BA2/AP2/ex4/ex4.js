@@ -1,6 +1,6 @@
 
-const taula = document.getElementById("taula")
-
+const taula = document.getElementById("tbody")
+// hacer maps en vez de una array normal
 const monitors = [
     {
         COD: 1234,
@@ -74,7 +74,7 @@ function Eliminar(){
 // Funcion para recargar la tablaaa
 
 function mostrarTaula(){
-    taula.innerHTML = "<tr><th>COD monitor</th><th>NOM</th><th>AMPLADA</th><th>ALÇADA</th><th>POLZADES</th><th>HERCIS</th></tr>"
+    taula.replaceChildren()
     for (const item of monitors) {
         const row = document.createElement("tr")
 

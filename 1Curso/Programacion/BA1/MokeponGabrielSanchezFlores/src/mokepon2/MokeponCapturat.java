@@ -28,7 +28,7 @@ public class MokeponCapturat extends Mokepon {
     }
     
     public MokeponCapturat(Mokepon mok, String nomPosat, String nomEntrenador) {
-    	super(mok.nom, mok.nivell, mok.hp_max, mok.atk, mok.def, mok.vel);
+    	super(mok.getNom(), mok.getNivell(), mok.getHp_max(), mok.getAtk(), mok.getDef(), mok.getVel());
     	
     	this.nomPosat = nomPosat;
     	this.nomEntrenador = nomEntrenador;
@@ -36,7 +36,7 @@ public class MokeponCapturat extends Mokepon {
     }
     
     public void mote() {
-    	System.out.println("Este " + this.nom + " tiene de mote " + this.nomPosat);
+    	System.out.println("Este " + this.getNom() + " tiene de mote " + this.getNomPosat());
     }
     
     public void acariciar() {
@@ -49,9 +49,9 @@ public class MokeponCapturat extends Mokepon {
 		
 		if(this.debilitat == false && this.Atacs.get(num_atac).moviments_actuals > 0) {
 			
-			System.out.println(this.nom + " ataca con " + this.Atacs.get(num_atac).nom + " a " + atacat.nom + " rival");
+			System.out.println(this.getNom() + " ataca con " + this.Atacs.get(num_atac).nom + " a " + atacat.getNom() + " rival");
 			
-			double dany = ((((((2 * this.nivell) / 5) + 2) * this.Atacs.get(num_atac).poder * (this.atk / atacat.def))/50) + 2) * super.efectivitat(this.Atacs.get(num_atac).tipus, atacat.tipus);
+			double dany = ((((((2 * this.getNivell()) / 5) + 2) * this.Atacs.get(num_atac).poder * (this.getAtk() / atacat.getDef()))/50) + 2) * super.efectivitat(this.Atacs.get(num_atac).tipus, atacat.getTipus());
 			
 			if(this.felicitat >= 50) {
 				dany *= 1.2;
@@ -59,13 +59,13 @@ public class MokeponCapturat extends Mokepon {
 				dany *= 0.8;
 			}
 			
-			atacat.hp_actual -= (int) dany;
+			atacat.setHp_actual(atacat.getHp_actual() - (int) dany);
 			
 			this.Atacs.get(num_atac).moviments_actuals--; //
 			
 //			System.out.println(efectivitat(this.Atacs.get(num_atac).tipus, atacat.tipus));
 			
-			System.out.println(this.nom + " le ha hecho " + (int) dany + " al " + atacat.nom + " del rival");
+			System.out.println(this.getNom() + " le ha hecho " + (int) dany + " al " + atacat.getNom() + " del rival");
 			
 		}else if(this.debilitat == false && this.Atacs.get(num_atac).moviments_actuals <= 0){
 			System.out.println("No te quedan mas PP de este movimiento");
@@ -75,5 +75,24 @@ public class MokeponCapturat extends Mokepon {
 		
 		
 	}
+
+	public String getNomEntrenador() {
+		return nomEntrenador;
+	}
+
+	public void setNomEntrenador(String nomEntrenador) {
+		this.nomEntrenador = nomEntrenador;
+	}
+	
+
+	public String getNomPosat() {
+		return nomPosat;
+	}
+
+	public void setNomPosat(String nomPosat) {
+		this.nomPosat = nomPosat;
+	}
+    
+    
 
 }
