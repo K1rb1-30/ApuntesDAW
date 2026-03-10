@@ -1,7 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #537191;
+    color: whitesmoke;
+}
+
 table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
 }
 
 .inputs {
@@ -14,19 +21,46 @@ table, th, td {
 .inputs input{
     border-radius: 5px;
     margin-bottom: 5px;
-    background-color: antiquewhite;
+    background-color: #ced9e9;
     border: gainsboro solid 2px;
+    color: #537191;
 }
 
 .botones{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .botones button{
     border-radius: 5px;
-    background-color: antiquewhite;
+    background-color: #ced9e9;
     border: gainsboro solid 2px;
     padding: 5px;
     font-weight: bold;
+    
 }
+
+/* Estilos condicionales jaja */
+.impar{
+    background-color: #ced9e9;
+    color: #537191;
+}
+.par{
+    background-color: #537191;
+    color: whitesmoke;
+}
+
+.masHz{
+    background-color: #01e67f;
+    color: #0f5132;
+}
+
+.intermedioHz{
+    background-color: #ffd6a5;
+    color: #714815 ;
+}
+
+.menosHz{
+    background-color: #fa8888;
+    color: #510f0f;
+}
+
