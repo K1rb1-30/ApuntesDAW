@@ -1,6 +1,7 @@
 package mokepon2;
 
 public class Atacs {
+
 	String nom;
 	double poder;
 	Tipus tipus;
@@ -27,6 +28,12 @@ public class Atacs {
 		this.poder = 10;
 		this.moviments_maxims = 10;
 		this.moviments_actuals = this.moviments_maxims;
+	}
+
+	@Override
+	public String toString() {
+		return "Atacs [nom=" + nom + ", poder=" + poder + ", tipus=" + tipus + ", moviments_maxims=" + moviments_maxims
+				+ ", moviments_actuals=" + moviments_actuals + "]";
 	}
 	
 }

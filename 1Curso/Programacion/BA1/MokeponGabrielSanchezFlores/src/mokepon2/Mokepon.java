@@ -20,6 +20,8 @@ public class Mokepon {
     
     ArrayList<Atacs> Atacs = new ArrayList<>();
     
+    static String estatic;
+    
     //fixa't que el constuctor no té retorn, ja que el que retorna es la propia classe
     public Mokepon() {
         this.nom = "Sense definir";
@@ -103,7 +105,7 @@ public class Mokepon {
 		}
 	}
 	
-	public double efectivitat(Tipus atac, Tipus defensa) {
+	static public double efectivitat(Tipus atac, Tipus defensa) {
         if(atac == Tipus.FOC && defensa == Tipus.AIGUA ||atac == Tipus.AIGUA && defensa == Tipus.PLANTA ||atac == Tipus.PLANTA && defensa == Tipus.FOC ) {
             return 0.5;
         }else if (atac == Tipus.AIGUA && defensa == Tipus.FOC ||atac == Tipus.FOC && defensa == Tipus.PLANTA ||atac == Tipus.PLANTA && defensa == Tipus.AIGUA ) {
@@ -233,6 +235,15 @@ public class Mokepon {
 		}else {
 			this.hp_actual = hp_actual;
 		}	
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Mokepon [nom=" + nom + ", nivell=" + nivell + ", atk=" + atk + ", def=" + def + ", vel=" + vel
+				+ ", exp=" + exp + ", hp_max=" + hp_max + ", hp_actual=" + hp_actual + ", tipus=" + tipus
+				+ ", debilitat=" + debilitat + ", Atacs=" + Atacs + "]";
 	}
 
 	public Tipus getTipus() {

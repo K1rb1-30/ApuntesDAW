@@ -6,6 +6,7 @@ public class MokeponCapturat extends Mokepon {
 	private String nomEntrenador;
 	private int felicitat;
 	
+	static int NombreMokeponsCapturats = 0;
 	
 	
 	
@@ -16,6 +17,7 @@ public class MokeponCapturat extends Mokepon {
         this.nomPosat = nom;
         this.nomEntrenador = "Marc";
         this.felicitat = 50;
+        NombreMokeponsCapturats++;
     }
     
     public MokeponCapturat() {
@@ -25,6 +27,7 @@ public class MokeponCapturat extends Mokepon {
     	this.nomPosat = "Sense definir";
         this.nomEntrenador = "Sense definir";
         this.felicitat = 1;
+        NombreMokeponsCapturats++;
     }
     
     public MokeponCapturat(Mokepon mok, String nomPosat, String nomEntrenador) {
@@ -33,6 +36,7 @@ public class MokeponCapturat extends Mokepon {
     	this.nomPosat = nomPosat;
     	this.nomEntrenador = nomEntrenador;
     	this.felicitat = 50;
+    	NombreMokeponsCapturats++;
     }
     
     public void mote() {
@@ -74,6 +78,14 @@ public class MokeponCapturat extends Mokepon {
 		}
 		
 		
+	}
+    
+    
+
+	@Override
+	public String toString() {
+		return "MokeponCapturat [nomPosat=" + nomPosat + ", nomEntrenador=" + nomEntrenador + ", felicitat=" + felicitat
+				+ "]";
 	}
 
 	public String getNomEntrenador() {

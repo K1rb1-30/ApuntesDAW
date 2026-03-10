@@ -79,6 +79,27 @@ public class Test {
         pakito.mote();
         
         System.out.println("-------------------------------------");
+        
+        Mokepon bulbasaur = new Mokepon();
+        bulbasaur.estatic = "hola";
+        Mokepon rotom = new Mokepon();
+        rotom.estatic = "adeu";
+        System.out.println(bulbasaur.estatic);
+        
+        
+        System.out.println();
+        
+        MokeponCapturat rotome = new MokeponCapturat(rotom, "rotillo", "GabrielSF");
+        
+        System.out.println(rotome.NombreMokeponsCapturats);
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println(hidrobomba);
+        
+        System.out.println(rotom);
+        
+        System.out.println(rotome);
 
     }
 	
