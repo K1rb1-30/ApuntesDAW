@@ -1,33 +1,29 @@
 
 const taula = document.getElementById("tbody")
 
-const monitors = [
-    {
-        COD: 1234,
+const monitors = new Map([
+    [1234, {
         nom : "patata",
         amplada: 1920,
         alzada: 1080,
         polzades: 24,
         hercis: 60
-
-    },
-    {
-        COD: 3017,
+    }],
+    [3017,{
         nom : "HP",
         amplada: 1920,
         alzada: 1080,
         polzades: 27,
         hercis: 120
-    },
-    {
-        COD: 2145,
+    }],
+    [2145,{
         nom : "MSI",
         amplada: 1920,
         alzada: 1080,
         polzades: 24,
         hercis: 100
-    }
-]
+    }]
+]);
 
 function Afegir(){
 
@@ -39,25 +35,29 @@ function Afegir(){
     const inHercis = document.getElementById("inHercis").value
 
     //Exercici 2
-    const monitor = {
-        COD: inCOD,
-        nom : inNom,
-        amplada: inAmplada,
-        alzada: inAlçada,
-        polzades: inPolzades,
-        hercis: inHercis
+    if(monitors.has(parseInt(inCOD))){
+        alert("El codi de monitor no esta disponible perque ja esta en ús")
+    }else{
+        monitors.set(parseInt(inCOD), {
+            nom : inNom,
+            amplada: inAmplada,
+            alzada: inAlçada,
+            polzades: inPolzades,
+            hercis: inHercis
+        })
     }
-
-    monitors.push(monitor)
 
     mostrarTaula()
 }
 
 // Exercici 3
 function Eliminar(){
+
    const inCOD = document.getElementById("inCOD").value
 
-   //Alomejor habria que poner aqui que el value se tratase como un int asi en el findindex haces === en vez de ==
+    // ESTE ES EL METODO SIN MAPS para una array normal
+
+    /*
    const indice = monitors.findIndex(m => m.COD == inCOD)
 
    // console.log(indice)
@@ -67,16 +67,23 @@ function Eliminar(){
    }else{
     alert("No s'ha trobat cap monitor amb aquest codi")
    }
+    */
 
+   if(monitors.has(parseInt(inCOD))){
+        monitors.delete(parseInt(inCOD))
+    }else{
+       alert("No s'ha trobat el codi a eliminar")
+    }
+   
    mostrarTaula()
 }
 
-// Funcion para recargar la tablaaa
+// Funcion para recargar la tablaaa 
 
 function mostrarTaula(){
 
     taula.replaceChildren()
-    for (const item of monitors) {
+    for (const [clave, valor] of monitors) {
         const row = document.createElement("tr")
 
         const cod = document.createElement("td")
@@ -86,12 +93,12 @@ function mostrarTaula(){
         const polzades = document.createElement("td")
         const hercis = document.createElement("td")
 
-        cod.innerText = item.COD
-        nom.innerText = item.nom
-        amplada.innerText = item.amplada
-        alzada.innerText = item.alzada
-        polzades.innerText = item.polzades
-        hercis.innerText = item.hercis
+        cod.innerText = clave
+        nom.innerText = monitors.get(clave).nom
+        amplada.innerText = monitors.get(clave).amplada
+        alzada.innerText = monitors.get(clave).alzada
+        polzades.innerText = monitors.get(clave).polzades
+        hercis.innerText = monitors.get(clave).hercis
 
         row.appendChild(cod)
         row.appendChild(nom)
