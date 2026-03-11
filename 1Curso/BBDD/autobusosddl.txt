@@ -1,0 +1,13 @@
+CREATE DATABASE autobusos CHARACTER SET utf8;
+
+-- SET FOREING_KEY_CHEKS = 0;
+
+USE autobusos;
+
+CREATE TABLE barri(
+	codi_barri INT AUTO_INCREMENT,
+	nom VARCHAR(25) NOT NULL,
+	CONSTRAINT pk_codi_barri PRIMARY KEY (codi_barri)
+);
+
+
