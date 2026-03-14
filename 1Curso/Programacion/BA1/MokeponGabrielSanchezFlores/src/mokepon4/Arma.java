@@ -11,20 +11,21 @@ public class Arma extends Objecte implements Equipament {
 	}
 
 	
-	public void utilitzar(Mokepon mok) {
+	public void utilitzar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
-		
+		this.Equipar(mok);
 	}
 
 	public void Equipar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
 		mok.objecteEquipat = this;
-		mok.setAtk(atacExtra + mok.getAtk());
+		mok.setAtk(mok.getAtk() + atacExtra);
 	}
 
 	public void Desequipar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
-		
+		mok.objecteEquipat = null;
+		mok.setAtk(mok.getAtk() - atacExtra);
 	}
 
 }

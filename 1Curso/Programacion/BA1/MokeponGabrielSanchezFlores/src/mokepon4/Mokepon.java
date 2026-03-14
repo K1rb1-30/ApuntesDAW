@@ -22,6 +22,8 @@ public class Mokepon {
     
     static String estatic;
     
+    Sexe sexe;
+    
     //fixa't que el constuctor no té retorn, ja que el que retorna es la propia classe
     public Mokepon() {
         this.nom = "Sense definir";
@@ -43,6 +45,19 @@ public class Mokepon {
         this.hp_max = 10;
         this.hp_actual = 10;
         this.debilitat = false;
+        
+        // El sexe es triara aleatoriament
+        
+        Random r = new Random();
+        
+        boolean eleccion = r.nextBoolean();
+        
+        if(eleccion == true) {
+        	this.sexe = Sexe.Femení;
+        }else if(eleccion == false) {
+        	this.sexe = Sexe.Masculí;
+        }
+        
     }
     
     public Mokepon(String nom, int nivell) {
@@ -166,6 +181,35 @@ public class Mokepon {
 		}
 		
 	}
+	
+    //especifiquem que el mètode reproduccio pot tirar una excepció
+	
+    public Ou reproduccio(Mokepon parella) throws Exception {
+        if(this.tipus != parella.tipus) {
+        	
+            //hauria de tornar un error per que son de diferent tipus
+            throw new Exception("Error, son de diferent tipus");
+            
+        }else if(this.debilitat == true || parella.debilitat == true) {
+        	
+        	 throw new Exception("Error, un o els dos pokemon estan debilitats");
+        }else if(this.sexe == parella.sexe) {
+        	throw new Exception("Error, els pokemon son del mateix sexe i per tant no poden reproduirse");
+        }
+        else {
+        	
+        	 Random r = new Random();
+             
+             boolean eleccion = r.nextBoolean();
+             
+             if(eleccion == true) {
+            	 return new Ou(this.nom, this.tipus);
+             }else if(eleccion == false) {
+            	 return new Ou(parella.nom, this.tipus);
+             }
+        }
+		return null;
+    }
 
 	public String getNom() {
 		return nom;

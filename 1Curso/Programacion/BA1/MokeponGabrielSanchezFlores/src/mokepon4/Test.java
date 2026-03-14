@@ -103,6 +103,7 @@ public class Test {
         
         System.out.println("-------------------------------------");
         
+        
         Pocio po1 = new Pocio(20);
         Reviure re1 = new Reviure();
         
@@ -117,7 +118,41 @@ public class Test {
         System.out.println(rotome.getHp_actual());
         po1.donar(rotome);
         
-
+        System.out.println("-------------------------------------");
+        
+        System.out.println("Prueba para ver si los Objetos de equipamiento funcionan");
+        
+        System.out.println(rotome.getAtk());
+        System.out.println(rotome.getDef());
+        
+        Arma a1 = new Arma("Cinta Fuerte", 30);
+        Armadura d1 = new Armadura("Pluma Aguante", 20);
+        
+        a1.Equipar(rotome);
+        d1.Equipar(rotome);
+        
+        System.out.println(rotome.getAtk());
+        System.out.println(rotome.getDef());
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println("Prueba para ver si se reproducen");
+        
+        //el try-catch té dues parts
+        try {
+         //intentem fer el codi en el try
+         Ou marmasaur = marmander.reproduccio(mulmasaur);
+        //si salta una excepció al fer el codi que hi ha dintre del try, anirà a executar aquest codi, en comptes d'acabar el programa
+        } catch (Exception e) {
+            //Escrivim el missatge de l’excepció. El missatge és la String que            hem posat en el constructor de l’excepció
+            e.printStackTrace();
+	  //el finally s'executa sempre, tant si ha saltat l'excepció com si no
+        } finally {
+            System.out.println(marmander.getNom() + " està molt cansat");
+        }
+        
+        
+        
     }
 	
 	static MokeponCapturat capturar(Mokepon mok, String nomEntrenador, String nomDonat) {

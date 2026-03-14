@@ -10,7 +10,7 @@ public class Pocio extends Objecte {
 		this.hp_curada = hp_curada;
 	}
 
-	public void utilitzar(Mokepon mok) {
+	public void utilitzar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
 		if(this.getQuantitat() > 0) {
 			if(mok.debilitat == false) {

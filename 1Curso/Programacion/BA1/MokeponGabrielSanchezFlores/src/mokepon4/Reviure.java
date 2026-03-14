@@ -8,7 +8,7 @@ public class Reviure extends Objecte{
 	}
 
 
-	public void utilitzar(Mokepon mok) {
+	public void utilitzar(MokeponCapturat mok) {
 		if(this.getQuantitat() > 0) {
 			if(mok.debilitat == true) {
 				mok.debilitat = false;

@@ -25,7 +25,10 @@ public abstract class Objecte {
 	//Un mètode abstracte significa que és un mètode que no existeix però els seus fills estan obligats a implementar-lo. 
 	//Fixa’t que es tanca amb punt i coma sense obrir i definir el mètode
 	
-	public abstract void utilitzar(Mokepon mok);
+	//He canviat aixo a MokeponCapturat perque no tenia sentit ja que si un mokepon 
+	// no esta capturat no pot utilitzar un objecte (no son tant llestos).
+	
+	public abstract void utilitzar(MokeponCapturat mok);
 	
 	
 	public String getNom() {
