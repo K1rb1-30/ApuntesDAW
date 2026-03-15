@@ -1,9 +1,10 @@
 package mokepon4;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
-public class Mokepon {
+public class Mokepon implements Comparable<Mokepon>{
 	//atributs del pokemon
     private String nom;
     private int nivell;
@@ -84,6 +85,12 @@ public class Mokepon {
     public Mokepon(String nom, Tipus tipus) {
         //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
         this(nom);
+        this.tipus = tipus;
+    }
+    
+    public Mokepon(String nom, Tipus tipus, int nivell) {
+        //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
+        this(nom, nivell);
         this.tipus = tipus;
     }
 
@@ -167,17 +174,14 @@ public class Mokepon {
 		this.hp_actual = this.hp_max;
 	}
 	
-	public MokeponCapturat capturar(String nomEntrenador, String nomDonat) {
+	public MokeponCapturat capturar(String nomEntrenador, String nomDonat) throws Exception{
 		if(!(this instanceof MokeponCapturat)) {
 			System.out.println(this.nom + " ha sigut capturat");
 			MokeponCapturat poke = new MokeponCapturat(this, nomDonat, nomEntrenador);
 			return poke;
 		}else {
-			 //El mokepon ja està capturat. No el pots tornar.
-            System.out.println("No pots capturar un Mokepon que ja esta capturat");
-            
-          //podem castejar perque estem segurs de que es un MokeponCapturat gracies al instanceof
-            return (MokeponCapturat) this;
+			 //El mokepon ja està capturat. No el pots tornar i tira una Exception.
+            throw new MokeponJaCapturatException("No pots capturar un Mokepon que ja esta capturat");
 		}
 		
 	}
@@ -188,13 +192,14 @@ public class Mokepon {
         if(this.tipus != parella.tipus) {
         	
             //hauria de tornar un error per que son de diferent tipus
-            throw new Exception("Error, son de diferent tipus");
+            throw new TipusDiferentException("Error, son de diferent tipus");
             
         }else if(this.debilitat == true || parella.debilitat == true) {
         	
-        	 throw new Exception("Error, un o els dos pokemon estan debilitats");
+        	throw new MokeponDebilitatException("Error, un o els dos pokemon estan debilitats");
+        
         }else if(this.sexe == parella.sexe) {
-        	throw new Exception("Error, els pokemon son del mateix sexe i per tant no poden reproduirse");
+        	throw new MateixSexeException("Error, els pokemon son del mateix sexe i per tant no poden reproduirse");
         }
         else {
         	
@@ -210,6 +215,45 @@ public class Mokepon {
         }
 		return null;
     }
+    
+    
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(Atacs, atk, def, exp, hp_max, nivell, nom, sexe, tipus, vel);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Mokepon other = (Mokepon) obj;
+		return Objects.equals(Atacs, other.Atacs) && atk == other.atk && def == other.def && exp == other.exp
+				&& hp_max == other.hp_max && nivell == other.nivell && Objects.equals(nom, other.nom)
+				&& sexe == other.sexe && tipus == other.tipus && vel == other.vel;
+	}
+	
+	@Override
+	public int compareTo(Mokepon other) {
+		// Comparar tipus
+		int res = this.tipus.ordinal() - other.tipus.ordinal();
+		if(res !=0) {
+			return res;
+		}
+		//Comparar per nom
+		res = this.nom.compareTo(other.nom);
+		if(res !=0) {
+			return res;
+		}
+		//Comparar per nivell
+		return this.nivell - other.nivell;
+	}
+	
+	
 
 	public String getNom() {
 		return nom;
@@ -313,8 +357,5 @@ public class Mokepon {
 	public void setAtacs(ArrayList<Atacs> atacs) {
 		Atacs = atacs;
 	}
-	
-	
-
 
 }

@@ -1,5 +1,8 @@
 package mokepon4;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -68,13 +71,36 @@ public class Test {
         
         elMeuCharmander.mote();
         
-        MokeponCapturat pakito = piplup.capturar("Gabri", "Pakito");
+        MokeponCapturat pakito = null;
+		try {
+			pakito = piplup.capturar("Gabri", "Pakito");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
-        MokeponCapturat pepito = capturar(fuecoco, "Gabrie", "Pepito");
+        MokeponCapturat pepito = null;
+		try {
+			pepito = capturar(fuecoco, "Gabrie", "Pepito");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
-        pepito.capturar("pepe", "ear");
+		MokeponCapturat pepe = null;
+        try {
+			pepe = pepito.capturar("pepe", "ear");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
-        elMeuCharmander.capturar("Gabri", "Pepe2");
+        try {
+			elMeuCharmander.capturar("Gabri", "Pepe2");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
         pakito.mote();
         
@@ -138,24 +164,58 @@ public class Test {
         
         System.out.println("Prueba para ver si se reproducen");
         
+        //marmander.debilitarse();
+        
         //el try-catch té dues parts
         try {
          //intentem fer el codi en el try
          Ou marmasaur = marmander.reproduccio(mulmasaur);
         //si salta una excepció al fer el codi que hi ha dintre del try, anirà a executar aquest codi, en comptes d'acabar el programa
         } catch (Exception e) {
-            //Escrivim el missatge de l’excepció. El missatge és la String que            hem posat en el constructor de l’excepció
+            //Escrivim el missatge de l’excepció. El missatge és la String que hem posat en el constructor de l’excepció
             e.printStackTrace();
 	  //el finally s'executa sempre, tant si ha saltat l'excepció com si no
         } finally {
             System.out.println(marmander.getNom() + " està molt cansat");
         }
         
+        try {
+            //intentem fer el codi en el try
+            Ou marplup = marmander.reproduccio(piplup);
+           //si salta una excepció al fer el codi que hi ha dintre del try, anirà a executar aquest codi, en comptes d'acabar el programa
+           } catch (Exception e) {
+               e.printStackTrace();
+           } finally {
+               System.out.println(marmander.getNom() + " està molt cansat");
+           }
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println("Prueba para ordenar los pokemon");
+        
+        ArrayList<Mokepon> mokedex = new ArrayList<>();
+        mokedex.add(new Mokepon("Charmander", Tipus.FOC, 10));
+        mokedex.add(new Mokepon("Squirtle", Tipus.AIGUA, 8));
+        mokedex.add(new Mokepon("Bulbasaur", Tipus.PLANTA, 12));
+        mokedex.add(new Mokepon("Pidgey", Tipus.AIGUA, 7));
+        mokedex.add(new Mokepon("Vulpix", Tipus.FOC, 15));
+        mokedex.add(new Mokepon("Charmander", Tipus.FOC, 12));
+        
+        Collections.sort(mokedex);
+        
+        System.out.println(mokedex);
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println("COMBAT MOKEPON");
+        
+        CombatMokepon combate1 = new CombatMokepon(piplup, rotome);
         
         
+
     }
 	
-	static MokeponCapturat capturar(Mokepon mok, String nomEntrenador, String nomDonat) {
+	static MokeponCapturat capturar(Mokepon mok, String nomEntrenador, String nomDonat) throws Exception {
 		return mok.capturar(nomEntrenador, nomDonat);
 	}
 	

@@ -1,6 +1,8 @@
 package mokepon4;
 
-public class MokeponCapturat extends Mokepon {
+import java.util.Objects;
+
+public class MokeponCapturat extends Mokepon{
 	//posem només els atributs nous, no els de Mokepon. És a dir, posem els atributs que tindrà MokeponCapturat, però no Mokepon
 	private String nomPosat;
 	private String nomEntrenador;
@@ -88,6 +90,29 @@ public class MokeponCapturat extends Mokepon {
     }
     
     
+    
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(nomEntrenador, nomPosat);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MokeponCapturat other = (MokeponCapturat) obj;
+		return Objects.equals(nomEntrenador, other.nomEntrenador) && Objects.equals(nomPosat, other.nomPosat);
+	}
+	
+	
 
 	@Override
 	public String toString() {
