@@ -1,0 +1,380 @@
+package mokepon6;
+
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Random;
+
+public class Mokepon implements Comparable<Mokepon>{
+	//atributs del pokemon
+    private String nom;
+    private int nivell;
+    private int atk;
+    private int def;
+    private int vel;
+    
+    private int exp;
+    private int hp_max;
+    private int hp_actual;
+    private Tipus tipus;
+    
+    boolean debilitat;
+    
+    ArrayList<Atacs> Atacs = new ArrayList<>();
+    
+    static String estatic;
+    
+    Sexe sexe;
+    
+    //fixa't que el constuctor no té retorn, ja que el que retorna es la propia classe
+    public Mokepon() {
+        this.nom = "Sense definir";
+        this.nivell = 1;
+        this.atk = 1;
+        this.def = 1;
+        this.vel = 1;
+        this.debilitat = false;
+    }
+    
+    //podem crear múltiples constructors sempre que tinguin paràmetres diferents
+    public Mokepon(String nom) {
+        //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
+        this.nom = nom;
+        this.nivell = 1;
+        this.atk = 1;
+        this.def = 1;
+        this.vel = 1;
+        this.hp_max = 10;
+        this.hp_actual = 10;
+        this.debilitat = false;
+        
+        // El sexe es triara aleatoriament
+        
+        Random r = new Random();
+        
+        boolean eleccion = r.nextBoolean();
+        
+        if(eleccion == true) {
+        	this.sexe = Sexe.Femení;
+        }else if(eleccion == false) {
+        	this.sexe = Sexe.Masculí;
+        }
+        
+    }
+    
+    public Mokepon(String nom, int nivell) {
+        //aquest constructor crida al constructor de nom primer, per això el this(nom), amb el que farà tot el que el constructor de nom digui
+        this(nom);
+        //podem fer fors dintre d'un constructor com si fos una funció normal
+        for (int i = 1; i < nivell; i++) {
+            //podem cridar a funcions de la nostra propia classe amb el this
+            this.pujarNivell();
+        }
+    }
+    
+    public Mokepon(String nom, int nivell, int hp_max, int atk, int def, int vel) {
+    	this(nom, nivell);
+    	this.hp_max = hp_max;
+    	this.hp_actual = this.hp_max;
+    	this.atk = atk;
+    	this.def = def;
+    	this.vel = vel;
+    }
+    
+    
+    //podem crear múltiples constructors sempre que tinguin paràmetres diferents
+    public Mokepon(String nom, Tipus tipus) {
+        //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
+        this(nom);
+        this.tipus = tipus;
+    }
+    
+    public Mokepon(String nom, Tipus tipus, int nivell) {
+        //this.nom fa referència a la variable global i nom a la local que hem passat per paràmetre
+        this(nom, nivell);
+        this.tipus = tipus;
+    }
+
+
+    
+    public void atorgarExperiencia(int exp_atorgada) {
+    	this.exp += exp_atorgada;
+    	
+    	while(this.exp> 100) {
+    		this.exp -= 100;
+    		pujarNivell();
+    	}
+    }
+    
+    private void pujarNivell() {
+		// TODO Auto-generated method stub
+    	Random r = new Random();
+		this.nivell++;
+		this.hp_max = r.nextInt(0, 6);
+		this.atk = r.nextInt(0, 3);
+		this.def = r.nextInt(0, 3);
+		this.vel = r.nextInt(0, 3);
+	}
+
+	public void diguesNom() {
+        //per a accedir a un atribut fem this.nomDeLAtribut
+        //this es una paraula especial que fa referencia a nosaltres mateixos.
+        System.out.println(this.nom);
+    }
+	
+	public void afegirAtac(Atacs at) {
+		if(this.Atacs.size()<2) {
+			this.Atacs.add(at);
+		}
+	}
+	
+	static public double efectivitat(Tipus atac, Tipus defensa) {
+        if(atac == Tipus.FOC && defensa == Tipus.AIGUA ||atac == Tipus.AIGUA && defensa == Tipus.PLANTA ||atac == Tipus.PLANTA && defensa == Tipus.FOC ) {
+            return 0.5;
+        }else if (atac == Tipus.AIGUA && defensa == Tipus.FOC ||atac == Tipus.FOC && defensa == Tipus.PLANTA ||atac == Tipus.PLANTA && defensa == Tipus.AIGUA ) {
+            return 2;
+        }else {
+            return 1;
+        }        
+    }
+	
+	public void atacar(Mokepon atacat, int num_atac) {
+		
+		if(this.debilitat == false && this.Atacs.get(num_atac).moviments_actuals > 0) {
+			
+			System.out.println(this.nom + " ataca con " + this.Atacs.get(num_atac).nom + " a " + atacat.nom + " rival");
+			
+			double dany = ((((((2 * this.nivell) / 5) + 2) * this.Atacs.get(num_atac).poder * (this.atk / atacat.def))/50) + 2) * efectivitat(this.Atacs.get(num_atac).tipus, atacat.tipus);
+
+			atacat.hp_actual -= (int) dany;
+			
+			this.Atacs.get(num_atac).moviments_actuals--; //
+			
+//			System.out.println(efectivitat(this.Atacs.get(num_atac).tipus, atacat.tipus));
+			
+			System.out.println(this.nom + " le ha hecho " + (int) dany + " al " + atacat.nom + " del rival");
+			
+		}else if(this.debilitat == false && this.Atacs.get(num_atac).moviments_actuals <= 0){
+			System.out.println("No te quedan mas PP de este movimiento");
+		}else if(this.debilitat == true){
+			System.out.println("Tu pokemon esta muerto y no puede atacar");
+		}
+		
+		
+	}
+	
+	public void debilitarse() {
+		this.debilitat = true;
+	}
+	
+	public void curar() {
+		if(this.debilitat == true) {
+			this.debilitat = false;
+		}
+		System.out.println("HP del Mokepon restaurada al maxim.");
+		this.hp_actual = this.hp_max;
+	}
+	
+	public MokeponCapturat capturar(String nomEntrenador, String nomDonat) throws Exception{
+		if(!(this instanceof MokeponCapturat)) {
+			System.out.println(this.nom + " ha sigut capturat");
+			MokeponCapturat poke = new MokeponCapturat(this, nomDonat, nomEntrenador);
+			return poke;
+		}else {
+			 //El mokepon ja està capturat. No el pots tornar i tira una Exception.
+            throw new MokeponJaCapturatException("No pots capturar un Mokepon que ja esta capturat");
+		}
+		
+	}
+	
+    //especifiquem que el mètode reproduccio pot tirar una excepció
+	
+    public Ou reproduccio(Mokepon parella) throws Exception {
+    	
+    	assert this.tipus != parella.tipus : "Error, son de diferent tipus";
+    	
+    	assert this.debilitat == true || parella.debilitat == true : "Error, un o els dos pokemon estan debilitats";
+    	
+    	assert this.sexe == parella.sexe : "Error, els pokemon son del mateix sexe i per tant no poden reproduirse";
+    	
+    	Random r = new Random();
+      
+	      boolean eleccion = r.nextBoolean();
+	      
+	      if(eleccion == true) {
+	     	 return new Ou(this.nom, this.tipus);
+	      }else if(eleccion == false) {
+	     	 return new Ou(parella.nom, this.tipus);
+	      }
+	      
+	      return null;
+    	
+//        if(this.tipus != parella.tipus) {
+//        	
+//            //hauria de tornar un error per que son de diferent tipus
+//            throw new TipusDiferentException("Error, son de diferent tipus");
+//            
+//        }else if(this.debilitat == true || parella.debilitat == true) {
+//        	
+//        	throw new MokeponDebilitatException("Error, un o els dos pokemon estan debilitats");
+//        
+//        }else if(this.sexe == parella.sexe) {
+//        	throw new MateixSexeException("Error, els pokemon son del mateix sexe i per tant no poden reproduirse");
+//        }
+//        else {
+//        	
+//        	 Random r = new Random();
+//             
+//             boolean eleccion = r.nextBoolean();
+//             
+//             if(eleccion == true) {
+//            	 return new Ou(this.nom, this.tipus);
+//             }else if(eleccion == false) {
+//            	 return new Ou(parella.nom, this.tipus);
+//             }
+//        }
+//		return null;
+    }
+    
+    
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(Atacs, atk, def, exp, hp_max, nivell, nom, sexe, tipus, vel);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Mokepon other = (Mokepon) obj;
+		return Objects.equals(Atacs, other.Atacs) && atk == other.atk && def == other.def && exp == other.exp
+				&& hp_max == other.hp_max && nivell == other.nivell && Objects.equals(nom, other.nom)
+				&& sexe == other.sexe && tipus == other.tipus && vel == other.vel;
+	}
+	
+	@Override
+	public int compareTo(Mokepon other) {
+		// Comparar tipus
+		int res = this.tipus.ordinal() - other.tipus.ordinal();
+		if(res !=0) {
+			return res;
+		}
+		//Comparar per nom
+		res = this.nom.compareTo(other.nom);
+		if(res !=0) {
+			return res;
+		}
+		//Comparar per nivell
+		return this.nivell - other.nivell;
+	}
+	
+	
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getNivell() {
+		return nivell;
+	}
+
+	public void setNivell(int nivell) {
+		this.nivell = nivell;
+	}
+
+	public int getAtk() {
+		return atk;
+	}
+
+	public void setAtk(int atk) {
+		this.atk = atk;
+	}
+
+	public int getDef() {
+		return def;
+	}
+
+	public void setDef(int def) {
+		this.def = def;
+	}
+
+	public int getVel() {
+		return vel;
+	}
+
+	public void setVel(int vel) {
+		this.vel = vel;
+	}
+
+	public int getExp() {
+		return exp;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+
+	public int getHp_max() {
+		return hp_max;
+	}
+
+	public void setHp_max(int hp_max) {
+		this.hp_max = hp_max;
+	}
+
+	public int getHp_actual() {
+		return hp_actual;
+	}
+
+	public void setHp_actual(int hp_actual) {
+		if(hp_actual < 0) {
+			this.hp_actual = 0;
+		}else if(hp_actual > this.hp_max) {
+			this.hp_actual = this.hp_max;
+		}else {
+			this.hp_actual = hp_actual;
+		}	
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Mokepon [nom=" + nom + ", nivell=" + nivell + ", atk=" + atk + ", def=" + def + ", vel=" + vel
+				+ ", exp=" + exp + ", hp_max=" + hp_max + ", hp_actual=" + hp_actual + ", tipus=" + tipus
+				+ ", debilitat=" + debilitat + ", Atacs=" + Atacs + "]";
+	}
+
+	public Tipus getTipus() {
+		return tipus;
+	}
+
+	public void setTipus(Tipus tipus) {
+		this.tipus = tipus;
+	}
+
+	public boolean isDebilitat() {
+		return debilitat;
+	}
+
+	public void setDebilitat(boolean debilitat) {
+		this.debilitat = debilitat;
+	}
+
+	public ArrayList<Atacs> getAtacs() {
+		return Atacs;
+	}
+
+	public void setAtacs(ArrayList<Atacs> atacs) {
+		Atacs = atacs;
+	}
+
+}
