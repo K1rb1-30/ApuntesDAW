@@ -1,6 +1,8 @@
-package mokepon4;
+package mokepon6;
 
 import java.util.Objects;
+
+import objectes.*;
 
 public class MokeponCapturat extends Mokepon{
 	//posem només els atributs nous, no els de Mokepon. És a dir, posem els atributs que tindrà MokeponCapturat, però no Mokepon
@@ -10,8 +12,8 @@ public class MokeponCapturat extends Mokepon{
 	
 	static int NombreMokeponsCapturats = 0;
 	
-	Objecte objecte;
-	Equipament objecteEquipat;
+	private Objecte objecte;
+	private Equipament objecteEquipat;
 	
 	
 	
@@ -86,7 +88,7 @@ public class MokeponCapturat extends Mokepon{
 	}
     
     public void utilitzaObjecte() {
-    	this.objecte.utilitzar(this);
+    	this.getObjecte().utilitzar(this);
     }
     
     
@@ -135,6 +137,22 @@ public class MokeponCapturat extends Mokepon{
 
 	public void setNomPosat(String nomPosat) {
 		this.nomPosat = nomPosat;
+	}
+
+	public Objecte getObjecte() {
+		return objecte;
+	}
+
+	public void setObjecte(Objecte objecte) {
+		this.objecte = objecte;
+	}
+
+	public Equipament getObjecteEquipat() {
+		return objecteEquipat;
+	}
+
+	public void setObjecteEquipat(Equipament objecteEquipat) {
+		this.objecteEquipat = objecteEquipat;
 	}
     
     

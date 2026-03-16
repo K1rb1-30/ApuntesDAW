@@ -1,4 +1,4 @@
-package mokepon4;
+package mokepon6;
 
 import java.util.Objects;
 

@@ -1,7 +1,10 @@
-package mokepon4;
+package mokepon6;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
+
+import objectes.*;
 
 public class Test {
 
@@ -130,32 +133,32 @@ public class Test {
         System.out.println("-------------------------------------");
         
         
-        Pocio po1 = new Pocio(20);
-        Reviure re1 = new Reviure();
+//        Pocio po1 = new Pocio(20);
+//        Reviure re1 = new Reviure();
         
         
-        
-        rotome.debilitarse();
-        
-        re1.utilitzar(rotome);
-        
-        System.out.println(rotome.getHp_actual());
-        po1.utilitzar(rotome);
-        System.out.println(rotome.getHp_actual());
-        po1.donar(rotome);
-        
-        System.out.println("-------------------------------------");
-        
-        System.out.println("Prueba para ver si los Objetos de equipamiento funcionan");
-        
-        System.out.println(rotome.getAtk());
-        System.out.println(rotome.getDef());
-        
-        Arma a1 = new Arma("Cinta Fuerte", 30);
-        Armadura d1 = new Armadura("Pluma Aguante", 20);
-        
-        a1.Equipar(rotome);
-        d1.Equipar(rotome);
+//        
+//        rotome.debilitarse();
+//        
+//        re1.utilitzar(rotome);
+//        
+//        System.out.println(rotome.getHp_actual());
+//        po1.utilitzar(rotome);
+//        System.out.println(rotome.getHp_actual());
+//        po1.donar(rotome);
+//        
+//        System.out.println("-------------------------------------");
+//        
+//        System.out.println("Prueba para ver si los Objetos de equipamiento funcionan");
+//        
+//        System.out.println(rotome.getAtk());
+//        System.out.println(rotome.getDef());
+//        
+////        Arma a1 = new Arma("Cinta Fuerte", 30);
+////        Armadura d1 = new Armadura("Pluma Aguante", 20);
+//        
+//        a1.Equipar(rotome);
+//        d1.Equipar(rotome);
         
         System.out.println(rotome.getAtk());
         System.out.println(rotome.getDef());
@@ -205,12 +208,46 @@ public class Test {
         
         System.out.println(mokedex);
         
+     
+
+        
         System.out.println("-------------------------------------");
         
-        System.out.println("COMBAT MOKEPON");
+        System.out.println("Nom de tots");
         
-        CombatMokepon combate1 = new CombatMokepon(piplup, rotome);
+        nomDeTots(mokedex);
         
+        System.out.println("-------------------------------------");
+        
+        System.out.println("TEAM");
+        
+        Team<Mokepon> equipo = new Team<>();
+        equipo.add(new Mokepon("Charmander", Tipus.FOC, 10));
+        equipo.add(new Mokepon("Squirtle", Tipus.AIGUA, 8));
+        equipo.add(new Mokepon("Bulbasaur", Tipus.PLANTA, 12));
+        equipo.add(new Mokepon("Pidgey", Tipus.AIGUA, 7));
+        equipo.add(new Mokepon("Vulpix", Tipus.FOC, 15));
+        equipo.add(new Mokepon("Pikachu", Tipus.AIGUA, 12));
+        
+        boolean añadido = equipo.add(new Mokepon("Leafeon", Tipus.PLANTA, 13));
+
+        System.out.println("¿Se añadió Leafeon? " + añadido);
+        System.out.println("Tamaño del equipo: " + equipo.size());
+        
+        nomDeTots(equipo);
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println("FACTORY DE OBJETOS");
+        
+        String[] tipus = {"POCIO", "SUPERPOCIO", "HIPERPOCIO", "REVIURE", "ARMADURA", "ARMA"};
+
+        Random r = new Random();
+        String escollit = tipus[r.nextInt(tipus.length)];
+
+        Objecte obj = ObjecteFactory.crearObjecte(escollit);
+
+        System.out.println("Objecte generat: " + escollit);
         
 
     }
@@ -218,6 +255,22 @@ public class Test {
 	static MokeponCapturat capturar(Mokepon mok, String nomEntrenador, String nomDonat) throws Exception {
 		return mok.capturar(nomEntrenador, nomDonat);
 	}
+	
+	//estem dient
+    //? -> qualsevol classe
+    //extends Mokepon -> que sigui Mokepon o filla seva
+    public static void nomDeTots(ArrayList<? extends Mokepon> list) {
+        for(Mokepon m : list) {
+            m.diguesNom();
+        }
+    }
+    
+
+    
+    
+
+	
+	
 	
 	
 

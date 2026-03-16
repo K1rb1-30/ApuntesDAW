@@ -233,13 +233,14 @@
   },
   "active": "1474207925b3ac9e",
   "lastOpenFiles": [
-    "BBDD/BA2/TRANSACTIONS.md",
-    "BBDD/BA2/CONCURRENCIA.md",
-    "BBDD/Clausula SELECT.md",
-    "BBDD/BA2/DELETE.md",
-    "BBDD/BA2/INSERT.md",
     "BBDD/BA2/PROCEDURES.md",
+    "BBDD/BA2/TRANSACTIONS.md",
+    "BBDD/BA2/INSERT.md",
+    "BBDD/BA2/DELETE.md",
+    "BBDD/BA2/CONCURRENCIA.md",
     "BBDD/BA2/UPDATE.md",
+    "BBDD/Clausula SELECT.md",
+    "BBDD/Clausula GROUP BY.md",
     "Pasted image 20260303104156.png",
     "BBDD/BA2",
     "Bot/Cosas que tiene que tener.md",
@@ -258,7 +259,6 @@
     "BBDD/Funciones nuevas.md",
     "BBDD/Subconsultas.md",
     "BBDD/UNION.md",
-    "BBDD/Clausula GROUP BY.md",
     "BBDD/CapturasBBDD",
     "Programacion/Apuntes teoria IDE.md"
   ]

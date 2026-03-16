@@ -1,11 +1,13 @@
-package mokepon4;
+package objectes;
+
+import mokepon6.MokeponCapturat;
 
 public class Arma extends Objecte implements Equipament {
 	
 	int atacExtra;
 
-	public Arma(String nom, int atacExtra) {
-		super(nom);
+	public Arma(int atacExtra) {
+		super("Arma");
 		this.atacExtra = atacExtra;
 		
 	}
@@ -18,13 +20,13 @@ public class Arma extends Objecte implements Equipament {
 
 	public void Equipar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
-		mok.objecteEquipat = this;
+		mok.setObjecteEquipat(this);
 		mok.setAtk(mok.getAtk() + atacExtra);
 	}
 
 	public void Desequipar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
-		mok.objecteEquipat = null;
+		mok.setObjecteEquipat(null);
 		mok.setAtk(mok.getAtk() - atacExtra);
 	}
 

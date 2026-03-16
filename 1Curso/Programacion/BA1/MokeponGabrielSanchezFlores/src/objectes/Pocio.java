@@ -1,10 +1,11 @@
-package mokepon4;
+package objectes;
+import mokepon6.MokeponCapturat;
 
 public class Pocio extends Objecte {
 	
 	int hp_curada;
 	
-	public Pocio(int hp_curada) {
+	Pocio(int hp_curada) {
 		super("Pocio");
 
 		this.hp_curada = hp_curada;
@@ -13,7 +14,7 @@ public class Pocio extends Objecte {
 	public void utilitzar(MokeponCapturat mok) {
 		// TODO Auto-generated method stub
 		if(this.getQuantitat() > 0) {
-			if(mok.debilitat == false) {
+			if(mok.isDebilitat() == false) {
 				if(mok.getHp_actual() + this.hp_curada < mok.getHp_max()) {
 					mok.setHp_actual(hp_curada);
 					System.out.println(mok.getNom() + "ha recuperat salut!");

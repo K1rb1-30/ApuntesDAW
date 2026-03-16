@@ -1,4 +1,4 @@
-package mokepon4;
+package mokepon6;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -189,31 +189,50 @@ public class Mokepon implements Comparable<Mokepon>{
     //especifiquem que el mètode reproduccio pot tirar una excepció
 	
     public Ou reproduccio(Mokepon parella) throws Exception {
-        if(this.tipus != parella.tipus) {
-        	
-            //hauria de tornar un error per que son de diferent tipus
-            throw new TipusDiferentException("Error, son de diferent tipus");
-            
-        }else if(this.debilitat == true || parella.debilitat == true) {
-        	
-        	throw new MokeponDebilitatException("Error, un o els dos pokemon estan debilitats");
-        
-        }else if(this.sexe == parella.sexe) {
-        	throw new MateixSexeException("Error, els pokemon son del mateix sexe i per tant no poden reproduirse");
-        }
-        else {
-        	
-        	 Random r = new Random();
-             
-             boolean eleccion = r.nextBoolean();
-             
-             if(eleccion == true) {
-            	 return new Ou(this.nom, this.tipus);
-             }else if(eleccion == false) {
-            	 return new Ou(parella.nom, this.tipus);
-             }
-        }
-		return null;
+    	
+    	assert this.tipus != parella.tipus : "Error, son de diferent tipus";
+    	
+    	assert this.debilitat == true || parella.debilitat == true : "Error, un o els dos pokemon estan debilitats";
+    	
+    	assert this.sexe == parella.sexe : "Error, els pokemon son del mateix sexe i per tant no poden reproduirse";
+    	
+    	Random r = new Random();
+      
+	      boolean eleccion = r.nextBoolean();
+	      
+	      if(eleccion == true) {
+	     	 return new Ou(this.nom, this.tipus);
+	      }else if(eleccion == false) {
+	     	 return new Ou(parella.nom, this.tipus);
+	      }
+	      
+	      return null;
+    	
+//        if(this.tipus != parella.tipus) {
+//        	
+//            //hauria de tornar un error per que son de diferent tipus
+//            throw new TipusDiferentException("Error, son de diferent tipus");
+//            
+//        }else if(this.debilitat == true || parella.debilitat == true) {
+//        	
+//        	throw new MokeponDebilitatException("Error, un o els dos pokemon estan debilitats");
+//        
+//        }else if(this.sexe == parella.sexe) {
+//        	throw new MateixSexeException("Error, els pokemon son del mateix sexe i per tant no poden reproduirse");
+//        }
+//        else {
+//        	
+//        	 Random r = new Random();
+//             
+//             boolean eleccion = r.nextBoolean();
+//             
+//             if(eleccion == true) {
+//            	 return new Ou(this.nom, this.tipus);
+//             }else if(eleccion == false) {
+//            	 return new Ou(parella.nom, this.tipus);
+//             }
+//        }
+//		return null;
     }
     
     

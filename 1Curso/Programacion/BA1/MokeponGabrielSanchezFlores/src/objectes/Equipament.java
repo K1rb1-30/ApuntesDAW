@@ -1,4 +1,5 @@
-package mokepon4;
+package objectes;
+import mokepon6.MokeponCapturat;
 
 public interface Equipament {
 	
@@ -7,7 +8,7 @@ public interface Equipament {
 	public abstract void Desequipar(MokeponCapturat mok);
 	
 	 public default boolean potEquipar(MokeponCapturat mok) {
-		 if(mok.objecteEquipat == null && mok.debilitat == false) {
+		 if(mok.getObjecteEquipat() == null && mok.isDebilitat() == false) {
 			 return true;
 		 }else {
 			 return false;
@@ -15,7 +16,7 @@ public interface Equipament {
 	 }
 	 
 	 default boolean equipMalPosat(MokeponCapturat mok) {
-		 if(mok.objecte instanceof Equipament) {
+		 if(mok.getObjecte() instanceof Equipament) {
 			 return true;
 		 }else {
 			 return false;

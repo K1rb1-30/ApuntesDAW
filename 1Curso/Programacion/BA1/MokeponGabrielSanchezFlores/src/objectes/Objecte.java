@@ -1,4 +1,5 @@
-package mokepon4;
+package objectes;
+import mokepon6.MokeponCapturat;
 
 //Una classe abstracta no pot instanciàrse (és a dir, no pots fer un new). 
 //Només les classes abstractes poden tenir mètodes abstractes
@@ -19,7 +20,7 @@ public abstract class Objecte {
 	}
 	
 	public void donar(MokeponCapturat mok) {
-		mok.objecte = this;
+		mok.setObjecte(this);
 	}
 	
 	//Un mètode abstracte significa que és un mètode que no existeix però els seus fills estan obligats a implementar-lo. 
