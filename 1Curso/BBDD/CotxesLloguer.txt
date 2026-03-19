@@ -1,0 +1,53 @@
+DROP DATABASE IF EXISTS lloguer_cotxes;
+CREATE DATABASE lloguer_cotxes CHARACTER SET utf8;
+
+-- SET FOREING_KEY_CHEKS = 0;
+
+USE lloguer_cotxes;
+
+CREATE TABLE cotxes(
+	matricula VARCHAR(8) UNIQUE NOT NULL,
+	marca VARCHAR(15) NOT NULL,
+	model VARCHAR(15) NOT NULL,
+	color VARCHAR(15),
+	classe ENUM('A','B','C') DEFAULT 'B',
+	any_cotxe YEAR(4),
+	tipus ENUM('furgoneta', 'turisme'),
+	combustible ENUM('diesel', 'gasolina', 'electric'),
+	quilometratge INT(7),
+	preu_dia INT NOT NULL,
+	disponibilitat TINYINT(1),
+	CONSTRAINT fk_cotxes PRIMARY KEY(matricula),
+	CONSTRAINT CHK_preu_dia CHECK (preu_dia > 0)
+);
+
+CREATE TABLE clients(
+	id_client INT AUTO_INCREMENT NOT NULL,
+	dni VARCHAR(9) UNIQUE NOT NULL,
+	nom VARCHAR(20) NOT NULL,
+	cognom1 VARCHAR(20) NOT NULL,
+	cognom2  VARCHAR(20),
+	telefon VARCHAR(12),
+	email VARCHAR(30),
+	adreça VARCHAR(100),
+	data_naixament DATE,
+	num_carnet VARCHAR(9) UNIQUE NOT NULL,
+	data_caducitat DATE,
+	CONSTRAINT pk_client PRIMARY KEY(id_client),
+	CONSTRAINT CHK_email CHECK(email = '%_@%_.%_')
+);
+
+CREATE TABLE lloguer(
+	id_lloguer INT AUTO_INCREMENT NOT NULL,
+	id_client INT,
+	id_cotxe VARCHAR(8),
+	data_inici DATETIME,
+	data_fi DATETIME,
+	preu_total INT,
+	estat TINYINT(1),
+	CONSTRAINT pk_lloguer PRIMARY KEY(id_lloguer),
+	CONSTRAINT fk_client FOREIGN KEY(id_client) REFERENCES clients(id_client),
+	CONSTRAINT fk_cotxes FOREIGN KEY(id_cotxe) REFERENCES cotxes(matricula),
+	CONSTRAINT CHK_dates CHECK( data_fi > data_inici)
+	
+);
