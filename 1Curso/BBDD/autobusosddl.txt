@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS autobusos;
 CREATE DATABASE autobusos CHARACTER SET utf8;
 
 -- SET FOREING_KEY_CHEKS = 0;
@@ -9,5 +10,72 @@ CREATE TABLE barri(
 	nom VARCHAR(25) NOT NULL,
 	CONSTRAINT pk_codi_barri PRIMARY KEY (codi_barri)
 );
+
+CREATE TABLE barri_vei(
+	codi_b1 INT,
+	codi_b2 INT,
+	CONSTRAINT pk_barri_vei PRIMARY KEY(codi_b1, codi_b2),
+	CONSTRAINT codi_b1_FK FOREIGN KEY (codi_b1) REFERENCES barri(codi_barri),
+	CONSTRAINT codi_b2_FK FOREIGN KEY (codi_b2) REFERENCES barri(codi_barri)
+	
+);
+
+CREATE TABLE parada(
+	codi_parada INT AUTO_INCREMENT,
+	codi_b INT NOT NULL,
+	CONSTRAINT pk_parada PRIMARY KEY (codi_parada),
+	CONSTRAINT fk_barri FOREIGN KEY (codi_b) REFERENCES barri(codi_barri)
+);
+
+CREATE TABLE linia(
+	codi_linia INT AUTO_INCREMENT,
+	nom VARCHAR(25) NOT NULL,
+	color VARCHAR(25) NOT NULL,
+	durada_trayecte INT  NOT NULL,
+	CONSTRAINT pk_codi_linia PRIMARY KEY (codi_linia)
+);
+
+CREATE TABLE parada_linia(
+	codi_p INT,
+	codi_l INT,
+	CONSTRAINT pk_parada_linia PRIMARY KEY(codi_p, codi_l),
+	CONSTRAINT fk_codi_p FOREIGN KEY (codi_p) REFERENCES parada(codi_parada),
+	CONSTRAINT fk_codi_l FOREIGN KEY (codi_l) REFERENCES linia(codi_linia)
+);
+
+CREATE TABLE conductor(
+	dni VARCHAR(9) NOT NULL,
+	nom VARCHAR(25) NOT NULL,
+	cognom1 VARCHAR(25) NOT NULL,
+	mail VARCHAR(25) NOT NULL,
+	data_carnet DATE NOT NULL,
+	CONSTRAINT pk_conductor PRIMARY KEY(dni)
+);
+
+CREATE TABLE linia_conductor(
+	codi_l INT,
+	codi_c VARCHAR(9),
+	CONSTRAINT pk_linia_conductor PRIMARY KEY(codi_l, codi_c),
+	CONSTRAINT fk_codi_lc FOREIGN KEY (codi_l) REFERENCES linia(codi_linia),
+	CONSTRAINT fk_codi_c FOREIGN KEY (codi_c) REFERENCES conductor(dni)
+);
+
+CREATE TABLE vehicle(
+	matricula INT NOT NULL,
+	any_fabricacio YEAR(4),
+	adaptat TINYINT(1),
+	capacitat INT,
+	CONSTRAINT pk_matricula PRIMARY KEY(matricula)
+);
+
+CREATE TABLE conductor_vehicle(
+	dni VARCHAR(9),
+	matricula INT,
+	CONSTRAINT pk_conductor_vehicle PRIMARY KEY (dni, matricula),
+	CONSTRAINT fk_dni FOREIGN KEY(dni) REFERENCES conductor(dni),
+	CONSTRAINT fk_vehicle FOREIGN KEY(matricula) REFERENCES vehicle(matricula)
+);
+
+
 
 

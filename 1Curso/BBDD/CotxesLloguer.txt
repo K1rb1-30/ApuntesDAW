@@ -29,12 +29,12 @@ CREATE TABLE clients(
 	cognom2  VARCHAR(20),
 	telefon VARCHAR(12),
 	email VARCHAR(30),
-	adreça VARCHAR(100),
-	data_naixament DATE,
+	adreca VARCHAR(100),
+	data_naixement DATE,
 	num_carnet VARCHAR(9) UNIQUE NOT NULL,
 	data_caducitat DATE,
 	CONSTRAINT pk_client PRIMARY KEY(id_client),
-	CONSTRAINT CHK_email CHECK(email = '%_@%_.%_')
+	CONSTRAINT CHK_email CHECK(email LIKE '_%@_%._%')
 );
 
 CREATE TABLE lloguer(
@@ -51,3 +51,20 @@ CREATE TABLE lloguer(
 	CONSTRAINT CHK_dates CHECK( data_fi > data_inici)
 	
 );
+
+INSERT INTO cotxes VALUES
+('4321XYZ','Honda','Civic','Vermell','B',2020,'turisme','gasolina',30000,50,TRUE),
+('8765LMN','Renault','Kangoo','Blanc','C',2019,'furgoneta','diesel',55000,55,TRUE),
+('2109QRS','Nissan','Leaf','Verd','A',2024,'turisme','electric',8000,75,TRUE);
+
+INSERT INTO clients (dni, nom, cognom1, cognom2, telefon, email, adreca, data_naixement, num_carnet, data_caducitat)
+VALUES
+('23456789D','Laura','Fernandez','Gomez','611223344','laura@email.com','Carrer Girona 12','1992-07-18','B234567','2032-07-18'),
+('98765432E','Carlos','Ruiz','Moreno','622334455','carlos@email.com','Passeig de Gracia 45','1988-01-30','B987654','2031-01-30'),
+('55667788F','Ana','Navarro','Diaz','633445566','ana@email.com','Carrer Balmes 8','1999-09-05','B556677','2033-09-05');
+
+INSERT INTO lloguer (id_client, id_cotxe, data_inici, data_fi, preu_total)
+VALUES
+(1,'4321XYZ','2026-03-01','2026-03-04', 150),
+(2,'8765LMN','2026-03-10','2026-03-13', 165),
+(3,'2109QRS','2026-03-20','2026-03-25', 300);
