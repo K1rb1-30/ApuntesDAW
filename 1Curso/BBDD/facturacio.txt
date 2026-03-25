@@ -1,0 +1,19 @@
+DROP DATABASE IF EXISTS facturacio;
+
+CREATE DATABASE facturacio CHARACTER SET utf8;
+
+USE facturacio;
+
+CREATE TABLE clients(
+	nif CHAR(9),
+	nom VARCHAR(35) NOT NULL,
+	cognom1 VARCHAR(35) NOT NULL,
+	cognom1 VARCHAR(35),
+	adreca VARCHAR(70),
+	data_alta DATETIME DEFAULT CURRENT_TIMESTAMP(),
+	CONSTRAINT pk_clients PRIMARY KEY (nif)
+);
+
+CREATE TABLE factures(
+	num_fact INT(4),
+);

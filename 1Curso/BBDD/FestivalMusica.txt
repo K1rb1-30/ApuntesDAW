@@ -1,0 +1,92 @@
+
+DROP DATABASE IF EXISTS festival_musica;
+
+CREATE DATABASE festival_musica CHARACTER SET utf8;
+
+USE festival_musica;
+
+CREATE TABLE recintes(
+	nom_recinte	VARCHAR(10),
+	aforament	INT,
+	m2escena	INT,
+	m2public	INT,
+	lavabos	TINYINT(1),
+	cobert	TINYINT(1),
+	CONSTRAINT pk_recintes PRIMARY KEY(nom_recinte)
+);
+
+CREATE TABLE carrers(
+	codi_carrer	INT,
+	nom_carrer 	VARCHAR(20),
+	CONSTRAINT pk_codi_carrer PRIMARY KEY (codi_carrer)
+);
+
+CREATE TABLE grups(
+	nom_grup 	VARCHAR(10),
+	pais	VARCHAR(20),
+	nombre_music VARCHAR(30),
+	CONSTRAINT pk_nom_grup PRIMARY KEY (nom_grup)
+);
+
+CREATE TABLE webs(
+	nom_web VARCHAR(15),
+	url	VARCHAR(40),
+	nif VARCHAR(9),
+	CONSTRAINT pk_webs PRIMARY KEY (nom_web)
+);
+
+CREATE TABLE persones(
+	usuari		VARCHAR(20) UNIQUE,
+	password 	VARCHAR(40),
+	dni_passaport	VARCHAR(9),
+	mail	VARCHAR(25),
+	nom		VARCHAR(20),
+	cognom1 VARCHAR(20),
+	cognom2 VARCHAR(20),
+	adreca	VARCHAR(20),
+	ciutat VARCHAR(15),
+	codipostal INT(7),
+	telefon VARCHAR(12),
+	CONSTRAINT pk_persones PRIMARY KEY (usuari)
+);
+
+CREATE TABLE parceles(
+	num_parc 	INT,
+	m2 	INT,
+	preu_hora 	INT,
+	codi_carrer	INT,
+	usuari 	VARCHAR(20),
+	CONSTRAINT pk_parceles PRIMARY KEY (num_parc),
+	CONSTRAINT fk_codi_carrer FOREIGN KEY (codi_carrer) REFERENCES carrers(codi_carrer) ON DELETE CASCADE,
+	CONSTRAINT fk_usuari FOREIGN KEY(usuari) REFERENCES persones(usuari)
+);
+
+CREATE TABLE actuacions(
+	nom_recinte	VARCHAR(10),
+	nom_grup	VARCHAR(10),
+	dataHora_actuacio DATETIME,
+	catxe	INT,
+	CONSTRAINT pk_actuacions PRIMARY KEY (nom_recinte, dataHora_actuacio),
+	CONSTRAINT fk_recinte FOREIGN KEY (nom_recinte) REFERENCES recintes(nom_recinte) ON UPDATE CASCADE,
+	CONSTRAINT fk_grup FOREIGN KEY (nom_grup) REFERENCES grups(nom_grup) ON DELETE SET NULL
+);
+
+CREATE TABLE compres(
+	id_compra INT AUTO_INCREMENT,
+	nom_web VARCHAR(15),
+	usuari	VARCHAR(20),
+	numentrades INT,
+	dataHora_compra DATETIME,
+	CONSTRAINT pk_compres PRIMARY KEY (id_compra),
+	CONSTRAINT fk_nom_web FOREIGN KEY (nom_web) REFERENCES webs(nom_web),
+	CONSTRAINT fk_usuari_compres FOREIGN KEY (usuari) REFERENCES persones(usuari) ON DELETE SET NULL
+);
+
+CREATE TABLE substitucions(
+	nom_grup1 VARCHAR(10),
+	nom_grup2 VARCHAR(10),
+	CONSTRAINT pk_substitucions PRIMARY KEY (nom_grup1, nom_grup2),
+	CONSTRAINT fk_nomgrup1 FOREIGN KEY (nom_grup1) REFERENCES grups(nom_grup),
+	CONSTRAINT fk_nomgrup2 FOREIGN KEY (nom_grup2) REFERENCES grups(nom_grup)
+);
+	

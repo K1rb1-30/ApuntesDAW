@@ -43,7 +43,7 @@ CREATE TABLE lloguer(
 	id_cotxe VARCHAR(8),
 	data_inici DATETIME,
 	data_fi DATETIME,
-	preu_total INT,
+	preu_total DECIMAL(6,2),
 	estat TINYINT(1),
 	CONSTRAINT pk_lloguer PRIMARY KEY(id_lloguer),
 	CONSTRAINT fk_client FOREIGN KEY(id_client) REFERENCES clients(id_client),
