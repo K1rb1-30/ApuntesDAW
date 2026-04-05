@@ -5,15 +5,66 @@ CREATE DATABASE facturacio CHARACTER SET utf8;
 USE facturacio;
 
 CREATE TABLE clients(
-	nif CHAR(9),
-	nom VARCHAR(35) NOT NULL,
-	cognom1 VARCHAR(35) NOT NULL,
-	cognom1 VARCHAR(35),
-	adreca VARCHAR(70),
-	data_alta DATETIME DEFAULT CURRENT_TIMESTAMP(),
-	CONSTRAINT pk_clients PRIMARY KEY (nif)
+	NIF CHAR(9),
+	Nom VARCHAR(35) NOT NULL,
+	Cognom1 VARCHAR(35) NOT NULL,
+	Cognom2 VARCHAR(35),
+	Adreca VARCHAR(70) NOT NULL,
+	DataAlta DATETIME DEFAULT CURRENT_TIMESTAMP(),
+	CONSTRAINT pk_clients PRIMARY KEY (NIF)
+);
+
+
+CREATE TABLE productes(
+	CodiProducte INT AUTO_INCREMENT,
+	NomProducte VARCHAR(40) NOT NULL,
+	Descripcio VARCHAR(20),
+	PreuUnitat DECIMAL(6, 2) NOT NULL, -- Ponemos 6 para que haya 4 enteros y 2 decimales
+	CONSTRAINT pk_productes PRIMARY KEY (CodiProducte)
 );
 
 CREATE TABLE factures(
-	num_fact INT(4),
+	NumFactura INT(4),
+	NIFClient CHAR(9),
+	DataFactura DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	Total	INT	NOT NULL,
+	CONSTRAINT pk_factures PRIMARY KEY (NumFactura),
+	CONSTRAINT fk_client FOREIGN KEY (NIFClient) REFERENCES clients(NIF) ON UPDATE CASCADE ON DELETE RESTRICT
 );
+
+CREATE TABLE facturesProductes(
+	NumFact INT(4),
+	CodiProducte INT,
+	Quantitat INT(5) NOT NULL,
+	Total	INT	NOT NULL,
+	DataFactura	DATETIME,
+	CONSTRAINT pk_facturesProductes PRIMARY KEY (NumFact, CodiProducte),
+	CONSTRAINT fk_factures FOREIGN KEY (NumFact) REFERENCES factures(NumFactura) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT fk_productes FOREIGN KEY (CodiProducte) REFERENCES productes(CodiProducte) ON UPDATE CASCADE ON DELETE RESTRICT,
+	CONSTRAINT CHK_quantitat CHECK (Quantitat > 0)
+);
+
+
+-- CLIENTS
+INSERT clients (NIF, Nom, Cognom1, Adreca)
+VALUES 
+('12345678A', 'Laura', 'Gomez', 'Calle Sol 12'),
+('87654321B', 'Carlos', 'Perez', 'Avenida Luna 45');
+
+-- PRODUCTES
+INSERT productes (NomProducte, Descripcio, PreuUnitat)
+VALUES
+('Crema facial', 'Hidratant', 12.50),
+('Champu natural', 'Ecologico', 8.75);
+
+-- FACTURES
+INSERT factures (NumFactura, NIFClient, Total)
+VALUES
+(1001, '12345678A', 25),
+(1002, '87654321B', 18);
+
+-- FACTURESPRODUCTES
+INSERT facturesProductes (NumFact, CodiProducte, Quantitat, Total, DataFactura)
+VALUES
+(1001, 1, 2, 25, NOW()),
+(1002, 2, 2, 18, NOW());

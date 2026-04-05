@@ -1,0 +1,74 @@
+USE miniwind;
+
+
+SHOW CREATE TABLE products;
+
+CREATE TABLE `products` (
+  `supplier_ids` longtext,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `product_code` varchar(25) DEFAULT NULL,
+  `product_name` varchar(50) DEFAULT NULL,
+  `standard_cost` decimal(19,4) DEFAULT '0.0000',
+  `list_price` decimal(19,4) NOT NULL DEFAULT '0.0000',
+  `reorder_level` int DEFAULT NULL,
+  `target_level` int DEFAULT NULL,
+  `quantity_per_unit` varchar(50) DEFAULT NULL,
+  `minimum_reorder_quantity` int DEFAULT NULL,
+  `category` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `product_code` (`product_code`)
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+-- ex 1
+ALTER TABLE products
+	MODIFY COLUMN product_code varchar(25) NOT NULL;
+
+-- ex 2
+ALTER TABLE products
+	MODIFY COLUMN product_name varchar(40) NOT NULL;
+
+-- ex 3
+SELECT MAX(standard_cost) AS maxcos, MAX(list_price) AS maxprice
+FROM products;
+
+ALTER TABLE products
+	MODIFY COLUMN standard_cost DECIMAL(4,2) DEFAULT '0.00',
+	MODIFY COLUMN list_price	DECIMAL(4,2) DEFAULT '0.00';
+
+-- ex 4
+SHOW CREATE TABLE order_details;
+
+ALTER TABLE order_details
+	MODIFY COLUMN unit_price DECIMAL(4,2) DEFAULT '00.00';
+
+-- ex 5
+ALTER TABLE products
+	ADD COLUMN IVA INT NOT NULL DEFAULT 10;
+
+DESC products;
+
+-- ex 6
+ALTER TABLE products
+	MODIFY COLUMN minimum_reorder_quantity INT DEFAULT 0;
+
+-- ex 7
+ALTER TABLE customers
+	ADD CONSTRAINT CHK_email CHECK(email_address LIKE '_%@_%.__%');
+
+-- ex 8
+SELECT product_code, COUNT(*)
+FROM products
+GROUP BY product_code
+HAVING COUNT(*) > 1;
+
+UPDATE products
+SET product_code = CONCAT(product_code,'_',id)
+WHERE product_code IN (SELECT product_code FROM (
+						SELECT product_code 
+						FROM products 
+						GROUP BY product_code 
+						HAVING COUNT(*) > 1	)
+						AS t);
+
+ALTER TABLE products
+	ADD CONSTRAINT uq_product_code UNIQUE(product_code);

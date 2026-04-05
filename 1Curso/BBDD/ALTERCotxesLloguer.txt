@@ -1,0 +1,40 @@
+USE lloguer_cotxes;
+
+-- ex 10
+ALTER TABLE lloguers
+	ADD CONSTRAINT CHK_datas CHECK (data_fi > data_inici);
+
+-- ex 11
+INSERT INTO lloguers(idClient, matricula, data_inici, data_fi, preu_total)
+VALUES 
+(1,'1234ABC','2026-03-01','2026-03-05', 200),
+(2,'5678DEF','2026-04-02','2026-02-12', 312);
+
+-- ex 12
+ALTER TABLE cotxes
+	DROP COLUMN tipus;
+
+-- ex 13
+ALTER TABLE clients
+	MODIFY COLUMN email VARCHAR(100) NOT NULL;
+
+-- ex 14
+ALTER TABLE lloguers
+	ADD CONSTRAINT UQ_14lloguers UNIQUE(idClient, matricula, data_inici);
+-- ex 15
+ALTER TABLE cotxes
+	DROP CONSTRAINT chk_portes;
+
+-- ex 17
+
+CREATE TABLE ciutats(
+	id_ciutat INT AUTO_INCREMENT,
+	nom_ciutat VARCHAR(40),
+	n_habitants INT,
+	CONSTRAINT pk_ciutat PRIMARY KEY (id_ciutat)
+);
+
+
+ALTER TABLE clients
+	ADD COLUMN id_ciutat INT,
+	ADD CONSTRAINT fk_ciutat_clients FOREIGN KEY (id_ciutat) REFERENCES ciutats(id_ciutat);
