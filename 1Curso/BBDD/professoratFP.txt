@@ -1,0 +1,124 @@
+DROP DATABASE IF EXISTS professoratFP;
+
+CREATE DATABASE professoratFP CHARACTER SET utf8;
+
+USE professoratFP;
+
+CREATE TABLE titulacions(
+	Codi INT AUTO_INCREMENT,
+	Nivell INT NOT NULL,
+	NomComplet VARCHAR(40) NOT NULL,
+	CONSTRAINT pk_titulacions PRIMARY KEY (Codi)
+);
+
+
+CREATE TABLE moduls(
+	CodiCicle INT,
+	CodiMod	INT,
+	NomComplet VARCHAR(40) NOT NULL,
+	Hores	INT,
+	CONSTRAINT pk_moduls PRIMARY KEY (CodiCicle, CodiMod),
+	CONSTRAINT fk_ciclesmoduls FOREIGN KEY (CodiCicle) REFERENCES titulacions(Codi)
+);
+
+CREATE TABLE centres(
+	Codi INT AUTO_INCREMENT,
+	Nom VARCHAR(50) NOT NULL,
+	Adreca VARCHAR(50) NOT NULL,
+	Telefon VARCHAR(14) NOT NULL,
+	Mail VARCHAR(30),
+	NomResponsable VARCHAR(20) NOT NULL,
+	Cognom1Responsable VARCHAR(20) NOT NULL,
+	Cognom2Responsable VARCHAR(20),
+	MailResponsable VARCHAR(30) NOT NULL,
+	CONSTRAINT pk_centres PRIMARY KEY (Codi),
+	CONSTRAINT CHK_mail CHECK(Mail LIKE '_%@_%._%' AND MailResponsable LIKE '_%@_%._%')
+);
+
+CREATE TABLE especialitats(
+	Codi	INT AUTO_INCREMENT,
+	Nom VARCHAR(40) NOT NULL,
+	CONSTRAINT pk_especialitats PRIMARY KEY (Codi)
+);
+
+CREATE TABLE titols(
+	CodiTit	INT AUTO_INCREMENT,
+	NomComplet VARCHAR(40) NOT NULL,
+	CONSTRAINT pk_titols PRIMARY KEY (CodiTit)
+);
+
+CREATE TABLE professorat(
+	DNI CHAR(9) UNIQUE,
+	Nom	VARCHAR(20) NOT NULL,
+	Cognom1	VARCHAR(30) NOT NULL,
+	Cognom2	VARCHAR(30),
+	Adreca VARCHAR(50) NOT NULL,
+	AnyNaixament YEAR NOT NULL,
+	Telf VARCHAR(14) NOT NULL,
+	Mail VARCHAR(30),
+	NumCompte INT NOT NULL,
+	CONSTRAINT pk_professorat PRIMARY KEY (DNI),
+	CONSTRAINT CHK_mail_prof CHECK(Mail LIKE '_%@_%._%')
+);
+
+CREATE TABLE dates(
+	Data DATE,
+	CONSTRAINT pk_dates PRIMARY KEY (Data)
+);
+
+CREATE TABLE centre_titulacions(
+	CodiCicle INT,
+	CodiCentre INT,
+	CONSTRAINT pk_centre_titulacions PRIMARY KEY (CodiCicle, CodiCentre),
+	CONSTRAINT fk_cicle_centre_titulacions FOREIGN KEY (CodiCicle) REFERENCES titulacions(Codi),
+	CONSTRAINT fk_centre_centre_titulacions FOREIGN KEY (CodiCentre) REFERENCES centres(Codi)
+);
+
+CREATE TABLE substitucions(
+	Data DATE,
+	DNI_substituit CHAR(9),
+	DNI_titular CHAR(9),
+	CONSTRAINT pk_substitucions PRIMARY KEY (Data, DNI_substituit),
+	CONSTRAINT fk_data	FOREIGN KEY (Data) REFERENCES dates(Data),
+	CONSTRAINT fk_substitut	FOREIGN KEY (DNI_substituit) REFERENCES professorat(DNI),
+	CONSTRAINT fk_titular	FOREIGN KEY (DNI_titular) REFERENCES professorat(DNI)
+);
+
+CREATE TABLE prof_cent_dates(
+	DNI_prof	CHAR(9),
+	CodiCentre INT,
+	Data DATE,
+	Qualificacio INT NOT NULL,
+	DataFi DATE,
+	CONSTRAINT pk_prof_cent_dates PRIMARY KEY(DNI_prof, Data),
+	CONSTRAINT fk_prof_pcd	FOREIGN KEY(DNI_prof) REFERENCES professorat(DNI),
+	CONSTRAINT fk_centre_pcd FOREIGN KEY (CodiCentre) REFERENCES centres(Codi),
+	CONSTRAINT fk_data_pcd	FOREIGN KEY(Data) REFERENCES	dates(Data)
+);
+
+CREATE TABLE prof_titols(
+	DNI_prof	CHAR(9),
+	CodiTitol	INT,
+	CONSTRAINT pk_prof_titols PRIMARY KEY (DNI_prof, CodiTitol),
+	CONSTRAINT fk_prof_pt FOREIGN KEY (DNI_prof) REFERENCES professorat(DNI),
+	CONSTRAINT fk_titol_pt FOREIGN KEY (CodiTitol) REFERENCES titols(CodiTit)
+);
+
+CREATE TABLE prof_espes(
+	DNI_prof	CHAR(9),
+	CodiEspe	INT,
+	CONSTRAINT pk_prof_espes PRIMARY KEY (DNI_prof, CodiEspe),
+	CONSTRAINT fk_prof_pe FOREIGN KEY (DNI_prof) REFERENCES professorat(DNI),
+	CONSTRAINT fk_espe_pe FOREIGN KEY (CodiEspe) REFERENCES especialitats(Codi)
+);
+
+CREATE TABLE espes_titols(
+	CodiEspe	INT,
+	CodiTitol	INT,
+	CONSTRAINT pk_espes_titols PRIMARY KEY (CodiEspe, CodiTitol),
+	CONSTRAINT fk_espe_et FOREIGN KEY (CodiEspe) REFERENCES especialitats(Codi),
+	CONSTRAINT fk_titol_et FOREIGN KEY (CodiTitol) REFERENCES titols(CodiTit)
+);
+
+
+
