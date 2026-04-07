@@ -1,0 +1,73 @@
+CREATE DATABASE ej_alter CHARACTER SET utf8;
+
+USE ej_alter;
+
+CREATE TABLE tipo(
+	id_tipo INT,
+	nombre VARCHAR(50),
+	descripcion VARCHAR(100),
+	debilidad VARCHAR(50)
+);
+
+CREATE TABLE pokemon(
+	id INT,
+	nombre VARCHAR(50),
+	tipo VARCHAR(50),
+	nivel INT,
+	experiencia INT,
+	hp INT,
+	ataque INT,
+	defensa INT,
+	velocidad INT,
+	fecha_captura DATE,
+	entrenador VARCHAR(50)
+);
+
+ALTER TABLE tipo
+	ADD CONSTRAINT pk_tipo PRIMARY KEY (id_tipo),
+	MODIFY id_tipo INT AUTO_INCREMENT;
+
+ALTER TABLE pokemon
+	ADD CONSTRAINT pk_pokemon PRIMARY KEY (id),
+	MODIFY id INT AUTO_INCREMENT;
+
+DESC tipo;
+DESC pokemon;
+
+ALTER TABLE pokemon
+	ADD COLUMN id_tipo INT,
+	ADD CONSTRAINT fk_id_tipus FOREIGN KEY (id_tipo) REFERENCES tipo(id_tipo) ON DELETE CASCADE;
+
+SHOW CREATE TABLE pokemon;
+
+ALTER TABLE pokemon									
+	ADD COLUMN nom_alias VARCHAR(20) AFTER nombre;
+
+ALTER TABLE  pokemon
+	DROP COLUMN tipo;
+
+ALTER TABLE pokemon
+	MODIFY COLUMN nivel TINYINT(1),
+	MODIFY COLUMN hp	SMALLINT,
+	MODIFY COLUMN nombre VARCHAR(100) NOT NULL;
+
+ALTER TABLE pokemon
+	ALTER COLUMN nivel SET DEFAULT 2;
+ALTER TABLE pokemon
+	ALTER COLUMN nivel DROP DEFAULT;
+ALTER TABLE pokemon
+	ALTER COLUMN nivel SET DEFAULT 1;
+
+ALTER TABLE pokemon
+	CHANGE COLUMN nombre nombre_pokemon VARCHAR(100);
+ALTER TABLE pokemon
+	CHANGE COLUMN entrenador nombre_entrenador VARCHAR(50);
+
+ALTER TABLE pokemon
+	DROP COLUMN experiencia;
+
+ALTER TABLE tipo
+	ADD CONSTRAINT UNQ_tip_nom UNIQUE (nombre);
+
+
+RENAME TABLE pokemon TO pokedex;

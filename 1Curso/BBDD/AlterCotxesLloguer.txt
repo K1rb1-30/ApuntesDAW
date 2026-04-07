@@ -1,0 +1,107 @@
+DROP DATABASE IF EXISTS lloguer_cotxes;
+CREATE DATABASE lloguer_cotxes CHARACTER SET utf8;
+USE lloguer_cotxes;
+
+CREATE TABLE cotxes (
+    matricula VARCHAR(10) PRIMARY KEY,
+    marca VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    color VARCHAR(30),
+    classe ENUM('A', 'B', 'C') DEFAULT 'B',
+    any_matriculacio  YEAR,
+    tipus ENUM('furgoneta','turisme'),
+    combustible ENUM('diesel','gasolina','electric'),
+    quilometratge INT,
+    preuDia INT NOT NULL CHECK (preuDia > 0),
+    disponibilitat TINYINT(1)
+);
+
+CREATE TABLE clients (
+    idClient INT AUTO_INCREMENT PRIMARY KEY,
+    dni VARCHAR(9) NOT NULL UNIQUE,
+    nom VARCHAR(50) NOT NULL,
+    cognom1 VARCHAR(50) NOT NULL,
+    cognom2 VARCHAR(50),
+    telefon VARCHAR(15),
+    email VARCHAR(100) ,
+    adreca VARCHAR(150),
+    data_naixement DATE,
+    numero_carnet VARCHAR(20),
+    data_caducitat DATE,
+    CONSTRAINT ck_mail CHECK (email LIKE '%_@_%._%')
+);
+
+-- Taula resultat de relacio lloguer N-M 
+CREATE TABLE lloguers (
+    idLloguer INT PRIMARY KEY AUTO_INCREMENT,
+    idClient INT,
+    matricula VARCHAR(10),
+    data_inici DATETIME,
+    data_fi DATETIME,
+    preu_total DECIMAL(6,2),
+    CONSTRAINT ck_dates CHECK (data_inici < data_fi),
+    CONSTRAINT uk_lloguers UNIQUE(matricula, data_inici), -- Es modificarà en activitat futura
+    CONSTRAINT fk_lloguers_clients FOREIGN KEY (idClient) REFERENCES clients(idClient),
+    CONSTRAINT fk_llogues_cotxes FOREIGN KEY (matricula) REFERENCES cotxes(matricula)
+);
+
+INSERT INTO cotxes VALUES
+('1234ABC','Toyota','Corolla','Blanc','B',2022,'turisme','gasolina',25000,45,TRUE),
+('5678DEF','Ford','Transit','Blau','C',2021,'furgoneta','diesel',40000,60,TRUE),
+('9012GHI','Tesla','Model 3','Negre','A',2023,'turisme','electric',10000,80,TRUE);
+
+INSERT INTO clients (dni, nom, cognom1, cognom2, telefon, email, adreca, data_naixement, numero_carnet, data_caducitat)
+VALUES
+('12345678A','Joan','Garcia','Lopez','600123456','joan@email.com','Carrer Major 10','1990-05-10','B123456','2030-05-10'),
+('87654321B','Maria','Perez','Sanchez','600654321','maria@email.com','Avinguda Catalunya 25','1985-03-22','B654321','2029-03-22'),
+('11223344C','David','Martinez','Ruiz','600987654','david@email.com','Carrer Nou 5','1995-11-15','B789456','2031-11-15');
+
+INSERT INTO lloguers (idClient, matricula, data_inici, data_fi, preu_total)
+VALUES
+(1,'1234ABC','2026-02-01','2026-02-05', 180),
+(2,'5678DEF','2026-02-10','2026-02-12', 120),
+(3,'9012GHI','2026-02-15','2026-02-18', 240);
+
+
+-- ALTERS
+
+-- ex 1
+ALTER TABLE cotxes
+	ADD COLUMN n_portes MEDIUMINT,
+	ADD COLUMN potencia INT;
+-- ex 2
+ALTER TABLE cotxes
+	ADD CONSTRAINT chk_portes CHECK (n_portes >= 1 AND n_portes <= 5);
+
+-- ex 3
+INSERT INTO cotxes VALUES
+('1234ABC','Toyota','Corolla','Blanc','B',2022,'turisme','gasolina',25000,45,TRUE, 7, 345);
+
+-- ex 4
+ALTER TABLE cotxes
+	ADD CONSTRAINT chk_preuDia CHECK(preuDia BETWEEN 20 AND 200);
+-- ex 5
+ALTER TABLE cotxes
+	DROP CONSTRAINT chk_portes;
+
+ALTER TABLE cotxes
+	ADD CONSTRAINT chk_portes CHECK (n_portes BETWEEN 1 AND 9);
+
+-- ex 6
+ALTER TABLE clients
+	MODIFY COLUMN nom VARCHAR(25) NOT NULL,
+	MODIFY COLUMN cognom1 VARCHAR(30) NOT NULL,
+    MODIFY COLUMN cognom2 VARCHAR(50);
+
+-- ex 7 
+ALTER TABLE cotxes
+	ALTER COLUMN quilometratge SET DEFAULT 0;
+-- ex 8
+ALTER TABLE clients
+	DROP CONSTRAINT ck_mail,
+	CHANGE COLUMN email correuElectronic VARCHAR(100),
+	ADD CONSTRAINT ck_mail CHECK (correuElectronic LIKE '%_@_%._%');
+
+-- ex 9
+ALTER TABLE clients
+	ADD COLUMN dataAlta DATETIME DEFAULT CURRENT_TIMESTAMP;

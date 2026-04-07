@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="ex3.js" defer></script>
+  <style>
+    #container {
+      margin: 20px;
+    }
+    #pare, #fill, #net {
+      padding: 20px;
+      border: 2px solid #333;
+      margin: 10px;
+      text-align: center;
+    }
+    #pare {
+      background-color: blue;
+    }
+    #fill {
+      background-color: green;
+    }
+    #net {
+      background-color: red;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: fuchsia;
+      color: white;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <button id="bubbling">Mode Bubbling</button>
+  <button id="capturing">Mode Capturing</button>
+
+  <div id="pare">
+    Pare
+    <div id="fill">
+      Fill
+      <div id="net">Net</div>
+    </div>
+  </div>
+</div>
+<p id="resultat"></p>
+
+
+
+</body>
+</html>
