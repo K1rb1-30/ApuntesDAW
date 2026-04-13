@@ -1,7 +1,15 @@
 package objectes;
+import java.io.Serializable;
+
 import mokepon6.MokeponCapturat;
 
-public class Reviure extends Objecte{
+public class Reviure extends Objecte implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	public Reviure() {
 		super("Reviure");

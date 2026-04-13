@@ -1,8 +1,14 @@
 package objectes;
+import java.io.Serializable;
+
 import mokepon6.MokeponCapturat;
 
-public class Armadura extends Objecte implements Equipament{
+public class Armadura extends Objecte implements Equipament, Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int defExtra;
 
 	public Armadura(int defExtra) {

@@ -1,10 +1,17 @@
 package objectes;
+import java.io.Serializable;
+
 import mokepon6.MokeponCapturat;
 
 //Una classe abstracta no pot instanciàrse (és a dir, no pots fer un new). 
 //Només les classes abstractes poden tenir mètodes abstractes
 
-public abstract class Objecte {
+public abstract class Objecte implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private String nom;
 	public int quantitat;

@@ -1,9 +1,15 @@
 package objectes;
+import java.io.Serializable;
+
 import mokepon6.MokeponCapturat;
 
-public class Pocio extends Objecte {
+public class Pocio extends Objecte implements Serializable {
 	
-	int hp_curada;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public int hp_curada;
 	
 	Pocio(int hp_curada) {
 		super("Pocio");
