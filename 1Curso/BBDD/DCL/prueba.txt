@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS institut;
+
+CREATE DATABASE institut CHARACTER SET utf8;
+
+USE institut;
+
+CREATE TABLE alumnes (
+	dni CHAR(9),
+	nom VARCHAR(40),
+	CONSTRAINT pk_a PRIMARY KEY (dni)
+);
+
+INSERT INTO alumnes (dni, nom) 
+VALUES('12345678F', 'gabri');
+
+CREATE USER 'profesor'@'localhost'
+IDENTIFIED BY 'abcd';
+
+SHOW GRANTS FOR 'profesor'@'localhost';
+
+GRANT SELECT
+ON institut.* TO 'profesor'@'localhost';
+
+ALTER USER 'profesor'@'localhost' ACCOUNT LOCK;
+
+DROP USER 'profesor'@'localhost';
