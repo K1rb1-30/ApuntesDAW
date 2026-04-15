@@ -1,0 +1,11 @@
+
+- De la carpeta 1 Introducció:
+    - El document 04 [[Introduccio Linux]]
+- Tota la carpeta 2 Linia Ordres
+	- [[00 Index Carpeta 2]]
+- Tota la carpeta 3 Paquets
+	- [[00 Index Carpeta 3]]
+- De la carpeta 4 Usuaris:
+    - Tot menys la part de ACLs
+    - [[00 Index Carpeta 4]]
+- Els exercicis realitzats

@@ -1,0 +1,181 @@
+{
+  "main": {
+    "id": "a2d44e3e607acaef",
+    "type": "split",
+    "children": [
+      {
+        "id": "5353956f493ef6c2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "61bb0a2688f660bb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ab0318e0f9fc18ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "df95ea507ec59324",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09b9403c89758224",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3de784d18ad1446e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "89556f1b60dcd5cd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "88b985ce5e8abde4",
+    "type": "split",
+    "children": [
+      {
+        "id": "f7f9ce762d53eaaf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "403ffe6333543f6e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "df5ece9d05cb7896",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "aaa6cee646c72ac3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "460ad42b1844e033",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "61bb0a2688f660bb",
+  "lastOpenFiles": [
+    "joanq/m1sistemesinformatics/-/blob/main/UF2/3Paquets/images/synaptic.png.md",
+    "joanq/m1sistemesinformatics/-/blob/main/UF2/3Paquets/images",
+    "joanq/m1sistemesinformatics/-/blob/main/UF2/3Paquets",
+    "joanq/m1sistemesinformatics/-/blob/main/UF2",
+    "joanq/m1sistemesinformatics/-/blob/main",
+    "joanq/m1sistemesinformatics/-/blob",
+    "joanq/m1sistemesinformatics/-",
+    "joanq/m1sistemesinformatics",
+    "joanq",
+    "Examen BA2/TEMARI QUE ENTRA AL EXAMEN.md",
+    "Examen BA2/Carpeta 4 Usuaris/09 Comandes Linux - Permisos - Avançats.md",
+    "Examen BA2/Carpeta 4 Usuaris/08 Comandes Linux - Permisos - Bàsics.md",
+    "Examen BA2/Carpeta 4 Usuaris/07 Control d’accés en Linux.md",
+    "Examen BA2/Carpeta 4 Usuaris/06 Comandes Linux - sudo.md",
+    "Examen BA2/Carpeta 4 Usuaris/05 Gestió d’usuaris - Contrasenyes.md",
+    "Examen BA2/Carpeta 4 Usuaris/04 Gestió d’usuaris - Grups.md",
+    "Examen BA2/Carpeta 4 Usuaris/00 Index Carpeta 4.md",
+    "Examen BA2/Carpeta 4 Usuaris/02 Gestió d’usuaris - Introducció.md",
+    "Examen BA2/Carpeta 4 Usuaris/03 Gestió d’usuaris.md",
+    "Examen BA2/Carpeta 4 Usuaris/01 usuari i grups.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/01 Alies.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/00 Index Carpeta 2.md",
+    "Examen BA2/Carpeta 3 Paquets/01 Gestió de paquets.md",
+    "Examen BA2/Carpeta 4 Usuaris",
+    "2026-04-15.md",
+    "Sin título.canvas",
+    "Examen BA2/Carpeta 3 Paquets/00 Index Carpeta 3.md",
+    "Examen BA2/Carpeta 3 Paquets",
+    "Examen BA2/Carpeta 2 Linia Ordres/10 Filtres.md",
+    "Examen BA2/Carpeta 1 Introducció/Introduccio Linux.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/09 Redirecció Entrada - Sortida.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/08 Eines bàsiques.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/07 Treballar amb el contingut dels fitxers.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/06 Pàgines man.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/05 Treballar amb l’historial.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/04 Globbing.md",
+    "Examen BA2/Carpeta 2 Linia Ordres/03 Treballar amb fitxers.md"
+  ]
+}
