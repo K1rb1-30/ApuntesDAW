@@ -11,8 +11,14 @@
             "id": "61bb0a2688f660bb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Examen BA2/Carpeta 2 Linia Ordres/07 Treballar amb el contingut dels fitxers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "07 Treballar amb el contingut dels fitxers"
             }
           }
         ]
@@ -34,8 +40,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de fitxers"
             }
           },
           {
@@ -50,7 +59,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Cerca"
             }
           },
           {
@@ -58,7 +69,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadors"
             }
           }
         ]
@@ -81,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Examen BA2/Carpeta 2 Linia Ordres/07 Treballar amb el contingut dels fitxers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,7 +102,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Retroenllaços per a 07 Treballar amb el contingut dels fitxers"
             }
           },
           {
@@ -97,9 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Examen BA2/Carpeta 2 Linia Ordres/07 Treballar amb el contingut dels fitxers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Enllaços sortints de 07 Treballar amb el contingut dels fitxers"
             }
           },
           {
@@ -109,8 +128,12 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
-              }
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetes"
             }
           },
           {
@@ -118,7 +141,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Examen BA2/Carpeta 2 Linia Ordres/07 Treballar amb el contingut dels fitxers.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de 07 Treballar amb el contingut dels fitxers"
             }
           }
         ]
@@ -130,16 +160,18 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Abrir selector rápido": false,
-      "graph:Abrir vista gráfica": false,
-      "canvas:Crear nuevo lienzo": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false
+      "switcher:Obre el selector ràpid": false,
+      "graph:Obre la vista gràfica": false,
+      "canvas:Crea un llenç nou": false,
+      "daily-notes:Obre la nota d'avui": false,
+      "templates:Inserir plantilla": false,
+      "command-palette:Obre la paleta d'ordres": false,
+      "bases:Crea una base nova": false
     }
   },
   "active": "61bb0a2688f660bb",
   "lastOpenFiles": [
+    "Examen BA2/Carpeta 1 Introducció/Introduccio Linux.md",
     "joanq/m1sistemesinformatics/-/blob/main/UF2/3Paquets/images/synaptic.png.md",
     "joanq/m1sistemesinformatics/-/blob/main/UF2/3Paquets/images",
     "joanq/m1sistemesinformatics/-/blob/main/UF2/3Paquets",
@@ -169,7 +201,6 @@
     "Examen BA2/Carpeta 3 Paquets/00 Index Carpeta 3.md",
     "Examen BA2/Carpeta 3 Paquets",
     "Examen BA2/Carpeta 2 Linia Ordres/10 Filtres.md",
-    "Examen BA2/Carpeta 1 Introducció/Introduccio Linux.md",
     "Examen BA2/Carpeta 2 Linia Ordres/09 Redirecció Entrada - Sortida.md",
     "Examen BA2/Carpeta 2 Linia Ordres/08 Eines bàsiques.md",
     "Examen BA2/Carpeta 2 Linia Ordres/07 Treballar amb el contingut dels fitxers.md",
