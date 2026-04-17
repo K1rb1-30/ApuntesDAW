@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mokedex>
+    <nom_entrenador>Gabri</nom_entrenador>
+    <entrades>
+        <entrada id="393">
+            <nom>Piplup</nom>
+            <tipus>Aigua</tipus>
+        </entrada>
+        <entrada id="25">
+            <nom>Mikachu</nom>
+            <tipus>Electric</tipus>
+        </entrada>
+    </entrades>
+</mokedex>
