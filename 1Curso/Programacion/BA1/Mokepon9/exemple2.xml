@@ -2,4 +2,13 @@
 <entrada id="393">
     <nom>Piplup</nom>
     <tipus>Aigua</tipus>
+    <pes>5.2</pes>
+    <evolucions>
+        <pre_evolucio>-</pre_evolucio>
+        <post_evolucio>Prinplup</post_evolucio>
+    </evolucions>
+    <localitzacions>
+        <localitzacio>Pueblo Paleta</localitzacio>
+        <localitzacio>Lago Veraz</localitzacio>
+    </localitzacions>
 </entrada>

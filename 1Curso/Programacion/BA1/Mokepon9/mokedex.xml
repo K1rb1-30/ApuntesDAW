@@ -5,10 +5,39 @@
         <entrada id="393">
             <nom>Piplup</nom>
             <tipus>Aigua</tipus>
+            <pes>5.2</pes>
+            <evolucions>
+                <pre_evolucio>-</pre_evolucio>
+                <post_evolucio>Prinplup</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Pueblo Paleta</localitzacio>
+                <localitzacio>Lago Veraz</localitzacio>
+            </localitzacions>
         </entrada>
         <entrada id="25">
-            <nom>Mikachu</nom>
+            <nom>Pikachu</nom>
             <tipus>Electric</tipus>
+            <pes>6.0</pes>
+            <evolucions>
+                <pre_evolucio>Pichu</pre_evolucio>
+                <post_evolucio>Raichu</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Pueblo Paleta</localitzacio>
+            </localitzacions>
+        </entrada>
+        <entrada id="395">
+            <nom>Empoleon</nom>
+            <tipus>Aigua</tipus>
+            <pes>94.5</pes>
+            <evolucions>
+                <pre_evolucio>Prinplup</pre_evolucio>
+                <post_evolucio>-</post_evolucio>
+            </evolucions>
+            <localitzacions>
+                <localitzacio>Ciudad Plateada</localitzacio>
+            </localitzacions>
         </entrada>
     </entrades>
 </mokedex>
