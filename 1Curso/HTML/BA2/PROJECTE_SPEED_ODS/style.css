@@ -1,0 +1,30 @@
+#contenidor {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    width: 75vw;
+
+}
+
+
+.items {
+
+    width: 100px;
+
+    height: 100px;
+
+    border: 2px solid black;
+
+    margin: 4px;
+
+}
+
+.imag{
+
+    width: 100px;
+
+    height: 100px;
+
+}
