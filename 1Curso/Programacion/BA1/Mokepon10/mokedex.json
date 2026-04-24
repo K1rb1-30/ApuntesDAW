@@ -1,0 +1,16 @@
+{
+  "nom_entrenador": "ASH",
+  "entrades": [
+    {
+      "id": 395,
+      "nom": "Empoleon",
+      "tipus": "Aigua",
+      "pes": 84.5,
+      "evolucions": {
+        "pre_evolucio": "Prinplup",
+        "post_evolucio": "-"
+      },
+      "localitzacions": []
+    }
+  ]
+}
