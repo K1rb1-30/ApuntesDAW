@@ -1,4 +1,3 @@
-
 const contenidor = document.getElementById("contenidor");
 let listaFitxes = [];
 const temps = document.getElementById("temps");

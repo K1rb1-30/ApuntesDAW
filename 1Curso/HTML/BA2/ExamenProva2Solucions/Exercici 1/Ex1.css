@@ -1,0 +1,18 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 2px solid springgreen;
+    padding: 10px;
+}
+
+.caixa {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
