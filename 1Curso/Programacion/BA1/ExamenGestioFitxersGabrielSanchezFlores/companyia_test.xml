@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<companyia nom="Exploradors de l'Atlàntida">
+    <personatges>
+        <personatge id="1">
+            <nom>Arya</nom>
+            <classe>Guerrera</classe>
+            <stats>
+                <vida>100</vida>
+                <atac>15</atac>
+                <defensa>8</defensa>
+            </stats>
+            <habilitats>
+                <li>Cop fort</li>
+                <li>Bloqueig</li>
+            </habilitats>
+        </personatge>
+        <personatge id="2">
+            <nom>Nil</nom>
+            <classe>Mag</classe>
+            <stats>
+                <vida>70</vida>
+                <atac>20</atac>
+                <defensa>4</defensa>
+            </stats>
+            <habilitats>
+                <li>Bola de foc</li>
+                <li>Escut màgic</li>
+            </habilitats>
+        </personatge>
+        <personatge id="3">
+            <nom>Lia</nom>
+            <classe>Exploradora</classe>
+            <stats>
+                <vida>85</vida>
+                <atac>12</atac>
+                <defensa>6</defensa>
+            </stats>
+            <habilitats>
+                <li>Sigil</li>
+                <li>Dispar precís</li>
+            </habilitats>
+        </personatge>
+    </personatges>
+</companyia>

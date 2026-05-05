@@ -1,0 +1,7 @@
+PocioVida;25;Consumible;3;true
+EspasaRovellada;80;Arma;1;true
+EscutFusta;60;Defensa;0;false
+CristallMana;40;Consumible;1;true
+ClauAntiga;120;Especial;1;true
+AmuletProteccio;90;Defensa;2;true
+PergamiMagia;70;Consumible;4;true
