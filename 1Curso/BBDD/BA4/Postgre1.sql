@@ -47,3 +47,17 @@ $$ LANGUAGE plpgsql;
 
 SELECT paisosidioma('eNglish');
 SELECT paisosidioma('patata');
+
+-- ex 4
+
+CREATE OR REPLACE FUNCTION afegirCiutat(v_nomCiutat text, v_codiPais text, v_districte text, v_population int) RETURNS INT AS $$
+
+BEGIN
+	INSERT INTO city (name, countrycode, district, population)
+	VALUES( v_nomCiutat, v_codiPais, v_districte, v_population)
+	RETURNING id;
+
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT afegirCiutat('Sabadell', 'ESP', 'Barcelona', 225000);
