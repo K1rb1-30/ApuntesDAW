@@ -1,0 +1,37 @@
+{
+  "entrades": [
+    {
+      "id": 393,
+      "nom": "Piplup",
+      "tipus": "Aigua",
+      "pes": 5.2,
+      "evolucions": {
+        "pre_evolucio": "-",
+        "post_evolucio": "Empoleon"
+      },
+      "localitzacions": []
+    },
+    {
+      "id": 395,
+      "nom": "Empoleon",
+      "tipus": "Aigua",
+      "pes": 84.5,
+      "evolucions": {
+        "pre_evolucio": "Prinplup",
+        "post_evolucio": "-"
+      },
+      "localitzacions": []
+    },
+    {
+      "id": 393,
+      "nom": "Piplup",
+      "tipus": "Aigua",
+      "pes": 5.2,
+      "evolucions": {
+        "pre_evolucio": "-",
+        "post_evolucio": "Empoleon"
+      },
+      "localitzacions": []
+    }
+  ]
+}
