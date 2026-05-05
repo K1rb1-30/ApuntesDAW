@@ -1,0 +1,61 @@
+{
+  "nom": "Exploradors de l'Atlàntida",
+  "personatges": [
+    {
+      "id": 1,
+      "nom": "Arya",
+      "classe": "Guerrera",
+      "stats": {
+        "vida": 100,
+        "atac": 15,
+        "defensa": 8
+      },
+      "habilitats": [
+        "Cop fort",
+        "Bloqueig"
+      ]
+    },
+    {
+      "id": 2,
+      "nom": "Nil",
+      "classe": "Mag",
+      "stats": {
+        "vida": 70,
+        "atac": 20,
+        "defensa": 4
+      },
+      "habilitats": [
+        "Bola de foc",
+        "Escut màgic"
+      ]
+    },
+    {
+      "id": 3,
+      "nom": "Lia",
+      "classe": "Exploradora",
+      "stats": {
+        "vida": 85,
+        "atac": 12,
+        "defensa": 6
+      },
+      "habilitats": [
+        "Sigil",
+        "Dispar precís"
+      ]
+    },
+    {
+      "id": 4,
+      "nom": "Brak",
+      "classe": "Guerrera",
+      "stats": {
+        "vida": 120,
+        "atac": 25,
+        "defensa": 10
+      },
+      "habilitats": [
+        "Cop devastador",
+        "Crit de guerra"
+      ]
+    }
+  ]
+}
