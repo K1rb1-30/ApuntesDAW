@@ -61,3 +61,38 @@ END;
 $$ LANGUAGE plpgsql;
 
 SELECT afegirCiutat('Sabadell', 'ESP', 'Barcelona', 225000);
+
+-- ex 7
+
+CREATE OR REPLACE FUNCTION ej7(OUT v_city NUMERIC, OUT v_countrylan NUMERIC, OUT v_country NUMERIC) AS $$ 
+BEGIN
+	SELECT COUNT(*) FROM city INTO v_city;
+	SELECT COUNT(*) FROM countrylanguage INTO v_countrylan;
+	SELECT COUNT(*) FROM country INTO v_country;
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT ej7();
+
+SELECT * FROM ej7();
+
+-- ex 8
+
+CREATE OR REPLACE FUNCTION ej8(v_nomIdioma TEXT) RETURNS SETOF country AS $$ 
+DECLARE
+	v_codiIdioma TEXT;
+BEGIN
+	SELECT COUNT(*) INTO v_codiIdioma 
+	FROM countrylanguage
+	WHERE UPPER(language) LIKE UPPER(v_nomIdioma);
+
+	RETURN QUERY SELECT c.*
+	FROM country c
+	JOIN countrylanguage cl ON c.code = cl.countrycode
+	WHERE UPPER(cl.language) LIKE UPPER(v_nomIdioma);
+raise notice '% paisos parlen el idioma %', v_codiIdioma, v_nomIdioma;
+
+END;
+$$ LANGUAGE plpgsql;
+
+SELECT * FROM ej8('spanish');
