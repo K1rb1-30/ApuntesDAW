@@ -18,12 +18,15 @@ public class Cuiner {
 	}
 	
 	
-	public void cuinar(Plat plat) {
+	public void cuinar(String nomRestaurant) {
+		Plat plat = Restaurant.getInstance(nomRestaurant).servirComanda();
 		if(this.sexe == 0) {
 			System.out.println("El cuiner "+this.nom+" està cuinant "+plat);
 		}else if(this.sexe == 1) {
 			System.out.println("La cuinera "+this.nom+" està cuinant "+plat);
 		}
 	}
+	
+	
 	
 }

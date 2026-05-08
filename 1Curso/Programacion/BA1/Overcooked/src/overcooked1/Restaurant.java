@@ -5,6 +5,8 @@ public class Restaurant {
 	 //atributs del restaurant
     private static Restaurant instance;
     private static String nom;
+    private static Comandes cm = new Comandes();
+    private static PlatsBruts pb = new PlatsBruts();
     
     //constructor privat de restaurant
     private Restaurant(String nom) {
@@ -25,6 +27,29 @@ public class Restaurant {
 	}
 	public static String getNom() {
 		return nom;
+	}
+	
+	public void afegirComanda(Plat p) {
+		cm.add(p);
+	}
+	
+	public Plat servirComanda() {
+		return null;
+	}
+	
+	public void afegirPlatBrut(Plat p) {
+		pb.add(p);
+	}
+	
+	public void iniciarRentatAutomatic() throws InterruptedException {
+		while(pb.size() > 0) {
+			System.out.println(pb.poll());
+			Thread.sleep(3000);
+			System.out.println("Plato Limpio");
+		}
+		
+		System.out.println("Todos los platos se han limpiado correctamente");
+		
 	}
 
 }
