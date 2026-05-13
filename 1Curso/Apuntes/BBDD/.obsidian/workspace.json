@@ -11,10 +11,14 @@
             "id": "f84f6be2616cbdf1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "BA4/APUNTES EXAMEN BA4.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nova pestanya"
+              "title": "APUNTES EXAMEN BA4"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#comandes-",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -57,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "Cerca"
             }
           },
           {
@@ -70,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -167,6 +172,8 @@
   },
   "active": "f84f6be2616cbdf1",
   "lastOpenFiles": [
+    "BA4/APUNTES EXAMEN BA4.md",
+    "BA4",
     "DDL/VIEWS.md",
     "Sense títol.md",
     "DDL",
