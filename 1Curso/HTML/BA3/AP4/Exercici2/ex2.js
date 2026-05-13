@@ -16,8 +16,19 @@ function getCookie(cname) {
     return "";
 }
 
-if(getCookie("usuari") !== ""){
-    h1.innerText=getCookie("usuari")
-}else{
-    h1.innerText="Usuari no registrat"
+comprovarCookie();
+function comprovarCookie(){
+    if(getCookie("usuari") !== ""){
+        h1.innerText=getCookie("usuari")
+    }else{
+        h1.innerText="Usuari no registrat"
+    }
+}
+
+
+
+function Netejar(){
+    let fecha = Date() - 1;
+    document.cookie = `usuari=;${fecha}`
+    comprovarCookie();
 }
