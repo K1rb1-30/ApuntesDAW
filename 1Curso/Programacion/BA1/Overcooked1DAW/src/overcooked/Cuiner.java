@@ -25,9 +25,9 @@ public class Cuiner {
 		
 		
 		if(this.sexe == 0) {
-			System.out.println("El cuiner"+ nom + " esta cuinant " + plat);
+			System.out.println("El cuiner "+ nom + " esta cuinant " + plat);
 		}else if(this.sexe == 1) {
-			System.out.println("La cuinera"+ nom + " esta cuinant " + plat);
+			System.out.println("La cuinera "+ nom + " esta cuinant " + plat);
 		}
 		
 		Restaurant.getInstance(nomRestaurant).afegirPlatBrut(plat);

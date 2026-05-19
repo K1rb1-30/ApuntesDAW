@@ -1,5 +1,7 @@
 package overcooked;
 
+import java.util.Iterator;
+
 public class Restaurant {
 	
 	//atributs del restaurant
@@ -46,14 +48,40 @@ public class Restaurant {
 		this.platsB.afegir(p);
 	}
 	
-	public void iniciarRentatAutomatic() throws InterruptedException {
+	public void iniciarRentatAutomatic() {
 		while(this.platsB.mida() > 0) {
 			System.out.println(this.platsB.rentar());
-			Thread.sleep(3000);
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("Plato Limpio");
 		}
 		
 		System.out.println("Todos los platos se han limpiado correctamente");
 		
 	}
+	
+	public void llistarComandes() {
+		Iterator<Plat> iterator = this.comandaments.iterator();
+		
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+	}
+	
+	public void cancelarComanda(String nomPlat) {
+		Iterator<Plat> iterator = this.comandaments.iterator();
+		
+		while (iterator.hasNext()) {
+			if(iterator.next().nom.equals(nomPlat)) {
+				iterator.remove();
+			}
+		}
+	}
+	
+	
+	
 }
