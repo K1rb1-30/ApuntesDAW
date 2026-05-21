@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<form>
+    <h1>Inicia sesió</h1>
+    <label>Nom usuari<input type="text" id="usuari"></label><br>
+    <label>Contrasenya<input type="text" id="contrasenya"></label><br>
+    <input type="submit">
+</form>
+
+<p id="Missatge"></p>
+
+<br>
+
+<div>
+
+    <button disabled id="esborrar" onclick="Netejar()">Esborrar cookie</button> <br>
+    <button disabled onclick="juego('facil')">Fàcil</button>
+    <button disabled onclick="juego('normal')">Normal</button>
+    <button disabled onclick="juego('dificil')">Difícil</button>
+</div>
+
+<div id="resum">
+    <h1 id="nickname">Usuario</h1>
+    <p>Score: <span id="puntuacio"></span></p>
+    <p>Temps: <span id="temps"></span></p>
+</div>
+
+<div id="contenidor">
+
+</div>
+
+</body>
+</html>

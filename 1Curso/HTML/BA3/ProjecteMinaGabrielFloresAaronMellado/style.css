@@ -1,0 +1,19 @@
+#contenidor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.roca{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border: 1px white solid;
+}
+.roca>img{
+    height: 100%;
+    width: 100%;
+}
+#resum{
+    text-align: center;
+}
