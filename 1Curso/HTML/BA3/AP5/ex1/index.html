@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../jquery-3.6.0.js" defer></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
+<label for="email">Email</label>
+<input id="email" type="text">
+<label for="pswd">Contraseña</label>
+<input id="pswd" type="text">
+<br>
+<br>
+<button onclick="getUsers()">getUsers</button>
+<button >login</button>
+<button onclick="register()">register</button>
 
+<p id="text"></p>
 </body>
 </html>
