@@ -11,25 +11,41 @@ try {
     $pswd = $_POST["pswd"];
 
     try {
-        $query = $conn->prepare("select * from usuari where  :email OR :pswd)");
+        if(!str_contains($email, "@ies-sabadell.cat")) {
+            $resposta = [
+                "estatus" => "KO",
+                "error"=> "correu incorrecte",
+                "usuari_app" => $email
+            ];
+            print_r(json_encode($resposta));
+            exit;
+        }
+
+        $query = $conn->prepare("select * from usuari where email = :email)");
         $query->bindParam(":email", $email);
         $query->bindParam(":pswd", $pswd);
         $query->execute();
 
-        // si devuelve la consulta es que existe
+        // Si no devuelve la consulta es que no existe
         if ($query->rowCount() < 0) {
+
             $resposta = [
                 "estatus" => "OK",
                 "error"=> "",
                 "usuari_app" => $email
             ];
 
-            print_r(json_encode($resposta));
+            $query = $conn->prepare("insert into usuari set email = :email)");
+            $query->bindParam(":email", $email);
+            $query->bindParam(":pswd", $pswd);
+            $query->execute();
 
+            print_r(json_encode($resposta));
         }else{
             $resposta = [
                 "estatus" => "KO",
-                "missatge" => "usuari o contrasenya incorrecte"
+                "error"=> "L'usuari existeix",
+                "usuari_app" => $email
             ];
             print_r(json_encode($resposta));
         }
