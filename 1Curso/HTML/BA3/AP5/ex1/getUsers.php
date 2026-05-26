@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 // cambiar si es para el de casa es root y si no es super3
-$password = "super3";
+$password = "root";
 $dbname = "ap5php";
 
 try {

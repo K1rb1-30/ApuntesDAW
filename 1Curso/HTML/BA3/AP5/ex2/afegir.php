@@ -3,12 +3,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "root"; // Cambiar a super3 si es con el portatil de clase y sino root
-$dbname = "ap5php";
+$dbname = "anime_db";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $email = $_POST["email"];
-    $pswd = $_POST["pswd"];
+    $idanime = $_POST["idanime"];
+    $nomper = $_POST["nomper"];
+    $ordre = $_POST["ordre"];
 
     try {
 
@@ -20,32 +21,23 @@ try {
         if ($query->rowCount() == 0) {
 
             $resposta = [
-                "estatus" => "KO",
-                "error"=> "Usuari no existeix",
+                "estatus" => "OK",
+                "error"=> "",
                 "usuari_app" => $email
             ];
 
-            print_r(json_encode($resposta));
-        }else{
-            $query = $conn->prepare("select * from usuari where email = :email AND contrasenya = :pswd");
+            $query = $conn->prepare("insert into usuari (email, contrasenya) VALUES (:email, :pswd)");
             $query->bindParam(":email", $email);
             $query->bindParam(":pswd", $pswd);
             $query->execute();
 
-            if ($query->rowCount() > 0) {
-                $resposta = [
-                    "estatus" => "OK",
-                    "error"=> "",
-                    "usuari_app" => $email
-                ];
-            }else{
-                $resposta = [
-                    "estatus" => "KO",
-                    "error"=> "Credencial incorrecte",
-                    "usuari_app" => $email
-                ];
-            }
-
+            print_r(json_encode($resposta));
+        }else{
+            $resposta = [
+                "estatus" => "KO",
+                "error"=> "L'usuari existeix",
+                "usuari_app" => $email
+            ];
             print_r(json_encode($resposta));
         }
 

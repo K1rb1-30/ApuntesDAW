@@ -88,6 +88,35 @@ function register(){
         data:{"email":inputEmail.value,"pswd":inputPswd.value},
         dataType:"json",
         success:function (data) {
+            if (data.estatus === "OK"){
+                p.style.color="green";
+                p.innerText=data.usuari_app;
+            }else{
+                p.style.color="red";
+                p.innerText=data.error+" "+data.usuari_app;
+            }
+
+        },
+        error: function (jqXHR, textStatus, error){
+            console.log(jqXHR);
+        }
+    });
+}
+
+function login(){
+    $.ajax({
+        method:"POST",
+        url:"login.php",
+        data:{"email":inputEmail.value,"pswd":inputPswd.value},
+        dataType:"json",
+        success:function (data) {
+            if (data.estatus === "OK"){
+                p.style.color="green";
+                p.innerText=data.usuari_app;
+            }else{
+                p.style.color="red";
+                p.innerText=data.error+" "+data.usuari_app;
+            }
 
         },
         error: function (jqXHR, textStatus, error){

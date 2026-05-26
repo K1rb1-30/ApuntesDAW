@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "root";
+$password = "root"; // Cambiar a super3 si es con el portatil de clase y sino root
 $dbname = "ap5php";
 
 try {
@@ -21,13 +21,12 @@ try {
             exit;
         }
 
-        $query = $conn->prepare("select * from usuari where email = :email)");
+        $query = $conn->prepare("select * from usuari where email = :email");
         $query->bindParam(":email", $email);
-        $query->bindParam(":pswd", $pswd);
         $query->execute();
 
         // Si no devuelve la consulta es que no existe
-        if ($query->rowCount() < 0) {
+        if ($query->rowCount() == 0) {
 
             $resposta = [
                 "estatus" => "OK",
@@ -35,7 +34,7 @@ try {
                 "usuari_app" => $email
             ];
 
-            $query = $conn->prepare("insert into usuari set email = :email)");
+            $query = $conn->prepare("insert into usuari (email, contrasenya) VALUES (:email, :pswd)");
             $query->bindParam(":email", $email);
             $query->bindParam(":pswd", $pswd);
             $query->execute();
