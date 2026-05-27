@@ -33,7 +33,7 @@ try {
             }
 
             $nuevoPer = [
-              "personatge" => $nomper,
+                "personatge" => $nomper,
                 "ordre" => $ordre
             ];
 
