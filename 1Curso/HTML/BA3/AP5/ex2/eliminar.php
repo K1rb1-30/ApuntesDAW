@@ -9,9 +9,8 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $idanime = intval($_POST["idanime"]);
     $nomper = $_POST["nomper"];
-    $ordre = intval($_POST["ordre"]);
 
-    if($idanime == "" || $nomper == "" || $ordre == ""){
+    if($idanime == "" || $nomper == ""){
         $resposta = [
             "estatus" => "KO",
             "missatge" => "Els camps estan buits"
@@ -45,14 +44,13 @@ try {
             foreach ($personatges as &$personatge) { // el & lo que hace es que personatge sea una referencia no una copia.
                 if($personatge["personatge"] == $nomper){
                     $flag = true;
-                    $personatge["ordre"] = $ordre;
                 }
             }
 
             if($flag == false){
                 $resposta = [
                     "estatus" => "KO",
-                    "missatge" => "El personatge a modificar no existeix."
+                    "missatge" => "El personatge a eliminar no existeix."
                 ];
                 print_r(json_encode($resposta));
                 exit;

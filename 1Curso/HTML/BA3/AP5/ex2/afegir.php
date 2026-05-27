@@ -2,14 +2,23 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "root"; // Cambiar a super3 si es con el portatil de clase y sino root
+$password = "super3"; // Cambiar a super3 si es con el portatil de clase y sino root
 $dbname = "anime_db";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $idanime = intval($_POST["idanime"]);
     $nomper = $_POST["nomper"];
-    $ordre = $_POST["ordre"];
+    $ordre = intval($_POST["ordre"]);
+
+    if($idanime == "" || $nomper == "" || $ordre == ""){
+        $resposta = [
+            "estatus" => "KO",
+            "missatge" => "Els camps estan buits"
+        ];
+        print_r(json_encode($resposta));
+        exit;
+    }
 
     try {
 

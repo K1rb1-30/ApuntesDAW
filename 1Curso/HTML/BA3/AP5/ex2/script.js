@@ -17,7 +17,7 @@ function afegir(){
                 p.innerText=data.missatge;
             }else{
                 p.style.color="red";
-                p.innerText=data.error+" "+data.missatge;
+                p.innerText=data.missatge;
             }
 
         },
@@ -41,7 +41,7 @@ function modificar(){
                 p.innerText=data.missatge;
             }else{
                 p.style.color="red";
-                p.innerText=data.error+" "+data.missatge;
+                p.innerText=data.missatge;
             }
 
         },
