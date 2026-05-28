@@ -2,12 +2,12 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "super3"; // Cambiar a super3 si es con el portatil de clase y sino root
+$password = "root"; // Cambiar a super3 si es con el portatil de clase y sino root
 $dbname = "anime_db";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $idanime = intval($_POST["idanime"]);
+    $idanime = $_POST["idanime"];
     $nomper = $_POST["nomper"];
 
     if($idanime == "" || $nomper == ""){
@@ -19,6 +19,7 @@ try {
         exit;
     }
 
+    $idanime = intval($_POST["idanime"]); // esto es porque en la BBDD es un int (no lo hago antes para poder comprovar si estan vacios)
     try {
 
         $query = $conn->prepare("select * from animes where idanimes = :idanime");
@@ -41,9 +42,10 @@ try {
             }
 
             $flag = false; // esto es por si no encuentra el personaje
-            foreach ($personatges as &$personatge) { // el & lo que hace es que personatge sea una referencia no una copia.
+            foreach ($personatges as $index => $personatge) {
                 if($personatge["personatge"] == $nomper){
                     $flag = true;
+                    array_splice($personatges, $index, 1); // esto es para eliminar el personaje entero
                 }
             }
 
@@ -58,14 +60,14 @@ try {
 
             $jsonPers = json_encode($personatges, JSON_UNESCAPED_UNICODE);
 
-            $update = $conn->prepare("update animes set personatges = :personatges where idanimes = :idanime");
+            $update = $conn->prepare("update animes set personatges = :personatges, numpersonatges = numpersonatges - 1 where idanimes = :idanime");
             $update->bindParam(":personatges", $jsonPers);
             $update->bindParam(":idanime", $idanime);
             $update->execute();
 
             $resposta = [
                 "estatus" => "OK",
-                "missatge" => "S'ha modificat correctament el personatge"
+                "missatge" => "S'ha esborrat correctament el personatge"
             ];
 
             print_r(json_encode($resposta));

@@ -50,3 +50,27 @@ function modificar(){
         }
     });
 }
+
+function eliminar(){
+    $.ajax({
+        method:"POST",
+        url:"eliminar.php",
+        data:{  "idanime":idanime.value,
+            "nomper":nomper.value,
+            "ordre":ordre.value},
+        dataType:"json",
+        success:function (data) {
+            if (data.estatus === "OK"){
+                p.style.color="green";
+                p.innerText=data.missatge;
+            }else{
+                p.style.color="red";
+                p.innerText=data.missatge;
+            }
+
+        },
+        error: function (jqXHR, textStatus, error){
+            console.log(jqXHR);
+        }
+    });
+}

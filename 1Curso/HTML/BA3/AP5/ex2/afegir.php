@@ -2,14 +2,14 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "super3"; // Cambiar a super3 si es con el portatil de clase y sino root
+$password = "root"; // Cambiar a super3 si es con el portatil de clase y sino root
 $dbname = "anime_db";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $idanime = intval($_POST["idanime"]);
+    $idanime = $_POST["idanime"];
     $nomper = $_POST["nomper"];
-    $ordre = intval($_POST["ordre"]);
+    $ordre = $_POST["ordre"];
 
     if($idanime == "" || $nomper == "" || $ordre == ""){
         $resposta = [
@@ -19,6 +19,10 @@ try {
         print_r(json_encode($resposta));
         exit;
     }
+
+    //esto es pq en la BBDD son int (no lo hago antes para poder comprovar si estan vacios)
+    $idanime = intval($_POST["idanime"]);
+    $ordre = intval($_POST["ordre"]);
 
     try {
 
@@ -38,6 +42,22 @@ try {
 
                 if(is_array($decoded)){
                     $personatges = $decoded;
+                }
+
+                $flag = false; // esto es por si encuentra el personaje
+                foreach ($personatges as $personatge) {
+                    if($personatge["personatge"] == $nomper){
+                        $flag = true;
+                    }
+                }
+
+                if($flag == true){
+                    $resposta = [
+                        "estatus" => "KO",
+                        "missatge" => "El personatge ya existeix."
+                    ];
+                    print_r(json_encode($resposta));
+                    exit;
                 }
             }
 
